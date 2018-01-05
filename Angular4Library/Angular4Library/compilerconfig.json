@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/Content/Styles/Site.css",
     "inputFile": "wwwroot/Content/Styles/Site.less"
+  },
+  {
+    "outputFile": "ClientApp/app/components/app-signup/app.signup.component.css",
+    "inputFile": "ClientApp/app/components/app-signup/app.signup.component.less"
   }
 ]

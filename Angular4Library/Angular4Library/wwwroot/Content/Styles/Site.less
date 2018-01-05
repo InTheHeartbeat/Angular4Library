@@ -154,29 +154,38 @@ body{background-image:url(../Images/Backgrounds/MainBackground.jpg);height:100%;
         float: left;
     }
 
-    .signin-window {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+.signin-window {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
 
-        .window {
-            height: 190px !important;
+    .window {
+        height: 190px !important;
 
-            .window-content {
-                padding-top: 1em !important;
-            }
+        .window-content {
+            padding-top: 1em !important;
         }
+    }
 
-        :nth-last-child(2) {
-            margin-bottom: 1em;
-        }
+    :nth-last-child(2) {
+        margin-bottom: 1em;
+    }
+
+    .buttons {
+        display: block;
+        width: 100%;
+        margin: 0 auto .3em auto;
+        font-size: 1.11em;
+        /* margin: 0 auto; */
+        /* display: inline-block; */
+        text-align: center;
 
         input[type=submit] {
             margin: 0 auto;
-            display: block;
         }
     }
+}
 
     .signup-window {
         position: absolute;

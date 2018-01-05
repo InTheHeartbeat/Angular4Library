@@ -1,0 +1,22 @@
+﻿<div class="windows-container">
+    <div class="windows-grid">
+        <div class="window-wrapper signin-window">
+            <div class="window">
+                <div class="window-header">
+                    <span class="icon ic-signin"></span>
+                    <h4>Sign up</h4>     
+                    <h5 style="color: red; margin: 0;display: inline-block;float: right;margin-right: 1em;">{{message}}</h5>
+                </div>
+                <div class="window-content">
+                    <form name="signUpForm">
+                        <input type="text" placeholder="your login" name="login" [(ngModel)]="login" required ng-minlength="5" />
+                        <input type="password" placeholder="your password" name="password" [(ngModel)]="password" required ng-minlength="5" />
+                        <div class="buttons">            
+                            <input [disabled]="isLoading" type="submit" id="signUpBtn" class="btn btn-colored" value="Let me in!" (click)="trySignUp(login,password)" ng-disabled="signUpForm.$invalid">
+                        </div>                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

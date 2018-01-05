@@ -2,6 +2,7 @@
 using System.Linq;
 using Angular4Library.Data;
 using Angular4Library.Data.Models;
+using Angular4Library.Extensions;
 using Angular4Library.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -37,20 +38,26 @@ namespace Angular4Library.Controllers.Api
 
             if (!String.IsNullOrWhiteSpace(at) && !String.IsNullOrWhiteSpace(adr))
             {
-                return Ok(GetCurrentAccount(at, adr));
+                return Ok(GetAuthDataModel(GetCurrentAccount(at, adr)));
             }
 
             return BadRequest();
         }
 
-        private object GetCurrentAccount(string at, string adr)
+        private Account GetCurrentAccount(string at, string adr)
         {
-            throw new NotImplementedException();
+            AccountAccessRecord record =
+                _context.AccountAccessRecord.FindOne(aar => aar.Source == adr && aar.Token == Guid.Parse(at));
+            if (record != null)
+            {
+                return _context.Account.FindOne(a => a.Id == record.AccountId);                
+            }
+            return null;
         }
 
         private Visitor GetCurrentVisitor(string vt)
         {
-            return _context.Visitor.FirstOrDefault(v => v.Token.ToString() == vt);
+            return _context.Visitor.FindOne(v => v.Token.ToString() == vt);
         }
 
         private Visitor InitializeVisitor()
@@ -63,8 +70,7 @@ namespace Angular4Library.Controllers.Api
                 LastAccess = DateTime.Now
             };
 
-            _context.Visitor.Add(visitor);
-            _context.SaveChanges();
+            _context.Visitor.Insert(visitor);
 
             return visitor;
         }
@@ -79,114 +85,111 @@ namespace Angular4Library.Controllers.Api
                 Login = String.Empty
             };
         }
-        /*
-        [Route("api/Account/TrySignIn")]
-        [ResponseType(typeof(AuthModel))]
+
+        private AuthDataModel GetAuthDataModel(Account account)
+        {
+            AccountAccessRecord rec = _context.AccountAccessRecord.FindOne(a => a.AccountId == account.Id);
+            return new AuthDataModel()
+            {
+                IsAdmin = account.IsAdmin,
+                IsVisitor = false,
+                Token = rec.Token.ToString(),
+                Login = account.Login
+            };
+        }
+
+        [Route("api/Account/TrySignIn")]        
         [HttpPost]
-        public IHttpActionResult TrySignIn(LoginDataModel dataModel)
+        public IActionResult TrySignIn([FromBody] SignInDataModel dataModel)
         {
             try
             {
-                Account account = DataContext.Accounts.FirstOrDefault(
+                Account account = _context.Account.FindOne(
                     ac => ac.Login == dataModel.Login && ac.Hash == dataModel.Password.MD5());
 
                 if (account == null)
                 {
-                    return Ok(new AuthModel() {Message = "Login or password incorrect"});
+                    return Ok(new AuthDataModel() {Message = "Login or password incorrect"});
                 }
 
                 Guid token = Guid.NewGuid();
 
 
-                string adr = "";
-                if (Request.Properties.ContainsKey("MS_HttpContext"))
-                {
-                    adr = ((HttpContextWrapper) Request.Properties["MS_HttpContext"]).Request.UserHostAddress;
-                }
+                string adr = Request.HttpContext.Connection.RemoteIpAddress.ToString();                
 
-                AccountAccessRecord previousRecord = account.AccountAccessRecords.FirstOrDefault(r => r.Source == adr);
+                AccountAccessRecord previousRecord = _context.AccountAccessRecord.FindOne(r => r.Source == adr);
                 if (previousRecord != null)
                 {
-                    DataContext.AccountAccessRecords.DeleteOnSubmit(previousRecord);
-                    DataContext.SubmitChanges();
+                    _context.AccountAccessRecord.Delete(previousRecord.Id);
                 }
 
                 AccountAccessRecord record = new AccountAccessRecord()
                 {
                     ActiveDate = DateTime.Now,
-                    Account = account,
+                    AccountId = account.Id,
                     Source = adr,
                     Token = token
                 };
-                DataContext.AccountAccessRecords.InsertOnSubmit(record);
-                DataContext.SubmitChanges();
+                _context.AccountAccessRecord.Insert(record);
 
-                return Ok(new AuthModel()
+                return Ok(new AuthDataModel()
                 {
                     IsAdmin = account.IsAdmin,
-                    Name = account.Login,
+                    Login = account.Login,
                     Token = token.ToString(),
                     IsVisitor = false
                 });
             }
             catch (Exception e)
             {
-                return InternalServerError(e);
+                return BadRequest(e);
             }
         }
 
-        [Route("api/Account/SignOut")]
-        [ResponseType(typeof(void))]
-        [HttpGet]
-        public IHttpActionResult SignOut()
+        [Route("api/Account/SignOut")]        
+        [HttpPost]
+        public IActionResult SignOut([FromBody] AuthDataModel model)
         {
-            if (CurrentUser == null) { return Unauthorized(); }
-            string adr = "";
-            if (Request.Properties.ContainsKey("MS_HttpContext"))
-            {
-                adr = ((HttpContextWrapper)Request.Properties["MS_HttpContext"]).Request.UserHostAddress;
-            }
-
-            AccountAccessRecord previousRecord = CurrentUser?.AccountAccessRecords.FirstOrDefault(r => r.Source == adr);
+            AccountAccessRecord a = _context.AccountAccessRecord.FindById(_context.AccountAccessRecord.Min()); 
+            AccountAccessRecord previousRecord = _context.AccountAccessRecord.FindOne(r => r.Token == new Guid(model.Token));
             if (previousRecord != null)
             {
-                DataContext.AccountAccessRecords.DeleteOnSubmit(previousRecord);
-                DataContext.SubmitChanges();                
+                _context.AccountAccessRecord.Delete(previousRecord.Id);
+                return GetCurrentUser();
             }
 
-            return Ok();
+            return BadRequest();
         }
 
-        [Route("api/Account/TrySignUp")]
-        [ResponseType(typeof(AuthModel))]
+        [Route("api/Account/TrySignUp")]        
         [HttpPost]
-        public IHttpActionResult TrySignUp(LoginDataModel dataModel)
+        public IActionResult TrySignUp([FromBody]SignInDataModel dataModel)
         {
             try
             {
-                AuthModel model = new AuthModel();
-                if (DataContext.Accounts.Any(ac => ac.Login == dataModel.Login))
+                AuthDataModel model = new AuthDataModel();
+                if (_context.Account.Exists(ac => ac.Login == dataModel.Login))
                 {
                     model.Message = "Login already exist";
-                    return Ok(model);
+                    return BadRequest(model);
                 }
 
                 Account newAccount = new Account()
                 {
                     Login = dataModel.Login,
-                    Hash = dataModel.Password.MD5()
+                    Hash = dataModel.Password.MD5(),
+                    IsAdmin = false
                 };
 
-                DataContext.Accounts.InsertOnSubmit(newAccount);
-                DataContext.SubmitChanges();
+                _context.Account.Insert(newAccount);                
 
                 return TrySignIn(dataModel);
             }
             catch (Exception e)
             {
-                return InternalServerError(e);
+                return BadRequest(e);
             }
-        }*/
+        }
     }
 }
 

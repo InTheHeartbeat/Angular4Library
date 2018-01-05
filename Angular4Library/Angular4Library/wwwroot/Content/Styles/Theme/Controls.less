@@ -15,7 +15,7 @@
     margin-left:-1px;
     color:white;
 }
-.btn:hover
+.btn:hover:not([disabled])
 {
 background-color: rgba(53, 57, 66, 0.55);
 border:1px solid @main-color;
@@ -28,14 +28,12 @@ border:1px solid @main-color;
     height:auto;    
 }
 
-.btn-colored {
+.btn-colored:not([disabled]) {
     background-color: @main-color !important;
     color: white !important;
-
-    
 }
-.btn-colored:hover {
-    background-color: darken(@main-color,20%) !important;    
+.btn-colored:hover:not([disabled]) {
+    background-color: darken(@main-color,20%) !important;
 }
 /* *** Inputs *** */
 input[type=text], input[type=password] {
@@ -55,11 +53,23 @@ input:focus{
     outline-offset: 0 !important;    
 }
 
-input:focus::-webkit-input-placeholder {text-indent: 500px; font-weight:100;transition: text-indent 0.3s ease;}     
-input::-webkit-input-placeholder       {font-weight:100;text-indent: 0px;   transition: text-indent 0.3s ease; font-weight:100; color: darken(darkgray,50%); }
-input::-moz-placeholder          { color: darken(darkgray,50%); font-weight:100;} /* Firefox 19+ */
-input:-moz-placeholder           { color: darken(darkgray,50%); font-weight:100;} /* Firefox 18- */
-input:-ms-input-placeholder      { color: darken(darkgray,50%); font-weight:100;}
+input:focus::-webkit-input-placeholder {text-indent: 500px; font-weight:100;transition: text-indent 0.3s ease;}
+input::-webkit-input-placeholder {
+    font-weight: 100;
+    text-indent: 0px;
+    transition: text-indent 0.3s ease;
+    font-weight: 100;
+    color: white;
+}
+input::-moz-placeholder          { color: white; font-weight:100;} /* Firefox 19+ */
+input:-moz-placeholder {
+    color: white;
+    font-weight: 100;
+} /* Firefox 18- */
+input:-ms-input-placeholder {
+    color: white;
+    font-weight: 100;
+}
 
 button[disabled]:active, button[disabled],
 input[type="button"][disabled]:active,

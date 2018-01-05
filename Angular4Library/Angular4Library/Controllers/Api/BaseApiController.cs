@@ -39,7 +39,7 @@ namespace Angular4Library.Controllers.Api
                 Guid token = Guid.Parse(at);
                 try
                 {
-                    CurrentUser = DataContext.AccountAccessRecords.FirstOrDefault(t => t.Token == token && t.Source == adr)?.Account;
+                    CurrentUser = DataContext.AccountAccessRecord.FirstOrDefault(t => t.Token == token && t.Source == adr)?.Account;
                 }
                 catch (Exception e)
                 {

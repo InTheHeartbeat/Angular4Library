@@ -10,6 +10,7 @@ namespace Angular4Library.Models
         public string Login { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsVisitor { get; set; }
-        public string Token { get; set; }       
+        public string Token { get; set; }
+        public string Message { get; set; }
     }
 }
