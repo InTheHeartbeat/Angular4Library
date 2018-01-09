@@ -12,9 +12,10 @@ namespace Angular4Library.Data
     {
         private LiteDatabase db;
 
-        public LiteCollection<Visitor> Visitor => db.GetCollection<Visitor>();
-        public LiteCollection<Account> Account => db.GetCollection<Account>();
-        public LiteCollection<AccountAccessRecord> AccountAccessRecord => db.GetCollection<AccountAccessRecord>();
+        public LiteCollection<Visitor> Visitors => db.GetCollection<Visitor>();
+        public LiteCollection<Account> Accounts => db.GetCollection<Account>();
+        public LiteCollection<AccountAccessRecord> AccountAccessRecords => db.GetCollection<AccountAccessRecord>();
+        public LiteCollection<Book> Books => db.GetCollection<Book>();
 
         public LibraryContext()
         {

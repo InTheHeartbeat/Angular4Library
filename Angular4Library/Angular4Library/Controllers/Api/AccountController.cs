@@ -178,7 +178,7 @@ namespace Angular4Library.Controllers.Api
                 {
                     Login = dataModel.Login,
                     Hash = dataModel.Password.MD5(),
-                    IsAdmin = false
+                    IsAdmin = false 
                 };
 
                 _context.Account.Insert(newAccount);                
