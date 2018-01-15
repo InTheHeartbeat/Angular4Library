@@ -48,6 +48,10 @@ input[type=text], input[type=password] {
     color: white;
     text-align: center;
 }
+input[type=text]:not(:valid), input[type=password]:not(:valid) {
+    border-bottom: 1px solid #FF8C00 !important;
+}
+
 input:focus{
     outline: 0 !important;
     outline-offset: 0 !important;    

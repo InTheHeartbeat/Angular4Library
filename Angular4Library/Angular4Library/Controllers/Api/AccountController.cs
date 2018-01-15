@@ -47,17 +47,17 @@ namespace Angular4Library.Controllers.Api
         private Account GetCurrentAccount(string at, string adr)
         {
             AccountAccessRecord record =
-                _context.AccountAccessRecord.FindOne(aar => aar.Source == adr && aar.Token == Guid.Parse(at));
+                _context.AccountAccessRecords.FindOne(aar => aar.Source == adr && aar.Token == Guid.Parse(at));
             if (record != null)
             {
-                return _context.Account.FindOne(a => a.Id == record.AccountId);                
+                return _context.Accounts.FindOne(a => a.Id == record.AccountId);                
             }
             return null;
         }
 
         private Visitor GetCurrentVisitor(string vt)
         {
-            return _context.Visitor.FindOne(v => v.Token.ToString() == vt);
+            return _context.Visitors.FindOne(v => v.Token.ToString() == vt);
         }
 
         private Visitor InitializeVisitor()
@@ -70,7 +70,7 @@ namespace Angular4Library.Controllers.Api
                 LastAccess = DateTime.Now
             };
 
-            _context.Visitor.Insert(visitor);
+            _context.Visitors.Insert(visitor);
 
             return visitor;
         }
@@ -88,7 +88,7 @@ namespace Angular4Library.Controllers.Api
 
         private AuthDataModel GetAuthDataModel(Account account)
         {
-            AccountAccessRecord rec = _context.AccountAccessRecord.FindOne(a => a.AccountId == account.Id);
+            AccountAccessRecord rec = _context.AccountAccessRecords.FindOne(a => a.AccountId == account.Id);
             return new AuthDataModel()
             {
                 IsAdmin = account.IsAdmin,
@@ -104,7 +104,7 @@ namespace Angular4Library.Controllers.Api
         {
             try
             {
-                Account account = _context.Account.FindOne(
+                Account account = _context.Accounts.FindOne(
                     ac => ac.Login == dataModel.Login && ac.Hash == dataModel.Password.MD5());
 
                 if (account == null)
@@ -117,10 +117,10 @@ namespace Angular4Library.Controllers.Api
 
                 string adr = Request.HttpContext.Connection.RemoteIpAddress.ToString();                
 
-                AccountAccessRecord previousRecord = _context.AccountAccessRecord.FindOne(r => r.Source == adr);
+                AccountAccessRecord previousRecord = _context.AccountAccessRecords.FindOne(r => r.Source == adr);
                 if (previousRecord != null)
                 {
-                    _context.AccountAccessRecord.Delete(previousRecord.Id);
+                    _context.AccountAccessRecords.Delete(previousRecord.Id);
                 }
 
                 AccountAccessRecord record = new AccountAccessRecord()
@@ -130,7 +130,7 @@ namespace Angular4Library.Controllers.Api
                     Source = adr,
                     Token = token
                 };
-                _context.AccountAccessRecord.Insert(record);
+                _context.AccountAccessRecords.Insert(record);
 
                 return Ok(new AuthDataModel()
                 {
@@ -150,11 +150,11 @@ namespace Angular4Library.Controllers.Api
         [HttpPost]
         public IActionResult SignOut([FromBody] AuthDataModel model)
         {
-            AccountAccessRecord a = _context.AccountAccessRecord.FindById(_context.AccountAccessRecord.Min()); 
-            AccountAccessRecord previousRecord = _context.AccountAccessRecord.FindOne(r => r.Token == new Guid(model.Token));
+            AccountAccessRecord a = _context.AccountAccessRecords.FindById(_context.AccountAccessRecords.Min()); 
+            AccountAccessRecord previousRecord = _context.AccountAccessRecords.FindOne(r => r.Token == new Guid(model.Token));
             if (previousRecord != null)
             {
-                _context.AccountAccessRecord.Delete(previousRecord.Id);
+                _context.AccountAccessRecords.Delete(previousRecord.Id);
                 return GetCurrentUser();
             }
 
@@ -168,7 +168,7 @@ namespace Angular4Library.Controllers.Api
             try
             {
                 AuthDataModel model = new AuthDataModel();
-                if (_context.Account.Exists(ac => ac.Login == dataModel.Login))
+                if (_context.Accounts.Exists(ac => ac.Login == dataModel.Login))
                 {
                     model.Message = "Login already exist";
                     return BadRequest(model);
@@ -181,7 +181,7 @@ namespace Angular4Library.Controllers.Api
                     IsAdmin = false 
                 };
 
-                _context.Account.Insert(newAccount);                
+                _context.Accounts.Insert(newAccount);                
 
                 return TrySignIn(dataModel);
             }

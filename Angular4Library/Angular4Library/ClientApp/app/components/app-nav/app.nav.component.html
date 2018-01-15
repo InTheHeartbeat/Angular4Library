@@ -25,7 +25,7 @@
     <div class="sidebar-items-container">
         <h4 class="label">Main</h4>
         <ul class="section-selector">
-            <li><a href="#"></a></li>
+            <li [ngClass]="{'active': currentSection == 'Books'}" (click)="setCurrentSection('Books')"><a [routerLink]="['/books']">{{currentSection}}</a></li>
         </ul>
         <h4 class="label">Sell</h4>
         <ul class="section-selector">
@@ -41,3 +41,5 @@
         <h5>All rights reserved. <br>Tyner©2017</h5>
     </div>
 </div>
+
+<div class="body-content"><router-outlet></router-outlet></div> 

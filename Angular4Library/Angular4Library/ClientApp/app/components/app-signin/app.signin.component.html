@@ -1,23 +1,27 @@
 ﻿<div class="windows-container">
-    <div class="windows-grid">
-        <div class="window-wrapper signin-window">
-            <div class="window">
-                <div class="window-header">
+    <div class="windows-grid">        
+        <div class="window centered bottom10">
+            <div class="window-header">
+                <div class="window-header-icon">
                     <span class="icon ic-signin"></span>
+                </div>
+                <div class="window-header-content">
                     <h4>Sign in</h4>
-                    <h5 style="color: red; margin: 0;display: inline-block;float: right;margin-right: 1em;">{{message}}</h5>
-                </div>
-                <div class="window-content">
-                    <form name="loginForm">                        
-                        <input type="text" placeholder="your login" name="login" [(ngModel)]="login" required ng-minlength="5" />                       
-                        <input type="password" placeholder="your password" name="password" [(ngModel)]="password" required ng-minlength="5" />
-                        <div class="buttons">
-                            <input [disabled]="isLoading" type="button" class="btn" value="Sign up" (click)="showSignUpDialog()">
-                            <input [disabled]="isLoading" type="submit" id="signInBtn" class="btn btn-colored" value="Let me in!" (click)="trySignIn(login,password)" ng-disabled="loginForm.$invalid || isSignInBtnDisabled">
-                        </div>                               
-                    </form>
-                </div>
+                </div>              
+                <div class="window-header-control auto-width" [hidden]="!message || message == ''">
+                    <h5 class="error-msg header-msg">{{message}}</h5>
+                </div>                    
             </div>
-        </div>
+            <div class="window-content">
+                <form name="loginForm">                        
+                    <input type="text" placeholder="your login" name="login" [(ngModel)]="login" required minlength="5" />                       
+                    <input type="password" placeholder="your password" name="password" [(ngModel)]="password" required minlength="5" />
+                    <div class="buttons">
+                        <input [disabled]="isLoading" type="button" class="btn" value="Sign up" (click)="showSignUpDialog()">
+                        <input [disabled]="isLoading" type="submit" id="signInBtn" class="btn btn-colored" value="Let me in!" (click)="trySignIn(login,password)" ng-disabled="loginForm.$invalid || isSignInBtnDisabled">
+                    </div>                               
+                </form>
+            </div>
+        </div>        
     </div>
 </div>

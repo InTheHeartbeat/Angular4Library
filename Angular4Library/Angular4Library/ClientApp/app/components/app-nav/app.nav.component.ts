@@ -13,22 +13,28 @@ export class AppNavComponent {
 
     currUserUpdateSub: Subscription;
 
+    currentSection: string;
+
     constructor(private cookieService: CookieService, private accountService: AccountService) {
         this.currentUser = {};          
     }
 
-    ngOnInit() {
-        this.accountService.loadCurrentUser();        
+    ngOnInit() {               
         this.currUserUpdateSub = this.accountService.currentUser$.subscribe(user => {            
             this.initCurrentUser(user);            
             this.currentUser = user;
-            console.log(this.accountService.currentUser$);
+            console.log("1");
         });
+        this.accountService.loadCurrentUser(); 
     }
 
     signOut() {
         this.accountService.trySignOut();
         this.cookieService.delete("AT");
+    }
+
+    setCurrentSection(newSection: string) {
+        this.currentSection = newSection;
     }
 
     private initCurrentUser(account: any) {

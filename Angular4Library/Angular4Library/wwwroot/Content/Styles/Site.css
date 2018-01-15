@@ -47,14 +47,9 @@ b {
   margin: 0 -20px 0 0;
   padding: 0;
 }
-.windows-container .windows-grid .window-wrapper {
-  display: block;
-  width: 97%;
+.windows-container .windows-grid .window {
   float: left;
-  transition: width .2s;
-}
-.windows-container .windows-grid .window-wrapper .window {
-  display: block;
+  display: table;
   border-radius: 3px;
   position: relative;
   background: transparent;
@@ -62,87 +57,140 @@ b {
   text-decoration: none;
   color: white;
   z-index: 0;
-  height: 200px;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header {
+.windows-container .windows-grid .window .window-header {
   width: 100%;
-  height: 30px;
-  min-height: 30px;
-  max-height: 30px;
-  background-color: rgba(25, 28, 35, 0.28);
-  line-height: 1.99em;
-}
-.windows-container .windows-grid .window-wrapper .window .window-header span.icon {
-  margin-top: 0.5em;
-  margin-left: 0.5em;
-  margin-right: 0.3em;
-  width: 16px;
-  height: 16px;
-  background-size: contain;
-  min-width: 16px;
-}
-.windows-container .windows-grid .window-wrapper .window .window-header h4 {
-  margin: 0;
-  display: inline-block;
+  height: 35px;
+  line-height: 1.5em;
+  font-size: 1.2em;
+  display: flex;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header .window-header-buttons {
-  display: inline-block;
-  float: right;
-  height: 30px;
-  width: 90px;
-  min-width: 63px;
-  text-align: right;
+.windows-container .windows-grid .window .window-header .window-header-icon {
+  width: 35px;
+  height: 35px;
+  margin-right: 1px;
+  display: inline-flex;
+  background-color: rgba(25, 28, 35, 0.28);
+  position: relative;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header .window-header-buttons .btn {
-  width: 28px!important;
-  height: 28px!important;
+.windows-container .windows-grid .window .window-header .window-header-icon > span {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header .window-header-buttons span.icon {
-  margin-left: 0.43em;
-  margin-top: 0.45em;
+.windows-container .windows-grid .window .window-header .window-header-content {
+  height: 35px;
+  background-color: rgba(25, 28, 35, 0.28);
+  overflow: hidden;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  display: inline-flex;
+  flex-grow: 100;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header .header-load-anim {
-  display: inline-block;
-  float: right;
-  margin-right: 2em;
-  margin-top: -0.2em;
-  width: 30px;
-  height: 30px;
-  display: none;
+.windows-container .windows-grid .window .window-header .window-header-content * {
+  margin: auto 0;
 }
-.windows-container .windows-grid .window-wrapper .window .window-header .header-load-anim ul {
-  margin: 0;
+.windows-container .windows-grid .window .window-header .window-header-control {
+  width: 35px;
+  height: 35px;
+  margin-right: 1px;
+  background-color: rgba(25, 28, 35, 0.28);
+  position: relative;
+  display: inline-flex;
+  margin-left: 1px;
+  margin-right: 0;
 }
-.windows-container .windows-grid .window-wrapper .window .justify {
+.windows-container .windows-grid .window .window-header .window-header-control > span {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.windows-container .windows-grid .window .window-header .window-header-control .btn {
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.windows-container .windows-grid .window .window-header .window-header-control .btn .icon {
+  width: 70%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.windows-container .windows-grid .window .window-header .window-header-control .header-msg {
+  margin: auto;
+}
+.windows-container .windows-grid .window .window-header .window-header-control.auto-width {
+  width: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+.windows-container .windows-grid .window .justify {
   display: flex;
   justify-content: space-between;
 }
-.windows-container .windows-grid .window-wrapper .window .window-content {
+.windows-container .windows-grid .window .window-content {
+  margin-top: 1px;
+  background-color: rgba(25, 28, 35, 0.52);
+  width: 100%;
+  display: table;
+  padding: 0.5em;
+  box-sizing: border-box;
+}
+.windows-container .windows-grid .window .window-content .buttons {
+  text-align: center;
+}
+.windows-container .windows-grid .window.centered {
   position: absolute;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
-  top: 32px;
-  bottom: 0;
-  background-color: rgba(25, 28, 35, 0.52);
-  padding: 0.5em;
+  margin: auto;
 }
-.windows-container .windows-grid .window-wrapper .window-hovered-shadow {
+.windows-container .windows-grid .window.bottom10 {
+  bottom: 10em;
+}
+.windows-container .windows-grid .window.disabled {
+  background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(158, 158, 158, 0.26) 5px, rgba(158, 158, 158, 0.26) 10px) !important;
+}
+.windows-container .windows-grid .window.disabled * {
+  pointer-events: none;
+  color: #cccccc;
+}
+.windows-container .windows-grid .window-hovered-shadow {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.windows-container .windows-grid .window-wrapper .window-hovered-shadow:hover {
+.windows-container .windows-grid .window-hovered-shadow:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 @media only screen and (min-width: 1000px) {
-  .window-wrapper {
-    width: 50% !important;
+  .window {
+    width: 45% !important;
   }
 }
 @media only screen and (min-width: 1366px) {
-  .window-wrapper {
-    width: 33.33333% !important;
+  .window {
+    width: 30% !important;
   }
 }
 .header-bar {
@@ -322,11 +370,18 @@ b {
   margin-right: 2em;
 }
 .choose-photo {
+  width: 302px;
+  height: 200px;
+  margin: .5em;
+  display: inline-block;
+  background-size: contain;
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid rgba(0, 0, 0, 0);
   cursor: pointer;
+  float: left;
+  margin-right: -6em;
 }
 .choose-photo h5 {
   bottom: -1.3em;
@@ -375,6 +430,9 @@ b {
   border: 1px solid #0071b7;
   cursor: zoom-out;
 }
+.error-msg {
+  color: #FF1800;
+}
 /* *** Buttons *** */
 .btn {
   display: inline-block;
@@ -418,6 +476,10 @@ input[type=password] {
   border: none;
   color: white;
   text-align: center;
+}
+input[type=text]:not(:valid),
+input[type=password]:not(:valid) {
+  border-bottom: 1px solid #FF8C00 !important;
 }
 input:focus {
   outline: 0 !important;
@@ -793,40 +855,6 @@ body {
 .sellWrapper {
   height: 100%;
 }
-.choose-photo {
-  height: 200px;
-  margin-bottom: 1em;
-}
-.ng-dialog-form > .ngdialog-content {
-  height: 100%;
-  overflow-y: auto;
-}
-.ng-dialog-basket > .ngdialog-content {
-  width: 80% !important;
-  height: 100% !important;
-  overflow-y: auto;
-}
-.ng-dialog-basket > .ngdialog-content .products-table {
-  width: 100%;
-  table-layout: fixed;
-  text-align: center;
-}
-.ng-dialog-basket > .ngdialog-content .products-table tbody tr td:nth-child(1) {
-  width: 60px;
-}
-.ng-dialog-basket > .ngdialog-content .products-table tbody tr td:nth-child(2) {
-  width: 100%;
-}
-.ng-dialog-basket > .ngdialog-content .products-table tbody tr td:nth-child(3) {
-  width: 100%;
-}
-.ng-dialog-basket > .ngdialog-content .products-table tbody tr td:nth-child(4) {
-  width: 100%;
-  text-align: right !important;
-}
-.ng-dialog-basket > .ngdialog-content .products-table tbody tr td:nth-child(4) a {
-  color: red !important;
-}
 .basket-li {
   list-style: none;
   height: 75px;
@@ -847,11 +875,21 @@ body {
   margin-left: 6em;
 }
 .btn-buy {
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  margin: auto;
+  vertical-align: middle;
+}
+.btn-buy > .ic-buy {
+  width: 80%;
+  height: 80%;
   position: absolute;
-  bottom: 1em;
-  right: 1em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
 }
 .nav-sector-controls > * {
   display: inline-block;
@@ -874,18 +912,6 @@ body {
   margin-right: 3em;
   display: inline-block;
 }
-.field-validation-error {
-  font-size: 0.85em;
-  color: red;
-  text-align: center;
-  display: inline-block !important;
-}
-.validation-summary-errors {
-  color: red;
-}
-.validation-summary-errors ul {
-  list-style: none;
-}
 .nav-status-icon {
   width: 20px;
   height: 20px;
@@ -893,42 +919,29 @@ body {
   margin-top: 0.3em;
 }
 .entity-photo {
-  width: 31%;
-  height: 94%;
+  width: 12em;
+  height: 12em;
   margin-right: 0.2em;
-  background-size: contain;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: center;
-  cursor: zoom-in;
-  float: left;
+  display: table-cell;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.19), 0 2px 2px rgba(0, 0, 0, 0.23);
+}
+.entity-content *:not(:first-child) {
+  margin-left: 1em;
+}
+.entity-content table {
+  text-align: left;
+  border-spacing: 4px 0;
+}
+.entity-content table tr:last-child td,
+.entity-content table tr:last-child th {
+  border-bottom: 1px solid #0091EA;
 }
 .signin-window {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
-.signin-window .window {
-  height: 190px !important;
-}
-.signin-window .window .window-content {
-  padding-top: 1em !important;
-}
-.signin-window :nth-last-child(2) {
-  margin-bottom: 1em;
-}
-.signin-window .buttons {
-  display: block;
-  width: 100%;
-  margin: 0 auto .3em auto;
-  font-size: 1.11em;
-  /* margin: 0 auto; */
-  /* display: inline-block; */
-  text-align: center;
-}
-.signin-window .buttons input[type=submit] {
-  margin: 0 auto;
+  bottom: 10em!important;
 }
 .signup-window {
   position: absolute;
@@ -968,7 +981,7 @@ body {
 }
 .add-entity-window .window,
 #add-book-window .window {
-  height: 450px !important;
+  height: 525px !important;
 }
 .add-entity-window .window .window-content,
 #add-book-window .window .window-content {
@@ -978,7 +991,6 @@ body {
 .add-entity-window .window .window-content form,
 #add-book-window .window .window-content form {
   text-align: center;
-  margin-top: 1em;
 }
 .add-entity-window .window .window-content form #add-entity-down-fields,
 #add-book-window .window .window-content form #add-entity-down-fields {
@@ -996,20 +1008,6 @@ body {
 .add-entity-window .window .window-content form #Title,
 #add-book-window .window .window-content form #Title {
   margin-top: 1em;
-}
-.add-entity-window .window .window-content .choose-photo,
-#add-book-window .window .window-content .choose-photo {
-  width: 150px;
-  height: 150px;
-  margin: 1em;
-  margin-top: 0;
-  float: left;
-  display: inline-block;
-  background-size: 80% 80%;
-}
-.add-entity-window .window .window-content input[type=text],
-#add-book-window .window .window-content input[type=text] {
-  width: 50%;
 }
 .add-entity-window .window .window-content input[type=submit],
 #add-book-window .window .window-content input[type=submit] {
@@ -1030,176 +1028,23 @@ body {
   padding-right: .5em;
   padding-left: .5em;
 }
-.cssload-container * {
-  box-sizing: border-box;
-  -o-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+.create-form-table,
+.form-table {
+  width: 95%;
+  margin: 0 auto;
 }
-.cssload-container ul li {
-  list-style: none;
+.create-form-table input,
+.form-table input {
+  width: 90% !important;
 }
-.cssload-flex-container {
-  display: flex;
-  display: -o-flex;
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: -moz-flex;
-  flex-direction: row;
-  -o-flex-direction: row;
-  -ms-flex-direction: row;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  flex-wrap: wrap;
-  -o-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  -moz-flex-wrap: wrap;
-  justify-content: space-around;
+.create-form-table hr,
+.form-table hr {
+  border: none;
+  height: 1px;
+  background-color: #0091ea;
+  margin-bottom: 0;
+  margin-top: 1em;
 }
-.cssload-flex-container li {
-  padding: 2px;
-  height: 22px;
-  width: 22px;
-  margin: 7px 4px;
-  position: relative;
-  text-align: center;
-}
-.cssload-loading {
-  display: inline-block;
-  position: relative;
-  width: 19px;
-  height: 19px;
-  border-radius: 100%;
-  -o-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  border: 1px solid transparent;
-  border-bottom: 1px solid #0091ea;
-  border-left: 1px solid #0091ea;
-  animation: cssload-spinR 2.3s linear infinite;
-  -o-animation: cssload-spinR 2.3s linear infinite;
-  -ms-animation: cssload-spinR 2.3s linear infinite;
-  -webkit-animation: cssload-spinR 2.3s linear infinite;
-  -moz-animation: cssload-spinR 2.3s linear infinite;
-}
-.cssload-loading:before,
-.cssload-loading:after {
-  content: '';
-  display: block;
-  border-radius: 100%;
-  -o-border-radius: 100%;
-  -ms-border-radius: 100%;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
-  position: absolute;
-}
-.cssload-loading:before {
-  height: 11px;
-  width: 11px;
-  border: 1px solid transparent;
-  border-top: 1px solid rgba(255, 0, 0, 0.66);
-  border-right: 1px solid rgba(50, 194, 27, 0.65);
-  animation: cssload-spinL 0.86s linear infinite;
-  -o-animation: cssload-spinL 0.86s linear infinite;
-  -ms-animation: cssload-spinL 0.86s linear infinite;
-  -webkit-animation: cssload-spinL 0.86s linear infinite;
-  -moz-animation: cssload-spinL 0.86s linear infinite;
-  transform-origin: center center;
-  -o-transform-origin: center center;
-  -ms-transform-origin: center center;
-  -webkit-transform-origin: center center;
-  -moz-transform-origin: center center;
-  top: 11%;
-  left: 11%;
-}
-.cssload-loading:after {
-  height: 2px;
-  width: 2px;
-  background: transparent;
-  border: 0px solid #fff538;
-  top: 35.5%;
-  left: 35.5%;
-}
-@keyframes cssload-spinR {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-@-o-keyframes cssload-spinR {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(360deg);
-  }
-}
-@-ms-keyframes cssload-spinR {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes cssload-spinR {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@-moz-keyframes cssload-spinR {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(360deg);
-  }
-}
-@keyframes cssload-spinL {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg);
-  }
-}
-@-o-keyframes cssload-spinL {
-  from {
-    -o-transform: rotate(0deg);
-  }
-  to {
-    -o-transform: rotate(-360deg);
-  }
-}
-@-ms-keyframes cssload-spinL {
-  from {
-    -ms-transform: rotate(0deg);
-  }
-  to {
-    -ms-transform: rotate(-360deg);
-  }
-}
-@-webkit-keyframes cssload-spinL {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(-360deg);
-  }
-}
-@-moz-keyframes cssload-spinL {
-  from {
-    -moz-transform: rotate(0deg);
-  }
-  to {
-    -moz-transform: rotate(-360deg);
-  }
+.window label {
+  font-size: 0.9em !important;
 }

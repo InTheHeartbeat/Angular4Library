@@ -16,6 +16,7 @@ namespace Angular4Library.Data
         public LiteCollection<Account> Accounts => db.GetCollection<Account>();
         public LiteCollection<AccountAccessRecord> AccountAccessRecords => db.GetCollection<AccountAccessRecord>();
         public LiteCollection<Book> Books => db.GetCollection<Book>();
+        public LiteCollection<Image> Images => db.GetCollection<Image>();
 
         public LibraryContext()
         {
