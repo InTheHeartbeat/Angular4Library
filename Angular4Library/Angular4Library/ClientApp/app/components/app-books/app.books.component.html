@@ -5,7 +5,7 @@
     <a class="btn btn-icon" href="#" (click)="export()">
         <span class="icon ic-export"></span>
     </a>
-    <a class="btn btn-icon" [routerLink]="['/books/put']" (click)="showAddBookDialog()">
+    <a class="btn btn-icon" [routerLink]="['/books/put']">
         <span class="icon ic-add"></span>
     </a>
 </div>
@@ -15,10 +15,10 @@
             <div class="window-header">
                     
                 <div class="window-header-icon"><span class="icon ic-book"></span></div>
-                <div class="window-header-content"><h4>{{book.author}} - {{book.title}}</h4></div>
+                <div class="window-header-content"><h4 class="entity">{{book.author}} - {{book.title}}</h4></div>
                     
                 <div class="window-header-control" [hidden]="!currentUser.isAdmin">
-                    <span class="btn btn-icon" (click)="showEditBookDialog(book)">
+                    <span class="btn btn-icon" (click)="editBookForm(book.id)">
                         <span class="icon ic-edit"></span>
                     </span>
                         
@@ -36,33 +36,33 @@
                 <table>  
                     <tr>
                         <th><span>Title:</span></th>
-                        <td><span>{{book.title}}</span></td>
+                        <td colspan="2"><span>{{book.title}}</span></td>
                     </tr>
                     <tr>
                         <th><span>Author:</span></th>
-                        <td><span>{{book.author}}</span></td>
+                        <td colspan="2"><span>{{book.author}}</span></td>
                     </tr>
                     <tr><td><br/></td></tr>
                     <tr>
                         <th><span>Genre:</span></th>
-                        <td><span>{{book.genre}}</span></td>
+                        <td colspan="2"><span>{{book.genre}}</span></td>
                     </tr>
                     <tr>
                         <th><span>Year:</span></th>
-                        <td><span>{{book.year}}</span></td>
+                        <td colspan="2"><span>{{book.year}}</span></td>
                     </tr>
                     <tr>
                         <th><span>Pages:</span></th>
-                        <td><span>{{book.pages}}</span></td>
+                        <td colspan="2"><span>{{book.pages}}</span></td>
                     </tr>
                     <tr>
                         <th><span>Available:</span></th>
-                        <td><span>{{book.amount}}</span></td>
+                        <td colspan="2"><span>{{book.amount}}</span></td>
                     </tr>
                     <tr><td><br /></td></tr>
                     <tr>
                         <th><span>Price:</span></th>
-                        <td>
+                        <td colspan="2">
                             <span>{{book.price}}$</span>
                         </td>
                         <td>
@@ -71,12 +71,7 @@
                             </a>
                         </td>
                     </tr>
-                </table>
-
-                                
-               
-                
-                
+                </table>                                                                               
             </div>            
         </div>
     </div>

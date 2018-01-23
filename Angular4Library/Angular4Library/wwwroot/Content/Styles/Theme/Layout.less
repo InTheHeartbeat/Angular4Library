@@ -1,13 +1,14 @@
 ﻿@import "Colors.less";
 @import "Windows.less";
+@import "Variables.less";
 
 .header-bar{
     position:absolute;
-    left:12em;
+    left:@sidebar-width;
     right:0;
-    height:4em;   
+    height:@header-height;   
     background-color:@header-background-color; 
-    padding-right:4em;
+    padding-right:3em;
     .header-title
     {
         width:auto; 
@@ -30,118 +31,138 @@
     } 
     .header-bar-menu-container
     {
+        height:@header-height;
+        display:flex;
         float:right;
         ul
         {
             list-style:none;
             margin:0;
+            display:flex;
             li
             {
                 display:inline-block;
                 float:left;
+                margin: auto;
+                font-size:13pt;
             }
         }
     }  
 }
 
 
-.sidebar
-{
-    width:12em;
-    float:left;
-    height:100%;    
-    background-color:@sidebar-background-color;
+.sidebar {
+    width: @sidebar-width;
+    float: left;
+    height: 100%;
+    background-color: @sidebar-background-color;
 
-    .sidebar-header
-    {
-        width:100%;
-        height:6.3em; 
-        background-color:@main-color;
-        float:left;
-        line-height:2.625rem;
-        text-align:center;
-        position:relative;
-        margin-bottom:2em;
-        .company
-        {        
-            color:white;
-            font-weight: 500;
+    .sidebar-header {
+        width: 100%;
+        height: @sidebar-header-height;
+        background-color: @main-color;
+        text-align: center;
+        display: flex;
+
+        .company {
+            color: white;
             font-style: normal;
-            font-size:1.9em; 
-            line-height: 3.625rem; 
             text-shadow: 1px 1px 1px @text-shadow-color;
+            margin: auto;
+            font-size: 18pt;
         }
-        .sub-header
-        {
-            width:100%;
-            height:2.3em;
-            background-color:@header-sublogo-background-color;
-            position:absolute;
-            bottom:0;
-            .title
-            {
-                color:white;
-                text-transform:uppercase;
-                font-size:1.08em;
-                text-shadow: 1px 1px 1px @text-shadow-color;
-            }
-        }        
     }
-    .sidebar-items-container
-    {
-        position:relative;
-        height:100%;
-        color:white;
-        .label
-        {
-            margin-left:0.8em; 
-            color:lighten(lightgrey,10%);
-            font-weight:100;
-            margin-bottom:0;
+
+    .sidebar-subheader {
+        width: 100%;
+        height: @sidebar-header-height/1.5;
+        background-color: @header-sublogo-background-color;
+        display: flex;
+
+        .title {
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 1px @text-shadow-color;
+            margin: auto;
+            font-size: 11pt;
         }
-        ul
-        {
+    }
+
+    .sidebar-items-container {
+        height: 100%;
+        color: white;
+        position:relative;
+        .label {
+            margin-left: 0.8em;
+            color: lighten(lightgrey,10%);
+            font-size: 10pt;
+            margin-bottom: 0;
+        }
+
+        ul {
             list-style: none;
             padding: 0;
             text-align: center;
-            color:darken(white, 35%);                
-            margin-top:0.5em;
-            li
-            {
-                cursor:pointer;
-                >*{color:darken(white, 35%);}   
+            color: darken(white, 35%);
+            margin-top: 0.5em;
+            font-size: 10pt;            
+
+            li {
+                cursor: pointer;
+                margin: auto;
+                display: flex;
+
+                * {
+                    color: darken(white, 35%);
+                    margin: auto;
+                }
+
                 padding: 0;
-                margin: 0;
                 width: 100%;
-                height: 2.6em;
-                line-height:2.625rem;
-                text-transform:uppercase;
-                display:inline-block                                     
-             }   
-             li:hover:not(.active){background-color:darken(@sidebar-background-color,10%);>*{color:darken(white,5%)!important;}}             
-             .active{background-color:lighten(@sidebar-background-color,30%);>*{color:white !important;} position:relative;}
-             .active:after
-             {
-                content:"";
-                position:absolute;
-                width:3px;
-                height:100%;
-                right:0;
-                background-color:@header-sublogo-background-color;
-             }
-         }
-         h5
-         {            
+                height: 30px;
+                //line-height: 2.625rem;
+                text-transform: uppercase;                
+            }
+
+            li:hover:not(.active) {
+                background-color: darken(@sidebar-background-color,10%);
+
+                > * {
+                    color: darken(white,5%) !important;
+                }
+            }
+
+            .active {
+                background-color: lighten(@sidebar-background-color,30%);
+
+                > * {
+                    color: white !important;
+                }
+
+                position: relative;
+            }
+
+            .active:after {
+                content: "";
+                position: absolute;
+                width: 3px;
+                height: 100%;
+                right: 0;
+                background-color: @header-sublogo-background-color;
+            }
+        }
+
+        h5 {
             font-weight: 500;
-            font-style: normal;            
+            font-style: normal;
             text-shadow: 1px 1px 1px @text-shadow-color;
-            margin:0 auto;
-            position:absolute;
-            bottom:2em;
-            left:0;
-            right:0;
-            text-align:center;
-         }            
+            margin: 0 auto;
+            position: absolute;
+            bottom: 7.5em;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
     }
 }
 

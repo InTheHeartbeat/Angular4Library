@@ -1,68 +1,68 @@
-﻿<div class="windows-container" id="add-book-container">
-    <div class="windows-grid">
-        <div class="window-wrapper add-entity-window" id="add-book-window">
-            <div class="window">
-                <div class="window-header">
+﻿<div class="windows-container">
+    <div class="windows-grid">        
+        <div class="window centered window-put">
+            <div class="window-header">
+                <div class="window-header-icon">
                     <span class="icon ic-addbook"></span>
+                </div>                
+                <div class="window-header-content">
                     <h4 [hidden]="!isEdit">Edit book</h4>
                     <h4 [hidden]="isEdit">Create book</h4>
-                </div>
-                <div class="window-content">                                                           
-                    <form name="bookForm">
-                        <table class="form-table">
-                            <tr>
-                                <td>                                    
-                                    <div class="choose-photo" (click)="uploadFile.click()" [ngStyle]="{ 'background-image': 'url(' + currentPhotoPath + ')'}" id="book-photo">
-                                        <h5>Click for choose photo</h5>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label>Title</label>
-                                    <input type="text" placeholder="Enter title" name="title" [(ngModel)]="currentBook.Title" required/>                                    
-                                    <label>Amount</label>
-                                    <input type="text" placeholder="Enter amount" name="amount" [(ngModel)]="currentBook.Amount" required/>
-                                    <label>Price</label>
-                                    <input type="text" placeholder="Enter price" name="price" [(ngModel)]="currentBook.Price" required/>
-                                </td>
-                            </tr>    
-                            <tr>
-                                <td colspan="2">
-                                    <hr/>
-                                    <label>Additional info</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <table class="create-form-table">
-                                        <tr>
-                                            <th><label>Year</label></th>
-                                            <th><label>Pages</label></th>
-                                        </tr>
-                                        <tr>
-                                            <td><input type="text" placeholder="Enter year" name="year" [(ngModel)]="currentBook.Year" required/></td>
-                                            <td><input type="text" placeholder="Enter pages" name="pages" [(ngModel)]="currentBook.Pages" required/></td>
-                                        </tr>
-                                        <tr>
-                                            <th><label>Author</label></th>
-                                            <th><label>Genre</label></th>
-                                        </tr>
-                                        <tr>                                            
-                                            <td><input type="text" placeholder="Enter author" name="author" [(ngModel)]="currentBook.Author" required /></td>
-                                            <td><input type="text" placeholder="Enter genre" name="genre" [(ngModel)]="currentBook.Genre" required/></td>
-                                        </tr>
-                                    </table>
-                                </td>
-                            </tr>
-                        </table>
+                </div>                
+            </div>
+            <div class="window-content">                                                           
+                <form name="bookForm">
+                    <table class="form-table">
+                        <tr>
+                            <td>                                    
+                                <div class="choose-photo" (click)="uploadFile.click()" [ngStyle]="{ 'background-image': 'url(' + currentPhotoPath + ')'}" id="book-photo">
+                                    <h5>Click for choose photo</h5>
+                                </div>
+                            </td>
+                            <td>
+                                <label>Title</label>
+                                <input type="text" placeholder="Enter title" name="title" [(ngModel)]="currentBook.title" required/>                                    
+                                <label>Amount</label>
+                                <input type="text" placeholder="Enter amount" name="amount" [(ngModel)]="currentBook.amount" required/>
+                                <label>Price</label>
+                                <input type="text" placeholder="Enter price" name="price" [(ngModel)]="currentBook.price" required/>
+                            </td>
+                        </tr>    
+                        <tr>
+                            <td colspan="2" class="td-divider">
+                                <hr/>
+                                <label>Additional info</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table class="create-form-table">
+                                    <tr>
+                                        <th><label>Year</label></th>
+                                        <th><label>Pages</label></th>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="text" placeholder="Enter year" name="year" [(ngModel)]="currentBook.year" required/></td>
+                                        <td><input type="text" placeholder="Enter pages" name="pages" [(ngModel)]="currentBook.pages" required/></td>
+                                    </tr>
+                                    <tr>
+                                        <th><label>Author</label></th>
+                                        <th><label>Genre</label></th>
+                                    </tr>
+                                    <tr>                                            
+                                        <td><input type="text" placeholder="Enter author" name="author" [(ngModel)]="currentBook.author" required /></td>
+                                        <td><input type="text" placeholder="Enter genre" name="genre" [(ngModel)]="currentBook.genre" required/></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                                                                                                 
-                        <input type="file" name="upload" #uploadFile (change)="uploadPhotoChange(uploadFile.files)" id="uploadFile" style="display: none"/>
-                        <input type="text" name="path" id="path" style="display: none" [(ngModel)]="currentBook.PhotoPath"/>
-                        <input type="number" name="photoid" id="photo-id" style="display: none" [(ngModel)]="currentBook.PhotoId"/>
-
-                        <input type="submit" id="addBookBtn" class="btn btn-colored" value="Complete" (click)="tryAddBook()" [hidden]="isEdit" [disabled]="!photoUploaded">
-                        <input type="submit" id="editBookBtn" class="btn btn-colored" value="Complete" (click)="tryEditBook(currentBook)" [hidden]="!isEdit">
-                    </form>
-                </div>
+                    <input type="file" name="upload" #uploadFile (change)="uploadPhotoChange(uploadFile.files)" id="uploadFile" style="display: none"/>
+                   
+                    <input type="submit" id="addBookBtn" class="btn btn-colored" value="Complete" (click)="tryAddBook()" [hidden]="isEdit" [disabled]="!photoUploaded">
+                    <input type="submit" id="editBookBtn" class="btn btn-colored" value="Complete" (click)="tryEditBook()" [hidden]="!isEdit" [disabled]="!photoUploaded">
+                </form>
             </div>
         </div>
     </div>

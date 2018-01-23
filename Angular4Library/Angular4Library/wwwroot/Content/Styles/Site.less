@@ -96,7 +96,7 @@ body{background-image:url(../Images/Backgrounds/MainBackground.jpg);height:100%;
 
 
 .entity-photo {
-    width: 12em;
+    width: 8.8em;
     height: 12em;
     margin-right: 0.2em;
     background-size: 100% 100%;
@@ -107,7 +107,20 @@ body{background-image:url(../Images/Backgrounds/MainBackground.jpg);height:100%;
     box-shadow: 0 3px 10px rgba(0,0,0,0.19), 0 2px 2px rgba(0,0,0,0.23);
 }
 
+.window-put {
+    width: 85% !important;
+    max-width: 700px;
+}
 .entity-content {
+    * {
+        word-wrap: break-word;
+        overflow: hidden;
+    }
+
+    height: 210px;
+    max-height: 210px;
+    font-size: 0.8em;
+
     *:not(:first-child) {
         margin-left: 1em;
     }
@@ -115,106 +128,21 @@ body{background-image:url(../Images/Backgrounds/MainBackground.jpg);height:100%;
     table {
         text-align: left;
         border-spacing: 4px 0;
+        height: 100%;
 
-       
+        td {
+            max-width: 130px;
+        }
+
         tr:last-child {
             td, th {
-                border-bottom: 1px solid @main-color;                
+                border-bottom: 1px solid @main-color;
             }
         }
     }
 }
 
-.signin-window {
-    bottom:10em!important;
-}
-
-    .signup-window {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-
-        .window {
-            height: 230px !important;
-
-            .window-content {
-                padding-top: 1em !important;
-            }
-        }
-
-        :nth-last-child(2) {
-            margin-bottom: 1em;
-        }
-
-        input[type=submit] {
-            margin: 0 auto;
-            display: block;
-        }
-    }
-
-    #add-journal-window, #add-newspaper-window {
-        .window {
-            .window-content {
-                input[type=submit] {
-                    display: inline-block;
-                    margin-top: 0.5em;
-                    float: left;
-                }
-            }
-        }
-    }
-
-    .add-entity-window, #add-book-window {
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        width: 85% !important;
-        max-width: 700px;
-        padding-top: 1em !important;
-        padding-left: 0 !important;
-
-        .window {
-            height: 525px !important;
-
-            .window-content {
-                padding-left: 0 !important;
-                overflow-y: auto;
-
-                form {
-                    text-align: center;                    
-
-                    .field-validation-error {
-                    }
-
-                    #add-entity-down-fields {
-                        width: 80%;
-                        height: 100%;
-                        display: inline-block;
-                        margin-top: 0.5em;
-
-                        input[type=text] {
-                            width: 40% !important;
-                            float: left !important;
-                            margin: 1em;
-                        }
-                    }
-
-                    #Title {
-                        margin-top: 1em;
-                    }
-                }
-               
-                input[type=submit] {
-                    display: inline-block;
-                    margin-top: 0.5em;
-                    float: left;
-                }
-            }
-        }
-    }
-
+   
 
     .raw-xml-switch {
         float: left;
@@ -231,23 +159,41 @@ body{background-image:url(../Images/Backgrounds/MainBackground.jpg);height:100%;
             padding-left: .5em;
         }
     }
-
+.entity {
+    max-width: 300px;
+}
 .create-form-table, .form-table {
     width: 95%;
     margin: 0 auto;
-
+    //text-align:center;
     input {
         width: 90% !important;
     }
 
-    hr {
-        border: none;
-        height: 1px;
-        background-color: #0091ea;
-        margin-bottom:0;
-        margin-top:1em;
+
+    .td-divider {
+        text-align: center;
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #0091ea;
+            margin-bottom: 1px;
+            margin-top: 1em;
+        }
+
+        label {
+            padding: 3px 1em 3px 1em;
+            border: 1px solid #0091ea;
+            border-top:none;
+        }
     }
 }
-.window{
-    label {font-size:0.9em !important;}
+
+
+
+.window {
+    label {
+        font-size: 0.9em !important;
+    }
 }

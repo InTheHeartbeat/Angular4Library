@@ -4,12 +4,12 @@
     <div class="header-bar-menu-container">
         <ul id="header-bar-menu">
             <li [hidden]="!currentUser.isVisitor">
-                <h3>
+                <span>
                     <a [routerLink]="['/signin']">Sign in</a>
-                </h3>
+                </span>
             </li>
             <li [hidden]="currentUser.isVisitor">
-                <h3>Hello, {{currentUser.login}}!</h3>
+                <span>Hello, {{currentUser.login}}!</span>
             </li>
         </ul>
     </div>
@@ -17,15 +17,15 @@
 
 <div class="sidebar">
     <div class="sidebar-header">
-        <span class="company">Anuitex</span>
-        <div class="sub-header">
-            <span class="title">Library</span>
-        </div>
+        <span class="company">Anuitex</span >       
+    </div>
+    <div class="sidebar-subheader">
+        <span class="title">Library</span>
     </div>
     <div class="sidebar-items-container">
         <h4 class="label">Main</h4>
         <ul class="section-selector">
-            <li [ngClass]="{'active': currentSection == 'Books'}" (click)="setCurrentSection('Books')"><a [routerLink]="['/books']">{{currentSection}}</a></li>
+            <li *ngFor="let section of sections" [ngClass]="{'active': currentSection == section}" (click)="setCurrentSection(section)"><a [routerLink]="section.route">{{section.name}}</a></li>            
         </ul>
         <h4 class="label">Sell</h4>
         <ul class="section-selector">

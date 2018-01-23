@@ -1,0 +1,78 @@
+﻿<div class="nav-sector-controls" [hidden]="!currentUser.isAdmin">
+    <a href="#" class="btn btn-icon" id="btn-import-journals" (click)="showUploadDialog()">
+        <span class="icon ic-import"></span>
+    </a>
+    <a class="btn btn-icon" href="#" (click)="export()">
+        <span class="icon ic-export"></span>
+    </a>
+    <a class="btn btn-icon" [routerLink]="['/journals/put']">
+        <span class="icon ic-add"></span>
+    </a>
+</div>
+<div class="windows-container">
+    <div class="windows-grid">        
+        <div [ngClass]="{'disabled': idToRemove === journal.id}" class="window window-hovered-shadow" *ngFor="let journal of journals">
+            <div class="window-header">
+                    
+                <div class="window-header-icon"><span class="icon ic-journal"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{journal.date}} - {{journal.title}}</h4></div>
+                    
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="editJournalForm(journal.id)">
+                        <span class="icon ic-edit"></span>
+                    </span>
+                        
+                </div>
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="tryRemoveJournal(journal.id)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="window-content entity-content">                
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + journal.photoPath + ')'}">                    
+                </div>              
+                <table>  
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{journal.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Author:</span></th>
+                        <td colspan="2"><span>{{journal.date}}</span></td>
+                    </tr>
+                    <tr><td><br/></td></tr>
+                    <tr>
+                        <th><span>Genre:</span></th>
+                        <td colspan="2"><span>{{journal.theme}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Year:</span></th>
+                        <td colspan="2"><span>{{journal.periodicity}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Pages:</span></th>
+                        <td colspan="2"><span>{{journal.pages}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{journal.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{journal.price}}$</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-icon btn-buy" (click)="addToBasket('Journal',journal)">
+                                <span class="icon ic-buy"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>                                                                               
+            </div>            
+        </div>
+    </div>
+</div>

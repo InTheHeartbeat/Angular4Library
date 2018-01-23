@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
 {
+    [Route("api/[controller]")]
     public class BooksController : Controller
     {
         private LibraryContext _context;
@@ -24,18 +25,20 @@ namespace Angular4Library.Controllers.Api
             _context = context;
             _hostingEnvironment = hostingEnvironment;
         }
-
-        [Route("api/Books/GetBooks")]
-        [HttpGet]
-        [ActionName("GetBooks")]
+        
+        [HttpGet("GetBooks")]        
         public IEnumerable<Book> GetBooks()
         {
             return _context.Books.FindAll();
         }
 
-        [Route("api/Books/AddBook")]
-        [HttpPost]
-        [ActionName("AddBook")]
+        [HttpGet("GetBook/{id}")]
+        public Book GetBook(int id)
+        {
+            return _context.Books.FindOne(book=>book.Id == id);
+        }
+        
+        [HttpPost("AddBook")]        
         public IActionResult AddBook([FromBody]Book book)
         {            
             try
@@ -48,8 +51,7 @@ namespace Angular4Library.Controllers.Api
                     Amount = book.Amount,
                     Pages = book.Pages,
                     Price = book.Price,
-                    Year = book.Year,
-                    PhotoId = book?.PhotoId,
+                    Year = book.Year,                    
                     PhotoPath = book.PhotoPath
                 });                
             }
@@ -60,10 +62,8 @@ namespace Angular4Library.Controllers.Api
 
             return Ok();
         }
-
-        [Route("api/Books/EditBook")]
-        [HttpPut]
-        [ActionName("EditBook")]
+        
+        [HttpPut("EditBook")]        
         public IActionResult EditBook([FromBody]Book bookModel)
         {            
             Book book = _context.Books.FindById(bookModel.Id);
@@ -78,9 +78,8 @@ namespace Angular4Library.Controllers.Api
                 book.Pages = bookModel.Pages;
                 book.Year = bookModel.Year;
                 book.Price = bookModel.Price;
-                book.Amount = bookModel.Amount;
-                book.PhotoId = bookModel?.PhotoId;
-
+                book.Amount = bookModel.Amount;                
+                book.PhotoPath = bookModel.PhotoPath;
                 _context.Books.Update(book);
             }
             catch (Exception e)
@@ -90,10 +89,8 @@ namespace Angular4Library.Controllers.Api
 
             return Ok();
         }
-
-        [Route("api/Books/DeleteBook/{id?}")]
-        [HttpDelete]
-        [ActionName("DeleteBook")]
+        
+        [HttpDelete("DeleteBook/{id}")]        
         public IActionResult DeleteBook(int id)
         {            
             Book forDelete = _context.Books.FindById(id);
@@ -112,9 +109,7 @@ namespace Angular4Library.Controllers.Api
             return Ok();
         }
 
-        [HttpPost]
-        [ActionName("UploadPhoto")]
-        [Route("api/Books/UploadPhoto")]
+        [HttpPost("UploadPhoto")]        
         public async Task<IActionResult> UploadPhoto()
         {
             var file = Request.Form.Files[0];
@@ -134,12 +129,10 @@ namespace Angular4Library.Controllers.Api
                         using (FileStream fs = new FileStream(root + customFileName, FileMode.Create))
                         {
                             await fs.WriteAsync(fileContent, 0, fileContent.Length);
-                        }
-
-                        _context.Images.Insert(new Image() {Path = relPath + customFileName});                        
+                        }                        
                     }
                 }
-                return Ok(_context.Images.FindOne(img => img.Path == relPath + customFileName));
+                return Ok(new Image{Path = relPath + customFileName});
             }
             catch(Exception e)
             {

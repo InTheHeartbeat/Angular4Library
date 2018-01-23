@@ -15,7 +15,6 @@ namespace Angular4Library.Data.Models
         public string Genre { get; set; }
         public int Amount { get; set; }
         public double Price { get; set; }
-        public string PhotoPath { get; set; }
-        public int? PhotoId { get; set; }
+        public string PhotoPath { get; set; }        
     }
 }

@@ -12,8 +12,10 @@ export class AppNavComponent {
     currentUser: any;
 
     currUserUpdateSub: Subscription;
-
-    currentSection: string;
+    sections = [{ name: "Books", route: "/books" }, { name: "Journals", route: "/journals" },
+        { name: "Newspapers", route: "newspapers" }
+    ];
+    currentSection: any = this.sections[0];
 
     constructor(private cookieService: CookieService, private accountService: AccountService) {
         this.currentUser = {};          
@@ -33,7 +35,7 @@ export class AppNavComponent {
         this.cookieService.delete("AT");
     }
 
-    setCurrentSection(newSection: string) {
+    setCurrentSection(newSection: any) {
         this.currentSection = newSection;
     }
 

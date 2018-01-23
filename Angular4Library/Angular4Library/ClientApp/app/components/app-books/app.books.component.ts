@@ -1,6 +1,7 @@
 ﻿import {Component, Input} from '@angular/core';
 import { AccountService } from '../../account.service';
 import { BooksService } from '../../books.service';
+import {Router} from '@angular/router';
 
 @Component({
 	selector:'app-books',
@@ -15,7 +16,7 @@ export class AppBooksComponent {
 
     currentUser = {};
 
-    constructor(private accountService: AccountService, private booksService: BooksService) { }
+    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -30,6 +31,10 @@ export class AppBooksComponent {
         this.booksService.tryGetBooks().subscribe(books => this.books = books);
     }
 
+
+    public editBookForm(id:any) {
+        this.router.navigate(['/books/put',id]);
+    }
 
     public tryRemoveBook(id: any) {
         this.idToRemove = id;
