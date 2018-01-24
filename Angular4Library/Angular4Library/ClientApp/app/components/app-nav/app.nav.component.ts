@@ -2,6 +2,7 @@
 import {AccountService} from '../../account.service';
 import { CookieService } from "ngx-cookie-service";
 import { Subscription } from 'rxjs/Subscription';
+import {Router} from '@angular/router';
 @Component({
 	selector:'app-nav',
 	templateUrl: './app.nav.component.html',
@@ -13,11 +14,11 @@ export class AppNavComponent {
 
     currUserUpdateSub: Subscription;
     sections = [{ name: "Books", route: "/books" }, { name: "Journals", route: "/journals" },
-        { name: "Newspapers", route: "newspapers" }
+        { name: "Newspapers", route: "/newspapers" }
     ];
     currentSection: any = this.sections[0];
 
-    constructor(private cookieService: CookieService, private accountService: AccountService) {
+    constructor(private cookieService: CookieService, private accountService: AccountService, private router:Router) {
         this.currentUser = {};          
     }
 
@@ -37,6 +38,7 @@ export class AppNavComponent {
 
     setCurrentSection(newSection: any) {
         this.currentSection = newSection;
+        this.router.navigateByUrl(newSection.route);
     }
 
     private initCurrentUser(account: any) {

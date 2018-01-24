@@ -1,0 +1,70 @@
+﻿<div class="nav-sector-controls" [hidden]="!currentUser.isAdmin">
+    <a href="#" class="btn btn-icon" id="btn-import-newspapers" (click)="showUploadDialog()">
+        <span class="icon ic-import"></span>
+    </a>
+    <a class="btn btn-icon" href="#" (click)="export()">
+        <span class="icon ic-export"></span>
+    </a>
+    <a class="btn btn-icon" [routerLink]="['/newspapers/put']">
+        <span class="icon ic-add"></span>
+    </a>
+</div>
+<div class="windows-container">
+    <div class="windows-grid">        
+        <div [ngClass]="{'disabled': idToRemove === newspaper.id}" class="window window-hovered-shadow" *ngFor="let newspaper of newspapers">
+            <div class="window-header">
+                    
+                <div class="window-header-icon"><span class="icon ic-newspaper"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{newspaper.date}} - {{newspaper.title}}</h4></div>
+                    
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="editNewspaperForm(newspaper.id)">
+                        <span class="icon ic-edit"></span>
+                    </span>
+                        
+                </div>
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="tryRemoveNewspaper(newspaper.id)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="window-content entity-content">                
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + newspaper.photoPath + ')'}">                    
+                </div>              
+                <table>  
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{newspaper.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Periodicity:</span></th>
+                        <td colspan="2"><span>{{newspaper.periodicity}}</span></td>
+                    </tr>
+                    <tr><td><br/></td></tr>                    
+                    <tr>
+                        <th><span>Date:</span></th>
+                        <td colspan="2"><span>{{newspaper.date}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{newspaper.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{newspaper.price}}$</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-icon btn-buy" (click)="addToBasket('Newspaper',newspaper)">
+                                <span class="icon ic-buy"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>                                                                               
+            </div>            
+        </div>
+    </div>
+</div>

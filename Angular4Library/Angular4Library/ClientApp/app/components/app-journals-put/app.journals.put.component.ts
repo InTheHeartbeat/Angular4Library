@@ -63,7 +63,7 @@ export class AppJournalsPutComponent {
     public tryAddJournal() {
         this.journalsService.tryAddJournal(this.currentJournal).subscribe(resp => {
             if (resp.ok) {
-                this.router.navigateByUrl('/');
+                this.router.navigateByUrl('/journals');
             }
         });
     }
@@ -71,7 +71,7 @@ export class AppJournalsPutComponent {
     public tryEditJournal() {
     this.journalsService.tryEditJournal(this.currentJournal).subscribe(resp => {
         if (resp.ok) {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/journals');
         }
     });
 }

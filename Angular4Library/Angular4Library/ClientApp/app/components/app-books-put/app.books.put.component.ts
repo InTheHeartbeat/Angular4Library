@@ -65,7 +65,7 @@ export class AppBooksPutComponent {
     public tryAddBook() {
         this.booksService.tryAddBook(this.currentBook).subscribe(resp => {
             if (resp.ok) {
-                this.router.navigateByUrl('/');
+                this.router.navigateByUrl('/books');
             }
         });
     }
@@ -73,7 +73,7 @@ export class AppBooksPutComponent {
     public tryEditBook() {
     this.booksService.tryEditBook(this.currentBook).subscribe(resp => {
         if (resp.ok) {
-            this.router.navigateByUrl('/');
+            this.router.navigateByUrl('/books');
         }
     });
 }

@@ -25,7 +25,7 @@
     <div class="sidebar-items-container">
         <h4 class="label">Main</h4>
         <ul class="section-selector">
-            <li *ngFor="let section of sections" [ngClass]="{'active': currentSection == section}" (click)="setCurrentSection(section)"><a [routerLink]="section.route">{{section.name}}</a></li>            
+            <li *ngFor="let section of sections" [ngClass]="{'active': currentSection == section}" (click)="setCurrentSection(section)"><span>{{section.name}}</span></li>            
         </ul>
         <h4 class="label">Sell</h4>
         <ul class="section-selector">
