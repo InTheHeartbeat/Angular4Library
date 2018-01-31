@@ -7,6 +7,7 @@ namespace Angular4Library.Models
 {
     public class AuthDataModel
     {
+        public int UserId { get; set; }
         public string Login { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsVisitor { get; set; }

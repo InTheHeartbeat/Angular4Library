@@ -25,8 +25,7 @@ export class AppNavComponent {
     ngOnInit() {               
         this.currUserUpdateSub = this.accountService.currentUser$.subscribe(user => {            
             this.initCurrentUser(user);            
-            this.currentUser = user;
-            console.log("1");
+            this.currentUser = user;            
         });
         this.accountService.loadCurrentUser(); 
     }

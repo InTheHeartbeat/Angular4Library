@@ -7,6 +7,18 @@
         margin: 0 -20px 0 0;
         padding: 0;
 
+        .divider {            
+            border: none;
+            width: 100%;
+            display: inline-block;
+            border-left: 1px solid #0091ea;
+            border-top: 1px solid #0091ea;
+            font-size: 11pt;
+            margin: 0;      
+            margin-bottom:0.5em;
+            padding-left: 0.1em;
+        };
+
         .window {
             float: left;
             display: table;
@@ -122,46 +134,47 @@
                     :first-child {
                         float: right;
                         margin-right: -8px;
-                    }                   
-                        :last-child:not(:disabled) {
-                            float: right;
-                            border: 1px solid @main-color;
-                        }
+                    }
+
+                    :last-child:not(:disabled) {
+                        float: right;
+                        border: 1px solid @main-color;
                     }
                 }
             }
+        }
 
-            .window.centered {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
+        .window.centered {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .window.bottom10 {
+            bottom: 10em;
+        }
+
+        .window.disabled {
+            * {
+                pointer-events: none;
+                color: #cccccc;
             }
 
-            .window.bottom10 {
-                bottom: 10em;
-            }
+            background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(158,158,158,.26) 5px, rgba(158,158,158,.26) 10px) !important;
+        }
 
-            .window.disabled {
-                * {
-                    pointer-events: none;
-                    color: #cccccc;
-                }
+        .window-hovered-shadow {
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        }
 
-                background-image: repeating-linear-gradient(135deg, transparent, transparent 5px, rgba(158,158,158,.26) 5px, rgba(158,158,158,.26) 10px) !important;
-            }
-
-            .window-hovered-shadow {
-                transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            }
-
-            .window-hovered-shadow:hover {
-                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-            }
+        .window-hovered-shadow:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         }
     }
+}
 
     @media only screen and (min-width: 1000px) {
         .window {

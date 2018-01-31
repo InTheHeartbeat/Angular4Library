@@ -10,6 +10,6 @@ namespace Angular4Library.Data.Models
     {
         public int Id { get; set; }
         public Guid Token { get; set; }
-        public DateTime LastAccess { get; set; }       
+        public DateTime LastAccess { get; set; }               
     }
 }

@@ -11,7 +11,7 @@
 </div>
 <div class="windows-container">
     <div class="windows-grid">        
-        <div [ngClass]="{'disabled': idToRemove === newspaper.id}" class="window window-hovered-shadow" *ngFor="let newspaper of newspapers">
+        <div [ngClass]="{'disabled': busyId === newspaper.id}" class="window window-hovered-shadow" *ngFor="let newspaper of newspapers">
             <div class="window-header">
                     
                 <div class="window-header-icon"><span class="icon ic-newspaper"></span></div>
@@ -58,7 +58,7 @@
                             <span>{{newspaper.price}}$</span>
                         </td>
                         <td>
-                            <a class="btn btn-icon btn-buy" (click)="addToBasket('Newspaper',newspaper)">
+                            <a class="btn btn-icon btn-buy" (click)="addToBasket(newspaper.id)">
                                 <span class="icon ic-buy"></span>
                             </a>
                         </td>

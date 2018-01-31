@@ -13,8 +13,10 @@ import { AppNewspapersPutComponent } from './components/app-newspapers-put/app.n
 import { AppJournalsPutComponent } from './components/app-journals-put/app.journals.put.component';
 import { AppSignInComponent } from './components/app-signin/app.signin.component';
 import { AppSignUpComponent } from './components/app-signup/app.signup.component';
-import {AppNavComponent} from './components/app-nav/app.nav.component';
+import { AppNavComponent } from './components/app-nav/app.nav.component';
+import { AppBasketComponent } from './components/app-basket/app.basket.component';
 import { AccountService } from './account.service';
+import { SellService } from './sell.service';
 import { BooksService } from './books.service';
 import { JournalsService } from './journals.service';
 import { NewspapersService } from './newspapers.service';
@@ -30,7 +32,8 @@ import { NewspapersService } from './newspapers.service';
 	    AppNewspapersPutComponent,
 		AppNavComponent,
         AppSignInComponent,
-	    AppSignUpComponent
+	    AppSignUpComponent,
+	    AppBasketComponent
 	],
 	imports: [		
 		CommonModule,
@@ -48,10 +51,11 @@ import { NewspapersService } from './newspapers.service';
 		    { path: 'journals/put/:id', component: AppJournalsPutComponent },		
             { path: 'newspapers', component: AppNewspapersComponent },
             { path: 'newspapers/put', component: AppNewspapersPutComponent },
-            { path: 'newspapers/put/:id', component: AppNewspapersPutComponent }			
+            { path: 'newspapers/put/:id', component: AppNewspapersPutComponent },
+		    { path: 'basket', component: AppBasketComponent }
 		])
 	],
-    providers: [AccountService, BooksService, JournalsService, NewspapersService]
+    providers: [AccountService, BooksService, JournalsService, NewspapersService, SellService]
 })
 
 export class AppModuleShared {

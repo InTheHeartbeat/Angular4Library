@@ -11,93 +11,25 @@ namespace Angular4Library.Controllers.Api
     public class AccountController : Controller
     {
         private LibraryContext _context;
+        private AccountProvider _accountProvider;
 
         public AccountController(LibraryContext context)
         {
             _context = context;
+            _accountProvider = new AccountProvider(context);
         }
 
         [Route("api/Account/GetCurrentUser")]        
         [HttpGet]
         public IActionResult GetCurrentUser()
-        {                    
-            string at = Request.Cookies["AT"];
-            string vt = Request.Cookies["VT"];
-
-            string adr = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-
-            if (String.IsNullOrWhiteSpace(at) && String.IsNullOrWhiteSpace(vt) && !String.IsNullOrWhiteSpace(adr))
-            {                
-                return Ok(GetAuthDataModel(InitializeVisitor()));
-            }
-
-            if (!String.IsNullOrWhiteSpace(vt) && !String.IsNullOrWhiteSpace(adr))
-            {                
-                return Ok(GetAuthDataModel(GetCurrentVisitor(vt)));
-            }
-
-            if (!String.IsNullOrWhiteSpace(at) && !String.IsNullOrWhiteSpace(adr))
-            {
-                return Ok(GetAuthDataModel(GetCurrentAccount(at, adr)));
-            }
-
-            return BadRequest();
-        }
-
-        private Account GetCurrentAccount(string at, string adr)
         {
-            AccountAccessRecord record =
-                _context.AccountAccessRecords.FindOne(aar => aar.Source == adr && aar.Token == Guid.Parse(at));
-            if (record != null)
-            {
-                return _context.Accounts.FindOne(a => a.Id == record.AccountId);                
-            }
-            return null;
+            AuthDataModel current = _accountProvider.GetCurrent(Request);
+            if(current == null)
+            { return BadRequest(); }
+
+            return Ok(current);
         }
-
-        private Visitor GetCurrentVisitor(string vt)
-        {
-            return _context.Visitors.FindOne(v => v.Token.ToString() == vt);
-        }
-
-        private Visitor InitializeVisitor()
-        {
-            Guid token = Guid.NewGuid();
-
-            Visitor visitor = new Visitor()
-            {
-                Token = token,
-                LastAccess = DateTime.Now
-            };
-
-            _context.Visitors.Insert(visitor);
-
-            return visitor;
-        }
-
-        private AuthDataModel GetAuthDataModel(Visitor visitor)
-        {
-            return new AuthDataModel()
-            {
-                IsAdmin = false,
-                IsVisitor = true,
-                Token = visitor.Token.ToString(),
-                Login = String.Empty
-            };
-        }
-
-        private AuthDataModel GetAuthDataModel(Account account)
-        {
-            AccountAccessRecord rec = _context.AccountAccessRecords.FindOne(a => a.AccountId == account.Id);
-            return new AuthDataModel()
-            {
-                IsAdmin = account.IsAdmin,
-                IsVisitor = false,
-                Token = rec.Token.ToString(),
-                Login = account.Login
-            };
-        }
-
+                        
         [Route("api/Account/TrySignIn")]        
         [HttpPost]
         public IActionResult TrySignIn([FromBody] SignInDataModel dataModel)

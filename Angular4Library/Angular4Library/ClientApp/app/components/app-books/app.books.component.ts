@@ -1,6 +1,7 @@
 ﻿import {Component, Input} from '@angular/core';
 import { AccountService } from '../../account.service';
 import { BooksService } from '../../books.service';
+import { SellService } from '../../sell.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -12,11 +13,11 @@ export class AppBooksComponent {
     
     books = [];
 
-    idToRemove:any = -1;
+    busyId:any = -1;
 
     currentUser = {};
 
-    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router) { }
+    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router, private sellService:SellService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -31,13 +32,13 @@ export class AppBooksComponent {
         this.booksService.tryGetBooks().subscribe(books => this.books = books);
     }
 
-
+    
     public editBookForm(id:any) {
         this.router.navigate(['/books/put',id]);
     }
 
     public tryRemoveBook(id: any) {
-        this.idToRemove = id;
+        this.busyId = id;
         this.booksService.tryRemoveBook(id).subscribe(resp => {
             if (resp.ok) {
                 this.books.forEach((value:any, index, array) => {
@@ -45,6 +46,15 @@ export class AppBooksComponent {
                         this.books.splice(index,1);
                     }
                 });
+            }
+        });
+    }
+
+    public addToBasket(id: any) {
+        this.busyId = id;
+        this.sellService.tryAddToBasket(id, 1).subscribe(resp => {
+            if (resp.ok) {
+                this.busyId = -1;
             }
         });
     }

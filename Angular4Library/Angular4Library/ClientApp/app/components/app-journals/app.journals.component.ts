@@ -2,7 +2,7 @@
 import { AccountService } from '../../account.service';
 import { JournalsService } from '../../journals.service';
 import {Router} from '@angular/router';
-
+import { SellService } from '../../sell.service';
 @Component({
 	selector:'app-journals',
 	templateUrl: './app.journals.component.html',
@@ -12,11 +12,11 @@ export class AppJournalsComponent {
     
     journals = [];
 
-    idToRemove:any = -1;
+    busyId:any = -1;
 
     currentUser = {};
 
-    constructor(private accountService: AccountService, private journalsService: JournalsService, private router: Router) { }
+    constructor(private accountService: AccountService, private journalsService: JournalsService, private router: Router, private sellService:SellService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -37,7 +37,7 @@ export class AppJournalsComponent {
     }
 
     public tryRemoveJournal(id: any) {
-        this.idToRemove = id;
+        this.busyId = id;
         this.journalsService.tryRemoveJournal(id).subscribe(resp => {
             if (resp.ok) {
                 this.journals.forEach((value:any, index, array) => {
@@ -45,6 +45,14 @@ export class AppJournalsComponent {
                         this.journals.splice(index,1);
                     }
                 });
+            }
+        });
+    }
+    public addToBasket(id: any) {
+        this.busyId = id;
+        this.sellService.tryAddToBasket(id, 2).subscribe(resp => {
+            if (resp.ok) {
+                this.busyId = -1;
             }
         });
     }

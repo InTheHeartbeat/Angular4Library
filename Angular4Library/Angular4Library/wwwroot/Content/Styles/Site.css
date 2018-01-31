@@ -49,6 +49,17 @@ b {
   margin: 0 -20px 0 0;
   padding: 0;
 }
+.windows-container .windows-grid .divider {
+  border: none;
+  width: 100%;
+  display: inline-block;
+  border-left: 1px solid #0091ea;
+  border-top: 1px solid #0091ea;
+  font-size: 11pt;
+  margin: 0;
+  margin-bottom: 0.5em;
+  padding-left: 0.1em;
+}
 .windows-container .windows-grid .window {
   float: left;
   display: table;
@@ -1015,6 +1026,14 @@ body {
   padding: 3px 1em 3px 1em;
   border: 1px solid #0091ea;
   border-top: none;
+}
+.basket-labels {
+  margin-left: 1em;
+  margin-top: 0.5em;
+  float: left;
+}
+.basket-labels span {
+  margin-right: 1em;
 }
 .window label {
   font-size: 0.9em !important;

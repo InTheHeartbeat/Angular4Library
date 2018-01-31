@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace Angular4Library.Data.Models
 {
     public class Book
-    {
+   {        
         public int Id { get; set; }
         public string Title { get; set; }
         public int Year { get; set; }
@@ -15,6 +15,24 @@ namespace Angular4Library.Data.Models
         public string Genre { get; set; }
         public int Amount { get; set; }
         public double Price { get; set; }
-        public string PhotoPath { get; set; }        
+        public string PhotoPath { get; set; }
+
+       public Book()
+       {
+           
+       }
+
+       protected Book(Book book)
+       {
+           Id = book.Id;
+           Title = book.Title;
+           Year = book.Year;
+           Pages = book.Pages;
+           Author = book.Author;
+           Genre = book.Genre;
+           Amount = book.Amount;
+           Price = book.Price;
+           PhotoPath = book.PhotoPath;
+       }
     }
 }

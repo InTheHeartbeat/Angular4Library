@@ -1,0 +1,164 @@
+﻿<div class="nav-sector-controls" >
+    <div class="basket-labels">
+        <span>Order id: {{basket.orderId}}</span>
+        <span>To pay: {{basket.sumPrice}}</span>
+        <span>Products: {{basket.totalProductsCount}}</span>
+    </div>
+    <span class="btn btn-icon" (click)="tryAcceptOrder()">
+        <span class="icon ic-accept"></span>
+    </span>
+</div>
+<div class="windows-container">
+    <div class="windows-grid">           
+        <label class="divider">Books</label>                
+        <div [ngClass]="{'disabled': recordBusyId === book.recordId}" class="window window-hovered-shadow" *ngFor="let book of basket.bookProducts">
+            <div class="window-header">
+                    
+                <div class="window-header-icon"><span class="icon ic-book"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{book.author}} - {{book.title}}</h4></div>                                    
+                <div class="window-header-control">
+                    <span class="btn btn-icon" (click)="tryRemoveFromOrder(book.recordId)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="window-content entity-content">                
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + book.photoPath + ')'}">                    
+                </div>              
+                <table>  
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{book.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Author:</span></th>
+                        <td colspan="2"><span>{{book.author}}</span></td>
+                    </tr>
+                    <tr><td><br/></td></tr>
+                    <tr>
+                        <th><span>Genre:</span></th>
+                        <td colspan="2"><span>{{book.genre}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Year:</span></th>
+                        <td colspan="2"><span>{{book.year}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Pages:</span></th>
+                        <td colspan="2"><span>{{book.pages}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{book.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{book.price}}$</span>
+                        </td>                        
+                    </tr>
+                </table>                                                                               
+            </div>            
+        </div>        
+        <label class="divider">Journals</label>                
+        
+        <div [ngClass]="{'disabled': recordBusyId === journal.recordId}" class="window window-hovered-shadow" *ngFor="let journal of basket.journalProducts">
+            <div class="window-header">
+
+                <div class="window-header-icon"><span class="icon ic-journal"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{journal.date}} - {{journal.title}}</h4></div>                
+                <div class="window-header-control">
+                    <span class="btn btn-icon" (click)="tryRemoveFromOrder(journal.recordId)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="window-content entity-content">
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + journal.photoPath + ')'}">
+                </div>
+                <table>
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{journal.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Date:</span></th>
+                        <td colspan="2"><span>{{journal.date}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Theme:</span></th>
+                        <td colspan="2"><span>{{journal.theme}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Periodicity:</span></th>
+                        <td colspan="2"><span>{{journal.periodicity}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Pages:</span></th>
+                        <td colspan="2"><span>{{journal.pages}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{journal.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{journal.price}}$</span>
+                        </td>                        
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <label class="divider">Newspapers</label>                
+        
+        <div [ngClass]="{'disabled': recordBusyId === newspaper.recordId}" class="window window-hovered-shadow" *ngFor="let newspaper of basket.newspaperProducts">
+            <div class="window-header">
+
+                <div class="window-header-icon"><span class="icon ic-newspaper"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{newspaper.date}} - {{newspaper.title}}</h4></div>               
+                <div class="window-header-control">
+                    <span class="btn btn-icon" (click)="tryRemoveFromOrder(newspaper.recordId)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+
+            </div>
+            <div class="window-content entity-content">
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + newspaper.photoPath + ')'}">
+                </div>
+                <table>
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{newspaper.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Periodicity:</span></th>
+                        <td colspan="2"><span>{{newspaper.periodicity}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Date:</span></th>
+                        <td colspan="2"><span>{{newspaper.date}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{newspaper.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{newspaper.price}}$</span>
+                        </td> 
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

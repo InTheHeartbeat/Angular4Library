@@ -2,7 +2,7 @@
 import { AccountService } from '../../account.service';
 import { NewspapersService } from '../../newspapers.service';
 import {Router} from '@angular/router';
-
+import { SellService } from '../../sell.service';
 @Component({
 	selector:'app-newspapers',
 	templateUrl: './app.newspapers.component.html',
@@ -12,11 +12,11 @@ export class AppNewspapersComponent {
     
     newspapers = [];
 
-    idToRemove:any = -1;
+    busyId:any = -1;
 
     currentUser = {};
 
-    constructor(private accountService: AccountService, private newspapersService: NewspapersService, private router: Router) { }
+    constructor(private accountService: AccountService, private newspapersService: NewspapersService, private router: Router, private sellService:SellService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -37,7 +37,7 @@ export class AppNewspapersComponent {
     }
 
     public tryRemoveNewspaper(id: any) {
-        this.idToRemove = id;
+        this.busyId = id;
         this.newspapersService.tryRemoveNewspaper(id).subscribe(resp => {
             if (resp.ok) {
                 this.newspapers.forEach((value:any, index, array) => {
@@ -45,6 +45,15 @@ export class AppNewspapersComponent {
                         this.newspapers.splice(index,1);
                     }
                 });
+            }
+        });
+    }
+
+    public addToBasket(id: any) {
+        this.busyId = id;
+        this.sellService.tryAddToBasket(id, 3).subscribe(resp => {
+            if (resp.ok) {
+                this.busyId = -1;
             }
         });
     }
