@@ -22,6 +22,10 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\app\export.service" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <None Include="ClientApp\app\components\app-books-put\app.books.put.component.ts" />
@@ -57,6 +61,7 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\app\components\app-signup\" />
+    <Folder Include="Models\IO\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Content\Images\Icons\" />
     <Folder Include="wwwroot\css\" />

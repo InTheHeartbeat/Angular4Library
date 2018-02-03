@@ -3,6 +3,7 @@ import { AccountService } from '../../account.service';
 import { NewspapersService } from '../../newspapers.service';
 import {Router} from '@angular/router';
 import { SellService } from '../../sell.service';
+import { ExportService } from '../../export.service';
 @Component({
 	selector:'app-newspapers',
 	templateUrl: './app.newspapers.component.html',
@@ -11,12 +12,13 @@ import { SellService } from '../../sell.service';
 export class AppNewspapersComponent {
     
     newspapers = [];
-
-    busyId:any = -1;
-
     currentUser = {};
 
-    constructor(private accountService: AccountService, private newspapersService: NewspapersService, private router: Router, private sellService:SellService) { }
+    busyId:any = -1;    
+    exportMode: boolean = false;
+    isXml: boolean = false;    
+
+    constructor(private accountService: AccountService, private newspapersService: NewspapersService, private router: Router, private sellService:SellService, private exportService:ExportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -24,8 +26,7 @@ export class AppNewspapersComponent {
         }
 
         this.accountService.currentUser$.subscribe(user => {
-            this.currentUser = user;
-            console.log("newspapers");
+            this.currentUser = user;            
         });
 
         this.newspapersService.tryGetNewspapers().subscribe(newspapers => this.newspapers = newspapers);
@@ -56,5 +57,19 @@ export class AppNewspapersComponent {
                 this.busyId = -1;
             }
         });
+    }
+
+    public switchExportMode() {
+        this.exportMode = !this.exportMode;
+    }
+
+    public tryExport() {
+        var ids: any[] = [];
+        this.journals.forEach((value: any, index, array) => {
+            if (value.selected) {
+                ids.push(value.id);
+            }
+        });
+        this.exportService.tryExportItems(2, ids, this.isXml);
     }
 }

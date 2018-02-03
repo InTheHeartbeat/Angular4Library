@@ -9,7 +9,7 @@ namespace Angular4Library.Data.Models
     {        
         public int Id { get; set; }
         public string Title { get; set; }
-        public int Date { get; set; }        
+        public string Date { get; set; }        
         public string Periodicity { get; set; }        
         public int Amount { get; set; }
         public double Price { get; set; }

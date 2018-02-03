@@ -3,6 +3,7 @@ import { AccountService } from '../../account.service';
 import { JournalsService } from '../../journals.service';
 import {Router} from '@angular/router';
 import { SellService } from '../../sell.service';
+import { ExportService } from '../../export.service';
 @Component({
 	selector:'app-journals',
 	templateUrl: './app.journals.component.html',
@@ -16,7 +17,10 @@ export class AppJournalsComponent {
 
     currentUser = {};
 
-    constructor(private accountService: AccountService, private journalsService: JournalsService, private router: Router, private sellService:SellService) { }
+    exportMode: boolean = false;
+    isXml: boolean = false;    
+
+    constructor(private accountService: AccountService, private journalsService: JournalsService, private router: Router, private sellService:SellService, private exportService:ExportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -24,8 +28,7 @@ export class AppJournalsComponent {
         }
 
         this.accountService.currentUser$.subscribe(user => {
-            this.currentUser = user;
-            console.log("journals");
+            this.currentUser = user;            
         });
 
         this.journalsService.tryGetJournals().subscribe(journals => this.journals = journals);
@@ -55,5 +58,19 @@ export class AppJournalsComponent {
                 this.busyId = -1;
             }
         });
+    }
+
+    public switchExportMode() {
+        this.exportMode = !this.exportMode;
+    }
+
+    public tryExport() {
+        var ids: any[] = [];
+        this.journals.forEach((value: any, index, array) => {
+            if (value.selected) {
+                ids.push(value.id);
+            }
+        });
+        this.exportService.tryExportItems(2, ids, this.isXml);
     }
 }

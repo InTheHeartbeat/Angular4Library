@@ -1,5 +1,6 @@
 ﻿import {Component, Input} from '@angular/core';
 import { AccountService } from '../../account.service';
+import { ExportService } from '../../export.service';
 import { BooksService } from '../../books.service';
 import { SellService } from '../../sell.service';
 import {Router} from '@angular/router';
@@ -12,21 +13,20 @@ import {Router} from '@angular/router';
 export class AppBooksComponent {
     
     books = [];
-
-    busyId:any = -1;
-
     currentUser = {};
 
-    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router, private sellService:SellService) { }
+    busyId:any = -1;
+    exportMode: boolean = false;
+    isXml: boolean = false;    
+
+    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router, private sellService: SellService, private exportService: ExportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
             this.currentUser = this.accountService.currentUser;
-        }
-
+        }        
         this.accountService.currentUser$.subscribe(user => {
-            this.currentUser = user;
-            console.log("books");
+            this.currentUser = user;            
         });
 
         this.booksService.tryGetBooks().subscribe(books => this.books = books);
@@ -57,5 +57,36 @@ export class AppBooksComponent {
                 this.busyId = -1;
             }
         });
+    }
+
+    public switchExportMode() {        
+        this.exportMode = !this.exportMode;        
+    }
+
+    public tryExportBooks() {
+        var ids:any[] = [];
+
+        this.books.forEach((value: any, index, array) => {
+            if (value.selected) {
+                ids.push(value.id);
+            }
+        });
+
+        this.exportService.tryExportItems(1, ids, this.isXml);
+    }
+
+    public importChange(files: any) {
+        this.photoUploaded = false;
+        if (files && files[0]) {
+            const formData = new FormData();
+            formData.append("image", files[0]);
+            this.booksService.uploadPhoto(formData).subscribe(res => {
+                this.currentPhotoPath = res.path;
+                this.currentBook.photoPath = res.path;
+                this.currentBook.photoId = res.id;
+                this.photoUploaded = true;
+            });
+        }
+        else { this.photoUploaded = true; }
     }
 }
