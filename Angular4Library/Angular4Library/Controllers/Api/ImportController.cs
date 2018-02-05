@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Angular4Library.Data;
+using Angular4Library.Data.Models;
 using Angular4Library.Helpers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -30,11 +31,24 @@ namespace Angular4Library.Controllers.Api
             try
             {
                 FileInfo info = new FileInfo(file.FileName.Trim('\"'));
-                return Ok(ImportHelper.Import(file.OpenReadStream(), info.Extension == ".xml"));
+                ImportModel importModel = ImportHelper.Import(file.OpenReadStream(), info.Extension == ".xml");
+                if (importModel.BookProducts != null && importModel.BookProducts.Any())
+                {
+                    _context.Books.Insert(importModel.BookProducts);
+                }
+                if (importModel.JournalProducts != null && importModel.JournalProducts.Any())
+                {
+                    _context.Journals.Insert(importModel.JournalProducts);
+                }
+                if (importModel.NewspaperProducts != null && importModel.NewspaperProducts.Any())
+                {
+                    _context.Newspapers.Insert(importModel.NewspaperProducts);
+                }
+                return Ok();
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e); // нельзя уже сщест
             }
         }
     }

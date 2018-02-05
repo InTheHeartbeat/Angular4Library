@@ -82,17 +82,17 @@ namespace Angular4Library.Helpers
                     XmlDocument d = new XmlDocument();
                     d.LoadXml(data);
 
-                    if (d.DocumentElement.Name == "ArrayOfBookModel")
+                    if (d.DocumentElement.Name == "ArrayOfBoo")
                     {
                         return "Book";
 
                     }
-                    if (d.DocumentElement.Name == "ArrayOfJournalModel")
+                    if (d.DocumentElement.Name == "ArrayOfJournal")
                     {
                         return "Journal";
 
                     }
-                    if (d.DocumentElement.Name == "ArrayOfNewspaperModel")
+                    if (d.DocumentElement.Name == "ArrayOfNewspaper")
                     {
                         return "Newspaper";
 
@@ -140,7 +140,7 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Books") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 10)
+                for (var i = 0; i + 8 < data.Length; i += 9)
                 {
                     result.Add(new Book()
                     {
@@ -152,7 +152,7 @@ namespace Angular4Library.Helpers
                         Genre = data[i + 6],
                         Amount = int.Parse(data[i + 7]),
                         Price = double.Parse(data[i + 8]),                            
-                        PhotoPath = data[i + 10]
+                        PhotoPath = data[i + 9]
                     });
                 }
             }
@@ -174,7 +174,7 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Journals") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 9)
+                for (var i = 0; i + 8 < data.Length; i += 8)
                 {
                     result.Add(new Journal()
                     {
@@ -185,7 +185,7 @@ namespace Angular4Library.Helpers
                         Date = data[i + 5],
                         Amount = int.Parse(data[i + 6]),
                         Price = double.Parse(data[i + 7]),                            
-                        PhotoPath = data[i + 9]
+                        PhotoPath = data[i + 8]
                     });
                 }
             }
@@ -207,7 +207,7 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Newspapers") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 8)
+                for (var i = 0; i + 8 < data.Length; i += 7)
                 {
                     result.Add(new Newspaper()
                     {
@@ -217,7 +217,7 @@ namespace Angular4Library.Helpers
                         Date = data[i + 4],
                         Amount = int.Parse(data[i + 5]),
                         Price = double.Parse(data[i + 6]),                            
-                        PhotoPath = data[i + 8]
+                        PhotoPath = data[i + 7]
                     });
                 }
             }

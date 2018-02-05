@@ -3,6 +3,7 @@ import { AccountService } from '../../account.service';
 import { ExportService } from '../../export.service';
 import { BooksService } from '../../books.service';
 import { SellService } from '../../sell.service';
+import { ImportService } from '../../import.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -19,7 +20,9 @@ export class AppBooksComponent {
     exportMode: boolean = false;
     isXml: boolean = false;    
 
-    constructor(private accountService: AccountService, private booksService: BooksService, private router: Router, private sellService: SellService, private exportService: ExportService) { }
+    constructor(private accountService: AccountService, private booksService: BooksService,
+        private router: Router, private sellService: SellService,
+        private exportService: ExportService, private importService:ImportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -75,18 +78,14 @@ export class AppBooksComponent {
         this.exportService.tryExportItems(1, ids, this.isXml);
     }
 
-    public importChange(files: any) {
-        this.photoUploaded = false;
+    public importChange(files: any) {        
         if (files && files[0]) {
             const formData = new FormData();
-            formData.append("image", files[0]);
-            this.booksService.uploadPhoto(formData).subscribe(res => {
-                this.currentPhotoPath = res.path;
-                this.currentBook.photoPath = res.path;
-                this.currentBook.photoId = res.id;
-                this.photoUploaded = true;
+            formData.append("import", files[0]);
+            this.importService.tryImport(formData).subscribe(res => {
+                this.booksService.tryGetBooks().subscribe(books => this.books = books);
+                alert("Import " + res.status);                
             });
-        }
-        else { this.photoUploaded = true; }
+        }        
     }
 }

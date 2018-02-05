@@ -21,6 +21,7 @@ import { BooksService } from './books.service';
 import { JournalsService } from './journals.service';
 import { NewspapersService } from './newspapers.service';
 import { ExportService } from './export.service';
+import { ImportService } from './import.service';
 
 @NgModule({
 	declarations: [
@@ -56,7 +57,7 @@ import { ExportService } from './export.service';
 		    { path: 'basket', component: AppBasketComponent }
 		])
 	],
-    providers: [AccountService, BooksService, JournalsService, NewspapersService, SellService, ExportService]
+    providers: [AccountService, BooksService, JournalsService, NewspapersService, SellService, ExportService, ImportService]
 })
 
 export class AppModuleShared {

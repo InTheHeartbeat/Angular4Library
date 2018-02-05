@@ -4,6 +4,7 @@ import { JournalsService } from '../../journals.service';
 import {Router} from '@angular/router';
 import { SellService } from '../../sell.service';
 import { ExportService } from '../../export.service';
+import { ImportService } from '../../import.service';
 @Component({
 	selector:'app-journals',
 	templateUrl: './app.journals.component.html',
@@ -20,7 +21,9 @@ export class AppJournalsComponent {
     exportMode: boolean = false;
     isXml: boolean = false;    
 
-    constructor(private accountService: AccountService, private journalsService: JournalsService, private router: Router, private sellService:SellService, private exportService:ExportService) { }
+    constructor(private accountService: AccountService, private journalsService: JournalsService,
+        private router: Router, private sellService: SellService,
+        private exportService: ExportService, private importService: ImportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -72,5 +75,16 @@ export class AppJournalsComponent {
             }
         });
         this.exportService.tryExportItems(2, ids, this.isXml);
+    }
+
+    public importChange(files: any) {
+        if (files && files[0]) {
+            const formData = new FormData();
+            formData.append("import", files[0]);
+            this.importService.tryImport(formData).subscribe(res => {
+                this.journalsService.tryGetJournals().subscribe(journals => this.journals = journals);
+                alert("Import " + res.status);                
+            });
+        }
     }
 }

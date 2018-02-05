@@ -7,9 +7,10 @@
         </label>
         <h4>Xml</h4>
     </div>
-    <a href="#" class="btn btn-icon" id="btn-import-journals" (click)="showUploadDialog()">
+    <span href="#" class="btn btn-icon" id="btn-import-journals" (click)="uploadFile.click()">
         <span class="icon ic-import"></span>
-    </a>
+    </span>
+    <input type="file" name="upload" #uploadFile (change)="importChange(uploadFile.files)" id="uploadFile" style="display: none" />
     <span class="btn btn-icon" href="#">
         <span class="icon ic-accept" [hidden]="!exportMode" (click)="tryExport()"></span>
         <span class="icon ic-export" [hidden]="exportMode" (click)="switchExportMode()"></span>

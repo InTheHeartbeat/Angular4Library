@@ -4,6 +4,7 @@ import { NewspapersService } from '../../newspapers.service';
 import {Router} from '@angular/router';
 import { SellService } from '../../sell.service';
 import { ExportService } from '../../export.service';
+import { ImportService } from '../../import.service';
 @Component({
 	selector:'app-newspapers',
 	templateUrl: './app.newspapers.component.html',
@@ -18,7 +19,9 @@ export class AppNewspapersComponent {
     exportMode: boolean = false;
     isXml: boolean = false;    
 
-    constructor(private accountService: AccountService, private newspapersService: NewspapersService, private router: Router, private sellService:SellService, private exportService:ExportService) { }
+    constructor(private accountService: AccountService, private newspapersService: NewspapersService,
+        private router: Router, private sellService: SellService,
+        private exportService: ExportService, private importService: ImportService) { }
 
     ngOnInit() {
         if (this.accountService.currentUser) {
@@ -65,11 +68,22 @@ export class AppNewspapersComponent {
 
     public tryExport() {
         var ids: any[] = [];
-        this.journals.forEach((value: any, index, array) => {
+        this.newspapers.forEach((value: any, index, array) => {
             if (value.selected) {
                 ids.push(value.id);
             }
         });
         this.exportService.tryExportItems(2, ids, this.isXml);
+    }
+
+    public importChange(files: any) {
+        if (files && files[0]) {
+            const formData = new FormData();
+            formData.append("import", files[0]);
+            this.importService.tryImport(formData).subscribe(res => {
+                this.newspapersService.tryGetNewspapers().subscribe(newspapers => this.newspapers = newspapers);
+                alert("Import " + res.status);
+            });
+        }
     }
 }
