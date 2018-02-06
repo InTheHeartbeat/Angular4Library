@@ -29,8 +29,7 @@ namespace Angular4Library.Helpers
                 writer.WriteLine("Books");
 
                 foreach (Book book in model.IdsArray.Select(id => context.Books.FindOne(bk=>bk.Id==id)))
-                {
-                    writer.WriteLine(book.Id);
+                {                   
                     writer.WriteLine(book.Title);
                     writer.WriteLine(book.Year);
                     writer.WriteLine(book.Pages);
@@ -64,8 +63,7 @@ namespace Angular4Library.Helpers
 
                 foreach (Journal journal in model.IdsArray
                     .Select(id => dataContext.Journals.FindOne(journal => journal.Id == id)))
-                {
-                    writer.WriteLine(journal.Id);
+                {                    
                     writer.WriteLine(journal.Title);
                     writer.WriteLine(journal.Theme);
                     writer.WriteLine(journal.Periodicity);
@@ -99,8 +97,7 @@ namespace Angular4Library.Helpers
 
                 foreach (Newspaper newspaper in model.IdsArray
                     .Select(id => dataContext.Newspapers.FindOne(newspaper => newspaper.Id == id)))
-                {
-                    writer.WriteLine(newspaper.Id);
+                {                    
                     writer.WriteLine(newspaper.Title);
                     writer.WriteLine(newspaper.Periodicity);
                     writer.WriteLine(newspaper.Date);

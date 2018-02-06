@@ -22,8 +22,7 @@ namespace Angular4Library.Helpers
                 {
                     case "Book":
                         result.BookProducts = ImportBooks(stream, isXml).Select(b => new Book
-                        {
-                            Id = b.Id,
+                        {                            
                             Amount = b.Amount,                            
                             Pages = b.Pages,
                             Genre = b.Genre,
@@ -36,8 +35,7 @@ namespace Angular4Library.Helpers
                         break;
                     case "Journal":
                         result.JournalProducts = ImportJournals(stream, isXml).Select(b => new Journal()
-                        {
-                            Id = b.Id,
+                        {                            
                             Date = b.Date,
                             Amount = b.Amount,
                             Periodicity = b.Periodicity,
@@ -50,8 +48,7 @@ namespace Angular4Library.Helpers
                         break;
                     case "Newspaper":
                         result.NewspaperProducts = ImportNewspapers(stream, isXml).Select(b => new Newspaper()
-                        {
-                            Id = b.Id,
+                        {                            
                             Date = b.Date,
                             Amount = b.Amount,                            
                             Periodicity = b.Periodicity,
@@ -82,7 +79,7 @@ namespace Angular4Library.Helpers
                     XmlDocument d = new XmlDocument();
                     d.LoadXml(data);
 
-                    if (d.DocumentElement.Name == "ArrayOfBoo")
+                    if (d.DocumentElement.Name == "ArrayOfBook")
                     {
                         return "Book";
 
@@ -99,8 +96,7 @@ namespace Angular4Library.Helpers
                     }
                 }
                 catch (Exception e)
-                {
-                    throw;
+                {                    
                 }
             }
 
@@ -133,6 +129,7 @@ namespace Angular4Library.Helpers
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Book>));
                 return (List<Book>)serializer.Deserialize(stream);
             }
+
             List<Book> result = new List<Book>();
             using (StreamReader streamReader = new StreamReader(stream))
             {
@@ -140,19 +137,18 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Books") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 9)
+                for (var i = 0; i+3 < data.Length; i += 8)
                 {
                     result.Add(new Book()
-                    {
-                        Id = int.Parse(data[i + 1]),
-                        Title = data[i + 2],
-                        Year = int.Parse(data[i + 3]),
-                        Pages = int.Parse(data[i + 4]),
-                        Author = data[i + 5],
-                        Genre = data[i + 6],
-                        Amount = int.Parse(data[i + 7]),
-                        Price = double.Parse(data[i + 8]),                            
-                        PhotoPath = data[i + 9]
+                    {                        
+                        Title = data[i + 1],
+                        Year = int.Parse(data[i +2]),
+                        Pages = int.Parse(data[i + 3]),
+                        Author = data[i + 4],
+                        Genre = data[i + 5],
+                        Amount = int.Parse(data[i + 6]),
+                        Price = double.Parse(data[i + 7]),                            
+                        PhotoPath = data[i + 8]
                     });
                 }
             }
@@ -167,6 +163,7 @@ namespace Angular4Library.Helpers
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Journal>));
                 return (List<Journal>)serializer.Deserialize(stream);
             }
+
             List<Journal> result = new List<Journal>();
             using (StreamReader streamReader = new StreamReader(stream))
             {
@@ -174,18 +171,17 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Journals") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 8)
+                for (var i = 0; i+3 < data.Length; i += 7)
                 {
                     result.Add(new Journal()
-                    {
-                        Id = int.Parse(data[i + 1]),
-                        Title = data[i + 2],
-                        Theme = data[i + 3],
-                        Periodicity = data[i + 4],
-                        Date = data[i + 5],
-                        Amount = int.Parse(data[i + 6]),
-                        Price = double.Parse(data[i + 7]),                            
-                        PhotoPath = data[i + 8]
+                    {                        
+                        Title = data[i + 1],
+                        Theme = data[i + 2],
+                        Periodicity = data[i + 3],
+                        Date = data[i + 4],
+                        Amount = int.Parse(data[i + 5]),
+                        Price = double.Parse(data[i + 6]),                            
+                        PhotoPath = data[i + 7]
                     });
                 }
             }
@@ -200,6 +196,7 @@ namespace Angular4Library.Helpers
                 XmlSerializer serializer = new XmlSerializer(typeof(List<Newspaper>));
                 return (List<Newspaper>)serializer.Deserialize(stream);
             }
+
             List<Newspaper> result = new List<Newspaper>();
             using (StreamReader streamReader = new StreamReader(stream))
             {
@@ -207,17 +204,16 @@ namespace Angular4Library.Helpers
 
                 if (data[0] != "Newspapers") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i + 8 < data.Length; i += 7)
+                for (var i = 0; i+3 < data.Length; i += 6)
                 {
                     result.Add(new Newspaper()
-                    {
-                        Id = int.Parse(data[i + 1]),
-                        Title = data[i + 2],
-                        Periodicity = data[i + 3],
-                        Date = data[i + 4],
-                        Amount = int.Parse(data[i + 5]),
-                        Price = double.Parse(data[i + 6]),                            
-                        PhotoPath = data[i + 7]
+                    {                        
+                        Title = data[i + 1],
+                        Periodicity = data[i + 2],
+                        Date = data[i + 3],
+                        Amount = int.Parse(data[i + 4]),
+                        Price = double.Parse(data[i + 5]),                            
+                        PhotoPath = data[i + 6]
                     });
                 }
             }
