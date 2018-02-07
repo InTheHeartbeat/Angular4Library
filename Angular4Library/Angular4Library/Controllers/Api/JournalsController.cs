@@ -25,7 +25,7 @@ namespace Angular4Library.Controllers.Api
 
         [HttpGet("GetJournals")]
         public IEnumerable<Journal> GetJournals()
-        {
+        {            
             return _context.Journals.FindAll();
         }
 

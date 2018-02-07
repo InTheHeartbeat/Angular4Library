@@ -17,7 +17,21 @@ namespace Angular4Library.Data.Models
         public string Genre { get; set; }
         public int Amount { get; set; }
         public double Price { get; set; }
-        public string PhotoPath { get; set; }
+
+       public string PhotoPath
+       {
+           get
+           {
+               if (String.IsNullOrEmpty(_photoPath))
+               {
+                   return "/Upload/Images/no-photo-e.png";
+               }
+               return _photoPath;
+           }
+           set => _photoPath = value;
+       }
+
+       private string _photoPath;
 
        public Book()
        {

@@ -12,8 +12,7 @@ namespace Angular4Library.Models
         public List<OrderRecordJournal> JournalProducts { get; set; }
         public List<OrderRecordNewspaper> NewspaperProducts { get; set; }
 
-        public int OrderId { get; set; }
-        public double SumPrice { get; set; }
+        public int OrderId { get; set; }       
         public double TotalProductsCount => BookProducts.Count + JournalProducts.Count + NewspaperProducts.Count;
 
         public BasketModel()

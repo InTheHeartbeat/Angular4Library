@@ -34,7 +34,7 @@ export class AppJournalsComponent {
             this.currentUser = user;            
         });
 
-        this.journalsService.tryGetJournals().subscribe(journals => this.journals = journals);
+        this.journalsService.tryGetJournals().subscribe(journals => { this.journals = journals; console.log(journals) });
     }
 
 

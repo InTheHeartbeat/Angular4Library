@@ -25,7 +25,7 @@ namespace Angular4Library.Controllers.Api
 
         [HttpGet("GetNewspapers")]
         public IEnumerable<Newspaper> GetNewspapers()
-        {
+        {            
             return _context.Newspapers.FindAll();
         }
 
