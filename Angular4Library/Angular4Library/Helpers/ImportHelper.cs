@@ -6,90 +6,98 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 using Angular4Library.Data.Models;
+using Angular4Library.Data.Models.Products;
+using Angular4Library.Helpers.Enums;
+using Angular4Library.Models;
+using Angular4Library.Models.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Helpers
 {
     public class ImportHelper
     {
+
+        public const int BookFieldsCount = 8;
+        public const int JournalFieldsCount = 7;
+        public const int NewspaperFieldsCount = 6;
+        public const int NoImportableFieldsCount = 3;
+
         public static ImportModel Import(Stream stream, bool isXml)
         {
-            ImportModel result = new ImportModel();
-
+            var result = new ImportModel();
             try
             {
-                switch (GetType(stream, isXml))
+                string type = GetType(stream, isXml);
+                if (type == "Book")
                 {
-                    case "Book":
-                        result.BookProducts = ImportBooks(stream, isXml).Select(b => new Book
-                        {                            
-                            Amount = b.Amount,                            
-                            Pages = b.Pages,
-                            Genre = b.Genre,
-                            Author = b.Author,
-                            Title = b.Title,
-                            Year = b.Year,
-                            Price = b.Price,                            
-                            PhotoPath = b.PhotoPath
-                        }).ToList();
-                        break;
-                    case "Journal":
-                        result.JournalProducts = ImportJournals(stream, isXml).Select(b => new Journal()
-                        {                            
+                    result.BookProducts = ImportBooks(stream, isXml).Select(b => new BookViewModel
+                    {
+                        Amount = b.Amount,
+                        Pages = b.Pages,
+                        Genre = b.Genre,
+                        Author = b.Author,
+                        Title = b.Title,
+                        Year = b.Year,
+                        Price = b.Price,
+                        PhotoPath = b.PhotoPath
+                    }).ToList();
+                }
+                if (type == "Journal")
+                {
+                    result.JournalProducts = ImportJournals(stream, isXml).Select(b => new JournalViewModel()
+                        {
                             Date = b.Date,
                             Amount = b.Amount,
                             Periodicity = b.Periodicity,
                             Theme = b.Theme,
                             Title = b.Title,
-                            Price = b.Price,                            
+                            Price = b.Price,
                             PhotoPath = b.PhotoPath
                         })
-                            .ToList();
-                        break;
-                    case "Newspaper":
-                        result.NewspaperProducts = ImportNewspapers(stream, isXml).Select(b => new Newspaper()
-                        {                            
+                        .ToList();
+                }
+                if (type == "Newspaper")
+                {
+                    result.NewspaperProducts = ImportNewspapers(stream, isXml).Select(b => new NewspaperViewModel()
+                        {
                             Date = b.Date,
-                            Amount = b.Amount,                            
+                            Amount = b.Amount,
                             Periodicity = b.Periodicity,
                             Title = b.Title,
-                            Price = b.Price,                            
+                            Price = b.Price,
                             PhotoPath = b.PhotoPath
                         })
-                            .ToList();
-                        break;
-                }
+                        .ToList();
+                }                
             }
-            catch
-            {                                
-            }
+            catch { }
 
             return result;
         }
 
         private static string GetType(Stream stream, bool isXml)
         {
-            StreamReader streamReader = new StreamReader(stream);
+            var streamReader = new StreamReader(stream);
 
             string data = streamReader.ReadToEnd().Replace("\r", "");
             if (isXml)
             {
                 try
                 {
-                    XmlDocument d = new XmlDocument();
-                    d.LoadXml(data);
+                    var xmlDocument = new XmlDocument();
+                    xmlDocument.LoadXml(data);
 
-                    if (d.DocumentElement.Name == "ArrayOfBook")
+                    if (xmlDocument.DocumentElement.Name == "ArrayOfBook")
                     {
                         return "Book";
 
                     }
-                    if (d.DocumentElement.Name == "ArrayOfJournal")
+                    if (xmlDocument.DocumentElement.Name == "ArrayOfJournal")
                     {
                         return "Journal";
 
                     }
-                    if (d.DocumentElement.Name == "ArrayOfNewspaper")
+                    if (xmlDocument.DocumentElement.Name == "ArrayOfNewspaper")
                     {
                         return "Newspaper";
 
@@ -102,7 +110,7 @@ namespace Angular4Library.Helpers
 
             if (!isXml)
             {
-                data = data.Split('\n')[0];
+                data = data.Split('\n').First();
 
                 if (data == "Books")
                 {
@@ -117,7 +125,7 @@ namespace Angular4Library.Helpers
                     return "Newspaper";
                 }
             }
-            return "";
+            return String.Empty;
         }
 
         private static List<Book> ImportBooks(Stream stream, bool isXml)
@@ -126,29 +134,29 @@ namespace Angular4Library.Helpers
             stream.Seek(0, SeekOrigin.Begin);
             if (isXml)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Book>));
+                var serializer = new XmlSerializer(typeof(List<Book>));
                 return (List<Book>)serializer.Deserialize(stream);
             }
 
-            List<Book> result = new List<Book>();
-            using (StreamReader streamReader = new StreamReader(stream))
+            var result = new List<Book>();
+            using (var streamReader = new StreamReader(stream))
             {
                 string[] data = streamReader.ReadToEnd().Replace("\r", "").Split('\n');
 
                 if (data[0] != "Books") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i+3 < data.Length; i += 8)
+                for (var i = 0; i + NoImportableFieldsCount < data.Length; i += BookFieldsCount)
                 {
                     result.Add(new Book()
                     {                        
-                        Title = data[i + 1],
-                        Year = int.Parse(data[i +2]),
-                        Pages = int.Parse(data[i + 3]),
-                        Author = data[i + 4],
-                        Genre = data[i + 5],
-                        Amount = int.Parse(data[i + 6]),
-                        Price = double.Parse(data[i + 7]),                            
-                        PhotoPath = data[i + 8]
+                        Title = data[i + (int)BookFieldsOffset.Title],
+                        Year = int.Parse(data[i + (int)BookFieldsOffset.Year]),
+                        Pages = int.Parse(data[i + (int)BookFieldsOffset.Pages]),
+                        Author = data[i + (int)BookFieldsOffset.Author],
+                        Genre = data[i + (int)BookFieldsOffset.Genre],
+                        Amount = int.Parse(data[i + (int)BookFieldsOffset.Amount]),
+                        Price = double.Parse(data[i + (int)BookFieldsOffset.Price]),                            
+                        PhotoPath = data[i + (int)BookFieldsOffset.PhotoPath]
                     });
                 }
             }
@@ -160,28 +168,28 @@ namespace Angular4Library.Helpers
             stream.Seek(0, SeekOrigin.Begin);
             if (isXml)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Journal>));
+                var serializer = new XmlSerializer(typeof(List<Journal>));
                 return (List<Journal>)serializer.Deserialize(stream);
             }
 
-            List<Journal> result = new List<Journal>();
-            using (StreamReader streamReader = new StreamReader(stream))
+            var result = new List<Journal>();
+            using (var streamReader = new StreamReader(stream))
             {
                 string[] data = streamReader.ReadToEnd().Replace("\r", "").Split('\n');
 
                 if (data[0] != "Journals") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i+3 < data.Length; i += 7)
+                for (var i = 0; i+NoImportableFieldsCount < data.Length; i += JournalFieldsCount)
                 {
                     result.Add(new Journal()
                     {                        
-                        Title = data[i + 1],
-                        Theme = data[i + 2],
-                        Periodicity = data[i + 3],
-                        Date = data[i + 4],
-                        Amount = int.Parse(data[i + 5]),
-                        Price = double.Parse(data[i + 6]),                            
-                        PhotoPath = data[i + 7]
+                        Title = data[i + (int)JournalFieldsOffset.Title],
+                        Theme = data[i + (int)JournalFieldsOffset.Theme],
+                        Periodicity = data[i + (int)JournalFieldsOffset.Periodicity],
+                        Date = data[i + (int)JournalFieldsOffset.Date],
+                        Amount = int.Parse(data[i + (int)JournalFieldsOffset.Amount]),
+                        Price = double.Parse(data[i + (int)JournalFieldsOffset.Price]),                            
+                        PhotoPath = data[i + (int)JournalFieldsOffset.PhotoPath]
                     });
                 }
             }
@@ -193,27 +201,27 @@ namespace Angular4Library.Helpers
             stream.Seek(0, SeekOrigin.Begin);
             if (isXml)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Newspaper>));
+                var serializer = new XmlSerializer(typeof(List<Newspaper>));
                 return (List<Newspaper>)serializer.Deserialize(stream);
             }
 
-            List<Newspaper> result = new List<Newspaper>();
-            using (StreamReader streamReader = new StreamReader(stream))
+            var result = new List<Newspaper>();
+            using (var streamReader = new StreamReader(stream))
             {
                 string[] data = streamReader.ReadToEnd().Replace("\r", "").Split('\n');
 
                 if (data[0] != "Newspapers") { throw new Exception("Incorrect file"); }
 
-                for (var i = 0; i+3 < data.Length; i += 6)
+                for (var i = 0; i+NoImportableFieldsCount < data.Length; i += NewspaperFieldsCount)
                 {
                     result.Add(new Newspaper()
                     {                        
-                        Title = data[i + 1],
-                        Periodicity = data[i + 2],
-                        Date = data[i + 3],
-                        Amount = int.Parse(data[i + 4]),
-                        Price = double.Parse(data[i + 5]),                            
-                        PhotoPath = data[i + 6]
+                        Title = data[i + (int)NewspaperFieldsOffset.Title],
+                        Periodicity = data[i + (int)NewspaperFieldsOffset.Periodicity],
+                        Date = data[i + (int)NewspaperFieldsOffset.Date],
+                        Amount = int.Parse(data[i + (int)NewspaperFieldsOffset.Amount]),
+                        Price = double.Parse(data[i + (int)NewspaperFieldsOffset.Price]),                            
+                        PhotoPath = data[i + (int)NewspaperFieldsOffset.PhotoPath]
                     });
                 }
             }

@@ -4,31 +4,30 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
-using Angular4Library.Data;
 using Angular4Library.Data.Models;
+using Angular4Library.Data.Models.Products;
+using Angular4Library.Data.Providers;
+using Angular4Library.Models;
 
 namespace Angular4Library.Helpers
 {
     public class ExportHelper
-    {
-        public static byte[] ExportBooks(ExportModel model, LibraryContext context)
+    {        
+        public static byte[] ExportBooks(ExportViewModel viewModel, RepositoryProvider repositoryProvider)
         {
-            if (model.IsXml)
+            var stream = new MemoryStream();
+            if (viewModel.IsXml)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Book>));
-                MemoryStream stream = new MemoryStream();
-                serializer.Serialize(stream, model.IdsArray
-                    .Select(id => context.Books.FindOne(book => book.Id == id)).ToList());
-                return stream.ToArray();
+                var serializer = new XmlSerializer(typeof(List<Book>));                
+                serializer.Serialize(stream, viewModel.IdsArray.Select(id => repositoryProvider.BooksRepository.GetProductById(id)).ToList());                
             }
-            else
-            {
-                MemoryStream stream = new MemoryStream();
-                StreamWriter writer = new StreamWriter(stream);
-
+            
+            if(!viewModel.IsXml)
+            {                
+                var writer = new StreamWriter(stream);
                 writer.WriteLine("Books");
 
-                foreach (Book book in model.IdsArray.Select(id => context.Books.FindOne(bk=>bk.Id==id)))
+                foreach (Book book in viewModel.IdsArray.Select(id => repositoryProvider.BooksRepository.GetProductById(id)))
                 {                   
                     writer.WriteLine(book.Title);
                     writer.WriteLine(book.Year);
@@ -40,29 +39,27 @@ namespace Angular4Library.Helpers
                     writer.WriteLine(book.PhotoPath);
                 }
                 writer.Flush();
-                stream.Seek(0, SeekOrigin.Begin);
-                return stream.ToArray();
+                stream.Seek(0, SeekOrigin.Begin);                
             }
+            return stream.ToArray();
         }        
-        public static byte[] ExportJournals(ExportModel model, LibraryContext dataContext)
+        public static byte[] ExportJournals(ExportViewModel viewModel, RepositoryProvider repositoryProvider)
         {
-            if (model.IsXml)
-            {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Journal>));
-                MemoryStream stream = new MemoryStream();
-                serializer.Serialize(stream, model.IdsArray
-                    .Select(id => dataContext.Journals.FindOne(journal => journal.Id == id)).ToList());                    
-                return stream.ToArray();
-            }
-            else
-            {
-                MemoryStream stream = new MemoryStream();
-                StreamWriter writer = new StreamWriter(stream);
+            var stream = new MemoryStream();
 
+            if(viewModel.IsXml)
+            {
+                var serializer = new XmlSerializer(typeof(List<Journal>));                
+                serializer.Serialize(stream, viewModel.IdsArray
+                    .Select(id => repositoryProvider.JournalsRepository.GetProductById(id)).ToList());                                    
+            }
+            if(!viewModel.IsXml)
+            {                
+                var writer = new StreamWriter(stream);
                 writer.WriteLine("Journals");
 
-                foreach (Journal journal in model.IdsArray
-                    .Select(id => dataContext.Journals.FindOne(journal => journal.Id == id)))
+                foreach (Journal journal in viewModel.IdsArray
+                    .Select(id => repositoryProvider.JournalsRepository.GetProductById(id)))
                 {                    
                     writer.WriteLine(journal.Title);
                     writer.WriteLine(journal.Theme);
@@ -73,30 +70,28 @@ namespace Angular4Library.Helpers
                     writer.WriteLine(journal.PhotoPath);
                 }
                 writer.Flush();
-                stream.Seek(0, SeekOrigin.Begin);
-                return stream.ToArray();
+                stream.Seek(0, SeekOrigin.Begin);                
             }
+            return stream.ToArray();
         }
-        public static byte[] ExportNewspapers(ExportModel model, LibraryContext dataContext)
+        public static byte[] ExportNewspapers(ExportViewModel viewModel, RepositoryProvider repositoryProvider)
         {
-            if (model.IsXml)
+            var stream = new MemoryStream();
+            if (viewModel.IsXml)
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<Newspaper>));
-                MemoryStream stream = new MemoryStream();
-                serializer.Serialize(stream, model.IdsArray
+                var serializer = new XmlSerializer(typeof(List<Newspaper>));                
+                serializer.Serialize(stream, viewModel.IdsArray
                     .Select(
-                        id => dataContext.Newspapers.FindOne(newspaper => newspaper.Id == id)).ToList());
-                return stream.ToArray();
+                        id => repositoryProvider.NewspapersRepository.GetProductById(id)).ToList());                
             }
-            else
-            {
-                MemoryStream stream = new MemoryStream();
-                StreamWriter writer = new StreamWriter(stream);
 
+            if (!viewModel.IsXml)
+            {                
+                var writer = new StreamWriter(stream);
                 writer.WriteLine("Newspapers");
 
-                foreach (Newspaper newspaper in model.IdsArray
-                    .Select(id => dataContext.Newspapers.FindOne(newspaper => newspaper.Id == id)))
+                foreach (Newspaper newspaper in viewModel.IdsArray
+                    .Select(id => repositoryProvider.NewspapersRepository.GetProductById(id)))
                 {                    
                     writer.WriteLine(newspaper.Title);
                     writer.WriteLine(newspaper.Periodicity);
@@ -106,9 +101,9 @@ namespace Angular4Library.Helpers
                     writer.WriteLine(newspaper.PhotoPath);
                 }
                 writer.Flush();
-                stream.Seek(0, SeekOrigin.Begin);
-                return stream.ToArray();
+                stream.Seek(0, SeekOrigin.Begin);                
             }
+            return stream.ToArray();
         }
     }
 }

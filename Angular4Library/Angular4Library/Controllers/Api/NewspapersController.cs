@@ -1,54 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-using Angular4Library.Data;
-using Angular4Library.Data.Models;
+using Angular4Library.Helpers;
+using Angular4Library.Models.Data;
+using Angular4Library.Services;
+using Angular4Library.Services.Products;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
 {    
     [Route("api/[controller]")]
     public class NewspapersController : Controller
-    {
-        private LibraryContext _context;
+    {        
         private readonly IHostingEnvironment _hostingEnvironment;
+        private readonly NewspapersService _newspapersService;
 
-        public NewspapersController(LibraryContext context, IHostingEnvironment hostingEnvironment)
+        public NewspapersController(IHostingEnvironment hostingEnvironment)
         {
-            _context = context;
+            _newspapersService = new NewspapersService();
             _hostingEnvironment = hostingEnvironment;
         }
 
         [HttpGet("GetNewspapers")]
-        public IEnumerable<Newspaper> GetNewspapers()
-        {            
-            return _context.Newspapers.FindAll();
+        public IEnumerable<NewspaperViewModel> GetNewspapers()
+        {
+            IEnumerable < NewspaperViewModel > result = _newspapersService.GetAll();            
+            return result;
         }
 
         [HttpGet("GetNewspaper/{id}")]
-        public Newspaper GetNewspaper(int id)
+        public NewspaperViewModel GetNewspaper(int id)
         {
-            return _context.Newspapers.FindOne(newspaper => newspaper.Id == id);
+            NewspaperViewModel result = _newspapersService.GetNewspaperById(id);
+            return result;
         }
 
         [HttpPost("AddNewspaper")]
-        public IActionResult AddNewspaper([FromBody]Newspaper newspaper)
+        public IActionResult AddNewspaper([FromBody]NewspaperViewModel newspaper)
         {
             try
             {
-                _context.Newspapers.Insert(new Newspaper()
-                {
-                    Title = newspaper.Title,
-                    Date = newspaper.Date,                    
-                    Amount = newspaper.Amount,                    
-                    Price = newspaper.Price,
-                    Periodicity = newspaper.Periodicity,
-                    PhotoPath = newspaper.PhotoPath
-                });
+                _newspapersService.AddNewNewspaper(newspaper);
             }
             catch (Exception e)
             {
@@ -59,21 +52,11 @@ namespace Angular4Library.Controllers.Api
         }
 
         [HttpPut("EditNewspaper")]
-        public IActionResult EditNewspaper([FromBody]Newspaper newspaperModel)
-        {
-            Newspaper newspaper = _context.Newspapers.FindById(newspaperModel.Id);
-
-            if (newspaper == null) { return NotFound(); }
-
+        public IActionResult EditNewspaper([FromBody]NewspaperViewModel newspaper)
+        {           
             try
             {
-                newspaper.Title = newspaperModel.Title;
-                newspaper.Date = newspaperModel.Date;                
-                newspaper.Periodicity = newspaperModel.Periodicity;
-                newspaper.Price = newspaperModel.Price;
-                newspaper.Amount = newspaperModel.Amount;
-                newspaper.PhotoPath = newspaperModel.PhotoPath;
-                _context.Newspapers.Update(newspaper);
+                _newspapersService.EditNewspaper(newspaper);
             }
             catch (Exception e)
             {
@@ -85,14 +68,10 @@ namespace Angular4Library.Controllers.Api
 
         [HttpDelete("DeleteNewspaper/{id}")]
         public IActionResult DeleteNewspaper(int id)
-        {
-            Newspaper forDelete = _context.Newspapers.FindById(id);
-
-            if (forDelete == null) { return NotFound(); }
-
+        {            
             try
             {
-                _context.Newspapers.Delete(forDelete.Id);
+                _newspapersService.DeleteNewspaperById(id);
             }
             catch (Exception e)
             {
@@ -105,27 +84,10 @@ namespace Angular4Library.Controllers.Api
         [HttpPost("UploadPhoto")]
         public async Task<IActionResult> UploadPhoto()
         {
-            var file = Request.Form.Files[0];
-            string relPath = "/Upload/Images/";
-            string root = _hostingEnvironment.WebRootPath + relPath;
-            string customFileName = Guid.NewGuid().ToString() + new FileInfo(file.FileName).Extension;
-            int id = -1;
-
             try
             {
-                using (Stream stream = file.OpenReadStream())
-                {
-                    using (var binaryReader = new BinaryReader(stream))
-                    {
-                        byte[] fileContent = binaryReader.ReadBytes((int)file.Length);
-
-                        using (FileStream fs = new FileStream(root + customFileName, FileMode.Create))
-                        {
-                            await fs.WriteAsync(fileContent, 0, fileContent.Length);
-                        }
-                    }
-                }
-                return Ok(new Image { Path = relPath + customFileName });
+                ImageViewModel result = await PhotoUploader.UploadPhoto(Request, _hostingEnvironment);
+                return Ok(result);
             }
             catch (Exception e)
             {

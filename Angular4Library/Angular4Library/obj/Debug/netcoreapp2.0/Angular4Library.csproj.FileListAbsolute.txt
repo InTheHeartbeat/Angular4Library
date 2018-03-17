@@ -9,3 +9,5 @@ D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\ob
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\obj\Debug\netcoreapp2.0\Angular4Library.AssemblyInfo.cs
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\obj\Debug\netcoreapp2.0\Angular4Library.dll
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\obj\Debug\netcoreapp2.0\Angular4Library.pdb
+D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\bin\Debug\netcoreapp2.0\Angular4Library.Data.dll
+D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library\bin\Debug\netcoreapp2.0\Angular4Library.Data.pdb

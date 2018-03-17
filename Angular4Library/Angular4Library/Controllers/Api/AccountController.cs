@@ -1,29 +1,25 @@
 ﻿using System;
-using System.Linq;
-using Angular4Library.Data;
-using Angular4Library.Data.Models;
-using Angular4Library.Extensions;
 using Angular4Library.Models;
+using Angular4Library.Services;
+using Angular4Library.Services.Accounting;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
 {
     public class AccountController : Controller
     {
-        private LibraryContext _context;
-        private AccountProvider _accountProvider;
+        private readonly AccountService _accountService;
 
-        public AccountController(LibraryContext context)
+        public AccountController()
         {
-            _context = context;
-            _accountProvider = new AccountProvider(context);
+            _accountService = new AccountService();
         }
 
         [Route("api/Account/GetCurrentUser")]        
         [HttpGet]
         public IActionResult GetCurrentUser()
         {
-            AuthDataModel current = _accountProvider.GetCurrent(Request);
+            AuthDataViewModel current = _accountService.GetCurrentAuthData(Request);
             if(current == null)
             { return BadRequest(); }
 
@@ -32,45 +28,16 @@ namespace Angular4Library.Controllers.Api
                         
         [Route("api/Account/TrySignIn")]        
         [HttpPost]
-        public IActionResult TrySignIn([FromBody] SignInDataModel dataModel)
+        public IActionResult TrySignIn([FromBody] SignInDataViewModel dataViewModel)
         {
             try
-            {
-                Account account = _context.Accounts.FindOne(
-                    ac => ac.Login == dataModel.Login && ac.Hash == dataModel.Password.MD5());
+            {                
+                string remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
 
-                if (account == null)
-                {
-                    return Ok(new AuthDataModel() {Message = "Login or password incorrect"});
-                }
+                AuthDataViewModel result =
+                    _accountService.SignAccount(dataViewModel.Login, dataViewModel.Password, remoteAddress);
 
-                Guid token = Guid.NewGuid();
-
-
-                string adr = Request.HttpContext.Connection.RemoteIpAddress.ToString();                
-
-                AccountAccessRecord previousRecord = _context.AccountAccessRecords.FindOne(r => r.Source == adr);
-                if (previousRecord != null)
-                {
-                    _context.AccountAccessRecords.Delete(previousRecord.Id);
-                }
-
-                AccountAccessRecord record = new AccountAccessRecord()
-                {
-                    ActiveDate = DateTime.Now,
-                    AccountId = account.Id,
-                    Source = adr,
-                    Token = token
-                };
-                _context.AccountAccessRecords.Insert(record);
-
-                return Ok(new AuthDataModel()
-                {
-                    IsAdmin = account.IsAdmin,
-                    Login = account.Login,
-                    Token = token.ToString(),
-                    IsVisitor = false
-                });
+                return Ok(result);
             }
             catch (Exception e)
             {
@@ -80,46 +47,27 @@ namespace Angular4Library.Controllers.Api
 
         [Route("api/Account/SignOut")]        
         [HttpPost]
-        public IActionResult SignOut([FromBody] AuthDataModel model)
+        public IActionResult SignOut([FromBody] AuthDataViewModel viewModel)
         {
-            AccountAccessRecord a = _context.AccountAccessRecords.FindById(_context.AccountAccessRecords.Min()); 
-            AccountAccessRecord previousRecord = _context.AccountAccessRecords.FindOne(r => r.Token == new Guid(model.Token));
-            if (previousRecord != null)
-            {
-                _context.AccountAccessRecords.Delete(previousRecord.Id);
-                return GetCurrentUser();
-            }
+            _accountService.SignOutAccount(viewModel.Token);
 
-            return BadRequest();
+            return GetCurrentUser();
         }
 
         [Route("api/Account/TrySignUp")]        
         [HttpPost]
-        public IActionResult TrySignUp([FromBody]SignInDataModel dataModel)
+        public IActionResult TrySignUp([FromBody]SignInDataViewModel dataViewModel)
         {
             try
-            {
-                AuthDataModel model = new AuthDataModel();
-                if (_context.Accounts.Exists(ac => ac.Login == dataModel.Login))
-                {
-                    model.Message = "Login already exist";
-                    return BadRequest(model);
-                }
-
-                Account newAccount = new Account()
-                {
-                    Login = dataModel.Login,
-                    Hash = dataModel.Password.MD5(),
-                    IsAdmin = false 
-                };
-
-                _context.Accounts.Insert(newAccount);                
-
-                return TrySignIn(dataModel);
+            {                
+                _accountService.CreateAccount(dataViewModel);                         
+                return TrySignIn(dataViewModel);
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                var viewModel = new AuthDataViewModel();
+                viewModel.Message = e.Message;
+                return BadRequest(viewModel);
             }
         }
     }

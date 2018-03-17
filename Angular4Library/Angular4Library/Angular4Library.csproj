@@ -23,6 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Controllers\Api\BaseController.cs" />
+    <Compile Remove="Helpers\ExportHelper.cs" />
+    <Compile Remove="Helpers\ImportHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="ClientApp\app\export.service" />
   </ItemGroup>
 
@@ -61,13 +67,18 @@
 
   <ItemGroup>
     <Folder Include="ClientApp\app\components\app-signup\" />
-    <Folder Include="Models\IO\" />
     <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Content\Images\Icons\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
     <Folder Include="wwwroot\Upload\Images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Angular4Library.Data">
+      <HintPath>..\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
