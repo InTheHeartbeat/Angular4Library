@@ -31,6 +31,8 @@ namespace Angular4Library.Services.Products
 
         public void AddNewNewspaper(NewspaperViewModel newspaperViewModel)
         {
+            if (newspaperViewModel == null) return;
+
             var newspaper = new Newspaper();
             newspaper.Id = newspaperViewModel.Id;
             newspaper.Amount = newspaperViewModel.Amount;
@@ -44,6 +46,8 @@ namespace Angular4Library.Services.Products
 
         public void EditNewspaper(NewspaperViewModel newspaperViewModel)
         {
+            if (newspaperViewModel == null) return;
+
             Newspaper newspaper = _repositoryProvider.NewspapersRepository.GetProductById(newspaperViewModel.Id);
 
             if (newspaper == null)
@@ -69,6 +73,8 @@ namespace Angular4Library.Services.Products
         internal static NewspaperViewModel CastDataModelToViewModel(Newspaper dataModel)
         {
             var result = new NewspaperViewModel();
+            if (dataModel == null) return result;
+
             result.Id = dataModel.Id;
             result.Amount = dataModel.Amount;
             result.Periodicity = dataModel.Periodicity;

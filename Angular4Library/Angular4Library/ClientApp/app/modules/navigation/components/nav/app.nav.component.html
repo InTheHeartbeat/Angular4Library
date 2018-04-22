@@ -1,0 +1,49 @@
+﻿<header class="header-bar">
+    <div class="header-title">       
+    </div>
+    <div class="header-bar-menu-container">
+        <ul id="header-bar-menu">
+            <li [hidden]="!currentUser.isVisitor">
+                <span>
+                    <a [routerLink]="['/signin']">Sign in</a>
+                </span>
+            </li>
+            <li [hidden]="currentUser.isVisitor">
+                <span>Hello, {{currentUser.login}}!</span>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<div class="sidebar">
+    <div class="sidebar-header">
+        <span class="company">Anuitex</span >       
+    </div>
+    <div class="sidebar-subheader">
+        <span class="title">Library</span>
+    </div>
+    <div class="sidebar-items-container">
+        <h4 class="label">Main</h4>
+        <ul class="section-selector">            
+            <li [ngClass]="{'active': currentSection == sections[0]}" (click)="setCurrentSection(sections[0])"><span>{{sections[0].name}}</span></li>            
+            <li [ngClass]="{'active': currentSection == sections[1]}" (click)="setCurrentSection(sections[1])"><span>{{sections[1].name}}</span></li>            
+            <li [ngClass]="{'active': currentSection == sections[2]}" (click)="setCurrentSection(sections[2])"><span>{{sections[2].name}}</span></li>            
+        </ul>
+        <h4 class="label">Sell</h4>
+        <ul class="section-selector">
+            <li [ngClass]="{'active': currentSection == sections[3]}" (click)="setCurrentSection(sections[3])"><span>{{sections[3].name}}</span></li>            
+            
+        </ul>
+        <h4 class="label">Account</h4>
+        <ul class="section-selector">            
+            <li [hidden]="!currentUser.isVisitor" [ngClass]="{'active': currentSection == sections[4]}" (click)="setCurrentSection(sections[4])"><span>{{sections[4].name}}</span></li>
+            <li [hidden]="!currentUser.isVisitor" [ngClass]="{'active': currentSection == sections[5]}" (click)="setCurrentSection(sections[5])"><span>{{sections[5].name}}</span></li>            
+
+            <li [hidden]="currentUser.isVisitor"><a (click)="signOut()" >Sign out</a></li>
+        </ul>
+
+        <h5>All rights reserved. <br>Tyner©2017</h5>
+    </div>
+</div>
+
+<div class="body-content"><router-outlet></router-outlet></div> 

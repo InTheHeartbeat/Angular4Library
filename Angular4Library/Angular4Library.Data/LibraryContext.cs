@@ -22,7 +22,7 @@ namespace Angular4Library.Data
 
         public LibraryContext()
         {
-            db = new LiteDatabase("Data/db.ldb");
+            db = new LiteDatabase(@"Data/db.ldb");
         }
 
         public void Dispose()

@@ -44,10 +44,18 @@ b {
   display: table;
   clear: both;
 }
+.windows-container {
+  width: 100%;
+}
 .windows-container .windows-grid {
   list-style: none;
   margin: 0 -20px 0 0;
   padding: 0;
+  display: flex;
+  /* flex-basis: 400px; */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
 }
 .windows-container .windows-grid .divider {
   border: none;
@@ -61,7 +69,6 @@ b {
   padding-left: 0.1em;
 }
 .windows-container .windows-grid .window {
-  float: left;
   display: table;
   border-radius: 3px;
   position: relative;
@@ -70,6 +77,8 @@ b {
   text-decoration: none;
   color: white;
   z-index: 0;
+  min-width: 350px;
+  max-width: 455px;
 }
 .windows-container .windows-grid .window .window-header {
   width: 100%;
@@ -210,12 +219,12 @@ b {
 }
 @media only screen and (min-width: 1000px) {
   .window {
-    width: 35% !important;
+    width: 47% !important;
   }
 }
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 1300px) {
   .window {
-    width: 30% !important;
+    width: 31% !important;
   }
 }
 .header-bar {
@@ -968,7 +977,7 @@ body {
   width: 8.8em;
   height: 12em;
   margin-right: 0.2em;
-  background-size: 100% 100%;
+  background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: center;

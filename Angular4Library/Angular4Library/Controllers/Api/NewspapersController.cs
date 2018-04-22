@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Angular4Library.Helpers;
 using Angular4Library.Models.Data;
-using Angular4Library.Services;
 using Angular4Library.Services.Products;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;

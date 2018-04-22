@@ -2,12 +2,11 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "LiteDB/4.1.1": {
+      "LiteDB/4.1.2": {
         "type": "package",
         "dependencies": {
           "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Threading.Thread": "4.0.0"
+          "System.Reflection.TypeExtensions": "4.3.0"
         },
         "compile": {
           "lib/netstandard2.0/LiteDB.dll": {}
@@ -187,7 +186,7 @@
           "Microsoft.NETCore.DotNetAppHost": "2.0.0"
         }
       },
-      "Microsoft.NETCore.Platforms/2.0.0": {
+      "Microsoft.NETCore.Platforms/2.0.2": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -301,26 +300,14 @@
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
-      },
-      "System.Threading.Thread/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Threading.Thread.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.Threading.Thread.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "LiteDB/4.1.1": {
-      "sha512": "CUZa6ejPI4VUe5vRsx+xURq52j46aELaJaftu/etratqmy6YiyjObjB5Tzg7EAjWFKj0ZYiJXo3eEBXS5MCqow==",
+    "LiteDB/4.1.2": {
+      "sha512": "lqjADPYzH9eKOJTFB9cHXhqPCHnSrgACoxsX6wxLGK1hyIRewv1HcY4TyXV/xZ0y8IjRZhVQyAvhbJUoNg/7xQ==",
       "type": "package",
-      "path": "litedb/4.1.1",
+      "path": "litedb/4.1.2",
       "files": [
         "lib/net35/LiteDB.dll",
         "lib/net35/LiteDB.xml",
@@ -330,7 +317,7 @@
         "lib/netstandard1.3/LiteDB.xml",
         "lib/netstandard2.0/LiteDB.dll",
         "lib/netstandard2.0/LiteDB.xml",
-        "litedb.4.1.1.nupkg.sha512",
+        "litedb.4.1.2.nupkg.sha512",
         "litedb.nuspec"
       ]
     },
@@ -648,15 +635,15 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+    "Microsoft.NETCore.Platforms/2.0.2": {
+      "sha512": "gID2fXOUeeLy8EOlYDchQITTwhsTAjZ83M156Yci4XK/kNvc+TNl7O/rf72+Xh0IayfNoDcf57Vevmkg689Faw==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/2.0.0",
+      "path": "microsoft.netcore.platforms/2.0.2",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+        "microsoft.netcore.platforms.2.0.2.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json",
         "useSharedDesignerContext.txt",
@@ -1290,50 +1277,13 @@
         "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
-    },
-    "System.Threading.Thread/4.0.0": {
-      "sha512": "gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
-      "type": "package",
-      "path": "system.threading.thread/4.0.0",
-      "files": [
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Threading.Thread.dll",
-        "lib/netcore50/_._",
-        "lib/netstandard1.3/System.Threading.Thread.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Threading.Thread.dll",
-        "ref/netstandard1.3/System.Threading.Thread.dll",
-        "ref/netstandard1.3/System.Threading.Thread.xml",
-        "ref/netstandard1.3/de/System.Threading.Thread.xml",
-        "ref/netstandard1.3/es/System.Threading.Thread.xml",
-        "ref/netstandard1.3/fr/System.Threading.Thread.xml",
-        "ref/netstandard1.3/it/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ja/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ko/System.Threading.Thread.xml",
-        "ref/netstandard1.3/ru/System.Threading.Thread.xml",
-        "ref/netstandard1.3/zh-hans/System.Threading.Thread.xml",
-        "ref/netstandard1.3/zh-hant/System.Threading.Thread.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.thread.4.0.0.nupkg.sha512",
-        "system.threading.thread.nuspec"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.0": [
-      "LiteDB >= 4.1.1",
-      "Microsoft.NETCore.App >= 2.0.0"
+      "LiteDB >= 4.1.2",
+      "Microsoft.NETCore.App >= 2.0.0",
+      "Microsoft.NETCore.Platforms >= 2.0.2"
     ]
   },
   "packageFolders": {
@@ -1382,7 +1332,11 @@
         "dependencies": {
           "LiteDB": {
             "target": "Package",
-            "version": "4.1.1"
+            "version": "4.1.2"
+          },
+          "Microsoft.NETCore.Platforms": {
+            "target": "Package",
+            "version": "2.0.2"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",

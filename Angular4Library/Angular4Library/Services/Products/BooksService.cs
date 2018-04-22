@@ -31,6 +31,8 @@ namespace Angular4Library.Services.Products
 
         public void AddNewBook(BookViewModel bookViewModel)
         {
+            if (bookViewModel == null) return;
+
             var book = new Book();
             book.Id = bookViewModel.Id;
             book.Amount = bookViewModel.Amount;
@@ -46,6 +48,8 @@ namespace Angular4Library.Services.Products
 
         public void EditBook(BookViewModel bookViewModel)
         {
+            if (bookViewModel == null) return;
+
             Book book = _repositoryProvider.BooksRepository.GetProductById(bookViewModel.Id);
 
             if (book == null)
@@ -73,6 +77,8 @@ namespace Angular4Library.Services.Products
         internal static BookViewModel CastDataModelToViewModel(Book dataModel)
         {
             var result = new BookViewModel();
+            if (dataModel == null) return result;
+
             result.Id = dataModel.Id;
             result.Amount = dataModel.Amount;
             result.Author = dataModel.Author;

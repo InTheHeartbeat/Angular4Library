@@ -1,9 +1,9 @@
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.deps.json
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.dll
+D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.pdb
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.csprojResolveAssemblyReference.cache
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.csproj.CoreCompileInputs.cache
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.AssemblyInfoInputs.cache
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.AssemblyInfo.cs
-D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.pdb
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.dll
 D:\Development\dotNet\Anuitex\Angular4Library\Angular4Library\Angular4Library.Data\obj\Debug\netcoreapp2.0\Angular4Library.Data.pdb

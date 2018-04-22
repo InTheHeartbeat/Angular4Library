@@ -1,15 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
-using Angular4Library.Data.Models;
 using Angular4Library.Helpers;
 using Angular4Library.Models.Data;
-using Angular4Library.Services;
 using Angular4Library.Services.Products;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api

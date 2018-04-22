@@ -1,4 +1,5 @@
-﻿using Angular4Library.Data.Interfaces;
+﻿using System.Runtime.InteropServices;
+using Angular4Library.Data.Interfaces;
 using Angular4Library.Data.Models.Products;
 using Angular4Library.Data.Repositories;
 
@@ -16,6 +17,10 @@ namespace Angular4Library.Data.Providers
         {
             var context = new LibraryContext();
             AccountRepository = new AccountRepository(context);
+            SellRepository = new SellRepository(context);
+            BooksRepository = new BooksRepository(context);
+            NewspapersRepository = new NewspapersRepository(context);
+            JournalsRepository = new JournalsRepository(context);
         }
     }
 }

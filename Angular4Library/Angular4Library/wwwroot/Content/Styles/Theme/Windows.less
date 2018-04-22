@@ -2,25 +2,32 @@
 @import "Variables.less";
 
 .windows-container {
+    width:100%;
     .windows-grid {
         list-style: none;
         margin: 0 -20px 0 0;
         padding: 0;
-
-        .divider {            
+        display: flex;
+        /* flex-basis: 400px; */
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width:100%;
+        .divider {
             border: none;
             width: 100%;
             display: inline-block;
             border-left: 1px solid #0091ea;
             border-top: 1px solid #0091ea;
             font-size: 11pt;
-            margin: 0;      
-            margin-bottom:0.5em;
+            margin: 0;
+            margin-bottom: 0.5em;
             padding-left: 0.1em;
-        };
+        }
+
+
 
         .window {
-            float: left;
+            
             display: table;
             border-radius: 3px;
             position: relative;
@@ -29,7 +36,8 @@
             text-decoration: none;
             color: @main-text-color;
             z-index: 0;
-
+            min-width:350px;
+            max-width:455px;
             .window-header {
                 width: 100%;
                 height: @window-header-height;
@@ -174,16 +182,18 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         }
     }
+
+    
 }
 
     @media only screen and (min-width: 1000px) {
         .window {
-            width: 35% !important;
+            width: 47% !important;            
         }
     }
 
-    @media only screen and (min-width: 1366px) {
+    @media only screen and (min-width: 1300px) {
         .window {
-            width: 30% !important;
+            width: 31% !important;            
         }
     }

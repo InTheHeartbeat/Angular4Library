@@ -31,6 +31,8 @@ namespace Angular4Library.Services.Products
 
         public void AddNewJournal(JournalViewModel journalViewModel)
         {
+            if (journalViewModel == null) return;
+
             var journal = new Journal();
             journal.Id = journalViewModel.Id;
             journal.Amount = journalViewModel.Amount;
@@ -46,6 +48,8 @@ namespace Angular4Library.Services.Products
 
         public void EditJournal(JournalViewModel journalViewModel)
         {
+            if (journalViewModel == null) return;
+
             Journal journal = _repositoryProvider.JournalsRepository.GetProductById(journalViewModel.Id);
 
             if (journal == null)
@@ -72,6 +76,9 @@ namespace Angular4Library.Services.Products
         internal static JournalViewModel CastDataModelToViewModel(Journal dataModel)
         {
             var result = new JournalViewModel();
+            if (dataModel == null) return result;
+
+
             result.Id = dataModel.Id;
             result.Amount = dataModel.Amount;
             result.Periodicity = dataModel.Periodicity;

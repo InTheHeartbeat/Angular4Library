@@ -1,32 +1,34 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "218315092a8e3caa3db5e5034ea114a66e495043"
+    "signature": "10e7f0500b92a9716a26895cb084f8220febb6a5"
   },
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v2.0": {
       "Angular4Library.Data/1.0.0": {
         "dependencies": {
-          "LiteDB": "4.1.1"
+          "LiteDB": "4.1.2",
+          "Microsoft.NETCore.Platforms": "2.0.2"
         },
         "runtime": {
           "Angular4Library.Data.dll": {}
         }
       },
-      "LiteDB/4.1.1": {
+      "LiteDB/4.1.2": {
         "dependencies": {
           "System.Reflection": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
-          "System.Threading.Thread": "4.0.0"
+          "System.Reflection.TypeExtensions": "4.3.0"
         },
         "runtime": {
           "lib/netstandard2.0/LiteDB.dll": {}
         }
       },
+      "Microsoft.NETCore.Platforms/2.0.2": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
       "System.IO/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "System.Text.Encoding": "4.3.0",
@@ -35,6 +37,7 @@
       },
       "System.Reflection/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.IO": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
@@ -43,6 +46,7 @@
       },
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
         }
@@ -55,23 +59,21 @@
       },
       "System.Runtime/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0"
         }
       },
       "System.Text.Encoding/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0"
         }
       },
       "System.Threading.Tasks/4.3.0": {
         "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.2",
           "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
-      "System.Threading.Thread/4.0.0": {
-        "dependencies": {
           "System.Runtime": "4.3.0"
         }
       }
@@ -83,12 +85,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "LiteDB/4.1.1": {
+    "LiteDB/4.1.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CUZa6ejPI4VUe5vRsx+xURq52j46aELaJaftu/etratqmy6YiyjObjB5Tzg7EAjWFKj0ZYiJXo3eEBXS5MCqow==",
-      "path": "litedb/4.1.1",
-      "hashPath": "litedb.4.1.1.nupkg.sha512"
+      "sha512": "sha512-lqjADPYzH9eKOJTFB9cHXhqPCHnSrgACoxsX6wxLGK1hyIRewv1HcY4TyXV/xZ0y8IjRZhVQyAvhbJUoNg/7xQ==",
+      "path": "litedb/4.1.2",
+      "hashPath": "litedb.4.1.2.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/2.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gID2fXOUeeLy8EOlYDchQITTwhsTAjZ83M156Yci4XK/kNvc+TNl7O/rf72+Xh0IayfNoDcf57Vevmkg689Faw==",
+      "path": "microsoft.netcore.platforms/2.0.2",
+      "hashPath": "microsoft.netcore.platforms.2.0.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Targets/1.1.0": {
       "type": "package",
@@ -145,13 +154,6 @@
       "sha512": "sha512-LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
-    },
-    "System.Threading.Thread/4.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-gIdJqDXlOr5W9zeqFErLw3dsOsiShSCYtF9SEHitACycmvNvY8odf9kiKvp6V7aibc8C4HzzNBkWXjyfn7plbQ==",
-      "path": "system.threading.thread/4.0.0",
-      "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
     }
   }
 }

@@ -1,13 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using Angular4Library.Data.Models;
-using Angular4Library.Data.Providers;
-using Angular4Library.Helpers;
-using Angular4Library.Models;
-using Angular4Library.Services;
 using Angular4Library.Services.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;

@@ -1,0 +1,83 @@
+﻿<div class="nav-sector-controls" [hidden]="!currentUser.isAdmin">
+    <div class="raw-xml-switch" [hidden]="!exportMode">
+        <h4>Raw</h4>
+        <label class="checkbox-switch">
+            <input type="checkbox" [(ngModel)]="isXml">
+            <span class="slider round"></span>
+        </label>
+        <h4>Xml</h4>
+    </div>
+    <span href="#" class="btn btn-icon" id="btn-import-newspapers" (click)="uploadFile.click()">
+        <span class="icon ic-import"></span>
+    </span>
+    <input type="file" name="upload" #uploadFile (change)="importChange(uploadFile.files)" id="uploadFile" style="display: none" />
+    <span class="btn btn-icon" href="#">
+        <span class="icon ic-accept" [hidden]="!exportMode" (click)="tryExport()"></span>
+        <span class="icon ic-export" [hidden]="exportMode" (click)="switchExportMode()"></span>
+    </span>
+    <span class="btn btn-icon lowered" [hidden]="!exportMode">
+        <span class="icon ic-close" (click)="switchExportMode()"></span>
+    </span>
+    <a class="btn btn-icon" [routerLink]="['/newspapers/put']">
+        <span class="icon ic-add"></span>
+    </a>
+</div>
+<div class="windows-container">
+    <div class="windows-grid">        
+        <div [ngClass]="{'disabled': busyId === newspaper.id}" class="window window-hovered-shadow" *ngFor="let newspaper of newspapers">
+            <div class="window-header">                    
+                <div class="window-header-icon"><span class="icon ic-newspaper"></span></div>
+                <div class="window-header-content"><h4 class="entity">{{newspaper.date}} - {{newspaper.title}}</h4></div>                    
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="editNewspaperForm(newspaper.id)">
+                        <span class="icon ic-edit"></span>
+                    </span>                        
+                </div>
+                <div class="window-header-control" [hidden]="!currentUser.isAdmin">
+                    <span class="btn btn-icon" (click)="tryRemoveNewspaper(newspaper.id)">
+                        <span class="icon ic-remove"></span>
+                    </span>
+                </div>
+                <div class="window-header-control" [hidden]="!exportMode">
+                    <input type="checkbox" class="checkbox-default" id="cb-sellected-{{newspaper.id}}" [(ngModel)]="newspaper.selected">
+                    <label for="cb-sellected-{{newspaper.id}}" class="checkbox-default-label"></label>
+                </div>
+            </div>
+            <div class="window-content entity-content">                
+                <div class="entity-photo" [ngStyle]="{ 'background-image': 'url(' + newspaper.photoPath + ')'}">                    
+                </div>              
+                <table>  
+                    <tr>
+                        <th><span>Title:</span></th>
+                        <td colspan="2"><span>{{newspaper.title}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Periodicity:</span></th>
+                        <td colspan="2"><span>{{newspaper.periodicity}}</span></td>
+                    </tr>
+                    <tr><td><br/></td></tr>                    
+                    <tr>
+                        <th><span>Date:</span></th>
+                        <td colspan="2"><span>{{newspaper.date}}</span></td>
+                    </tr>
+                    <tr>
+                        <th><span>Available:</span></th>
+                        <td colspan="2"><span>{{newspaper.amount}}</span></td>
+                    </tr>
+                    <tr><td><br /></td></tr>
+                    <tr>
+                        <th><span>Price:</span></th>
+                        <td colspan="2">
+                            <span>{{newspaper.price}}$</span>
+                        </td>
+                        <td>
+                            <a class="btn btn-icon btn-buy" (click)="addToBasket(newspaper.id)">
+                                <span class="icon ic-buy"></span>
+                            </a>
+                        </td>
+                    </tr>
+                </table>                                                                               
+            </div>            
+        </div>
+    </div>
+</div>

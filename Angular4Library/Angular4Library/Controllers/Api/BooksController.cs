@@ -65,11 +65,18 @@ namespace Angular4Library.Controllers.Api
             }
         }
 
-        [HttpDelete("DeleteBook/{id}")]        
+        [HttpDelete("DeleteBook/{id}")]
         public IActionResult DeleteBook(int id)
         {
-            _service.DeleteBookById(id);
-            return Ok();
+            try
+            {
+                _service.DeleteBookById(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e);
+            }
         }
 
         [HttpPost("UploadPhoto")]

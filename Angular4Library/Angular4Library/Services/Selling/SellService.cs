@@ -61,7 +61,7 @@ namespace Angular4Library.Services.Selling
             return result;
         }
 
-        public void AddToBasket(AuthDataViewModel currentUser, AddToBasketModel product)
+        public void AddToBasket(AuthDataViewModel currentUser, AddToBasketViewModel product)
         {
             var record = new SellOrderRecord();
             record.OrderId = GetSellOrder(currentUser.UserId, !currentUser.IsVisitor).Id;

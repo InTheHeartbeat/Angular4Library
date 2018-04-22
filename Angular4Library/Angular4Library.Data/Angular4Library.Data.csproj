@@ -4,8 +4,20 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="LiteDB" Version="4.1.1" />
+    <PackageReference Include="LiteDB" Version="4.1.2" />
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="db.ldb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

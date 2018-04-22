@@ -1,5 +1,4 @@
 ﻿using Angular4Library.Models;
-using Angular4Library.Services;
 using Angular4Library.Services.Accounting;
 using Angular4Library.Services.Selling;
 using Microsoft.AspNetCore.Mvc;
@@ -28,7 +27,7 @@ namespace Angular4Library.Controllers.Api
         }
 
         [HttpPost("AddToBasket")]
-        public ActionResult AddToBasket([FromBody] AddToBasketModel model)
+        public ActionResult AddToBasket([FromBody] AddToBasketViewModel viewModel)
         {
             AuthDataViewModel currentUser = _accountService.GetCurrentAuthData(Request);
 
@@ -37,7 +36,7 @@ namespace Angular4Library.Controllers.Api
                 return BadRequest();
             }
 
-            _sellService.AddToBasket(currentUser, model);
+            _sellService.AddToBasket(currentUser, viewModel);
            
             return Ok();
         }

@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5781f54c906e7dfd986f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0f1a86d24160adec63ae"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -1232,8 +1232,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: "app",
-            template: __webpack_require__(58),
-            styles: [__webpack_require__(77)]
+            template: __webpack_require__(48),
+            styles: [__webpack_require__(67)]
         })
     ], AppComponent);
     return AppComponent;
@@ -1996,23 +1996,23 @@ function getBaseUrl() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_app_books_app_books_component__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_app_journals_app_journals_component__ = __webpack_require__(27);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_app_newspapers_app_newspapers_component__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_app_books_put_app_books_put_component__ = __webpack_require__(24);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_app_newspapers_put_app_newspapers_put_component__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_app_journals_put_app_journals_put_component__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_app_signin_app_signin_component__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_app_signup_app_signup_component__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_app_nav_app_nav_component__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_app_basket_app_basket_component__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__sell_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__books_service__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__journals_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__newspapers_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__export_service__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__modules_books_components_books_app_books_component__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__modules_books_components_put_app_books_put_component__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__modules_journals_components_journals_app_journals_component__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__modules_journals_components_put_app_journals_put_component__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__modules_newspapers_components_newspapers_app_newspapers_component__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__modules_newspapers_components_put_app_newspapers_put_component__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__modules_navigation_components_nav_app_nav_component__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__modules_accounting_components_singin_app_signIn_component__ = __webpack_require__(24);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__modules_accounting_components_signup_app_signup_component__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__modules_basket_components_basket_app_basket_component__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__modules_accounting_account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__modules_books_books_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__modules_journals_journals_service__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__modules_newspapers_newspapers_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__modules_basket_sell_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__modules_data_transfer_export_service__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__modules_data_transfer_import_service__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2049,16 +2049,16 @@ var AppModuleShared = (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_5__components_app_app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__components_app_books_app_books_component__["a" /* AppBooksComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__components_app_books_put_app_books_put_component__["a" /* AppBooksPutComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__components_app_journals_app_journals_component__["a" /* AppJournalsComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__components_app_journals_put_app_journals_put_component__["a" /* AppJournalsPutComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__components_app_newspapers_app_newspapers_component__["a" /* AppNewspapersComponent */],
-                __WEBPACK_IMPORTED_MODULE_10__components_app_newspapers_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__components_app_nav_app_nav_component__["a" /* AppNavComponent */],
-                __WEBPACK_IMPORTED_MODULE_12__components_app_signin_app_signin_component__["a" /* AppSignInComponent */],
-                __WEBPACK_IMPORTED_MODULE_13__components_app_signup_app_signup_component__["a" /* AppSignUpComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__components_app_basket_app_basket_component__["a" /* AppBasketComponent */]
+                __WEBPACK_IMPORTED_MODULE_6__modules_books_components_books_app_books_component__["a" /* AppBooksComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__modules_books_components_put_app_books_put_component__["a" /* AppBooksPutComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__modules_journals_components_journals_app_journals_component__["a" /* AppJournalsComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__modules_journals_components_put_app_journals_put_component__["a" /* AppJournalsPutComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__modules_newspapers_components_newspapers_app_newspapers_component__["a" /* AppNewspapersComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__modules_newspapers_components_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */],
+                __WEBPACK_IMPORTED_MODULE_12__modules_navigation_components_nav_app_nav_component__["a" /* AppNavComponent */],
+                __WEBPACK_IMPORTED_MODULE_13__modules_accounting_components_singin_app_signIn_component__["a" /* AppSignInComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__modules_accounting_components_signup_app_signup_component__["a" /* AppSignUpComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__modules_basket_components_basket_app_basket_component__["a" /* AppBasketComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
@@ -2066,21 +2066,21 @@ var AppModuleShared = (function () {
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
                 __WEBPACK_IMPORTED_MODULE_4__angular_router__["RouterModule"].forRoot([
                     { path: '', redirectTo: 'books', pathMatch: 'full' },
-                    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_12__components_app_signin_app_signin_component__["a" /* AppSignInComponent */] },
-                    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_13__components_app_signup_app_signup_component__["a" /* AppSignUpComponent */] },
-                    { path: 'books', component: __WEBPACK_IMPORTED_MODULE_6__components_app_books_app_books_component__["a" /* AppBooksComponent */] },
-                    { path: 'books/put', component: __WEBPACK_IMPORTED_MODULE_9__components_app_books_put_app_books_put_component__["a" /* AppBooksPutComponent */] },
-                    { path: 'books/put/:id', component: __WEBPACK_IMPORTED_MODULE_9__components_app_books_put_app_books_put_component__["a" /* AppBooksPutComponent */] },
-                    { path: 'journals', component: __WEBPACK_IMPORTED_MODULE_7__components_app_journals_app_journals_component__["a" /* AppJournalsComponent */] },
-                    { path: 'journals/put', component: __WEBPACK_IMPORTED_MODULE_11__components_app_journals_put_app_journals_put_component__["a" /* AppJournalsPutComponent */] },
-                    { path: 'journals/put/:id', component: __WEBPACK_IMPORTED_MODULE_11__components_app_journals_put_app_journals_put_component__["a" /* AppJournalsPutComponent */] },
-                    { path: 'newspapers', component: __WEBPACK_IMPORTED_MODULE_8__components_app_newspapers_app_newspapers_component__["a" /* AppNewspapersComponent */] },
-                    { path: 'newspapers/put', component: __WEBPACK_IMPORTED_MODULE_10__components_app_newspapers_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */] },
-                    { path: 'newspapers/put/:id', component: __WEBPACK_IMPORTED_MODULE_10__components_app_newspapers_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */] },
-                    { path: 'basket', component: __WEBPACK_IMPORTED_MODULE_15__components_app_basket_app_basket_component__["a" /* AppBasketComponent */] }
+                    { path: 'signin', component: __WEBPACK_IMPORTED_MODULE_13__modules_accounting_components_singin_app_signIn_component__["a" /* AppSignInComponent */] },
+                    { path: 'signup', component: __WEBPACK_IMPORTED_MODULE_14__modules_accounting_components_signup_app_signup_component__["a" /* AppSignUpComponent */] },
+                    { path: 'books', component: __WEBPACK_IMPORTED_MODULE_6__modules_books_components_books_app_books_component__["a" /* AppBooksComponent */] },
+                    { path: 'books/put', component: __WEBPACK_IMPORTED_MODULE_7__modules_books_components_put_app_books_put_component__["a" /* AppBooksPutComponent */] },
+                    { path: 'books/put/:id', component: __WEBPACK_IMPORTED_MODULE_7__modules_books_components_put_app_books_put_component__["a" /* AppBooksPutComponent */] },
+                    { path: 'journals', component: __WEBPACK_IMPORTED_MODULE_8__modules_journals_components_journals_app_journals_component__["a" /* AppJournalsComponent */] },
+                    { path: 'journals/put', component: __WEBPACK_IMPORTED_MODULE_9__modules_journals_components_put_app_journals_put_component__["a" /* AppJournalsPutComponent */] },
+                    { path: 'journals/put/:id', component: __WEBPACK_IMPORTED_MODULE_9__modules_journals_components_put_app_journals_put_component__["a" /* AppJournalsPutComponent */] },
+                    { path: 'newspapers', component: __WEBPACK_IMPORTED_MODULE_10__modules_newspapers_components_newspapers_app_newspapers_component__["a" /* AppNewspapersComponent */] },
+                    { path: 'newspapers/put', component: __WEBPACK_IMPORTED_MODULE_11__modules_newspapers_components_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */] },
+                    { path: 'newspapers/put/:id', component: __WEBPACK_IMPORTED_MODULE_11__modules_newspapers_components_put_app_newspapers_put_component__["a" /* AppNewspapersPutComponent */] },
+                    { path: 'basket', component: __WEBPACK_IMPORTED_MODULE_15__modules_basket_components_basket_app_basket_component__["a" /* AppBasketComponent */] }
                 ])
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_16__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_18__books_service__["a" /* BooksService */], __WEBPACK_IMPORTED_MODULE_19__journals_service__["a" /* JournalsService */], __WEBPACK_IMPORTED_MODULE_20__newspapers_service__["a" /* NewspapersService */], __WEBPACK_IMPORTED_MODULE_17__sell_service__["a" /* SellService */], __WEBPACK_IMPORTED_MODULE_21__export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_22__import_service__["a" /* ImportService */]]
+            providers: [__WEBPACK_IMPORTED_MODULE_16__modules_accounting_account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_17__modules_books_books_service__["a" /* BooksService */], __WEBPACK_IMPORTED_MODULE_18__modules_journals_journals_service__["a" /* JournalsService */], __WEBPACK_IMPORTED_MODULE_19__modules_newspapers_newspapers_service__["a" /* NewspapersService */], __WEBPACK_IMPORTED_MODULE_20__modules_basket_sell_service__["a" /* SellService */], __WEBPACK_IMPORTED_MODULE_21__modules_data_transfer_export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_22__modules_data_transfer_import_service__["a" /* ImportService */]]
         })
     ], AppModuleShared);
     return AppModuleShared;
@@ -2093,10 +2093,125 @@ var AppModuleShared = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSignUpComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppSignUpComponent = (function () {
+    function AppSignUpComponent(accountService, router) {
+        this.accountService = accountService;
+        this.router = router;
+        this.message = "";
+        this.isLoading = false;
+    }
+    AppSignUpComponent.prototype.trySignUp = function (login, pass) {
+        var _this = this;
+        this.isLoading = true;
+        this.currUserUpdateSub = this.accountService.currentUser$.subscribe(function (result) {
+            if (!result.message) {
+                _this.router.navigateByUrl('/');
+            }
+            _this.isLoading = false;
+        });
+        this.signUpError = this.accountService.error$.subscribe(function (message) {
+            _this.message = message;
+            _this.isLoading = false;
+        });
+        this.accountService.trySignUp(login, pass);
+    };
+    AppSignUpComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'signup',
+            template: __webpack_require__(49),
+            styles: [__webpack_require__(68)]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
+    ], AppSignUpComponent);
+    return AppSignUpComponent;
+}());
+
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSignInComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppSignInComponent = (function () {
+    function AppSignInComponent(accountService, router) {
+        this.accountService = accountService;
+        this.router = router;
+        this.message = "";
+        this.isLoading = false;
+    }
+    AppSignInComponent.prototype.trySignIn = function (login, pass) {
+        var _this = this;
+        this.isLoading = true;
+        this.currUserUpdateSub = this.accountService.currentUser$.subscribe(function (result) {
+            if (!result.message) {
+                _this.router.navigateByUrl('/');
+            }
+            _this.isLoading = false;
+        });
+        this.signInError = this.accountService.error$.subscribe(function (message) {
+            _this.message = message;
+            _this.isLoading = false;
+        });
+        this.accountService.trySignIn(login, pass);
+    };
+    AppSignInComponent.prototype.showSignUpDialog = function () {
+        this.router.navigateByUrl('/signup');
+    };
+    AppSignInComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-signin',
+            template: __webpack_require__(50),
+            styles: [__webpack_require__(69)]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
+    ], AppSignInComponent);
+    return AppSignInComponent;
+}());
+
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppBasketComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__sell_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sell_service__ = __webpack_require__(7);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2141,10 +2256,10 @@ var AppBasketComponent = (function () {
     AppBasketComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-basket',
-            template: __webpack_require__(48),
-            styles: [__webpack_require__(67)]
+            template: __webpack_require__(51),
+            styles: [__webpack_require__(70)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__sell_service__["a" /* SellService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__sell_service__["a" /* SellService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"]])
     ], AppBasketComponent);
     return AppBasketComponent;
 }());
@@ -2152,120 +2267,17 @@ var AppBasketComponent = (function () {
 
 
 /***/ }),
-/* 24 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppBooksPutComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__books_service__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AppBooksPutComponent = (function () {
-    function AppBooksPutComponent(booksService, router, route) {
-        this.booksService = booksService;
-        this.router = router;
-        this.route = route;
-        this.photoUploaded = true;
-        this.currentPhotoPath = "/Upload/Images/no-photo-e.png";
-        this.currentBook = {
-            id: -1,
-            photoId: -1,
-            title: '',
-            author: '',
-            genre: '',
-            year: '',
-            pages: '',
-            amount: '',
-            price: '',
-            photoPath: '',
-        };
-    }
-    AppBooksPutComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.idSubscriber = this.route.params.subscribe(function (params) {
-            _this.idForEdit = +params['id'];
-            if (_this.idForEdit && _this.idForEdit > -1) {
-                _this.isEdit = true;
-                _this.booksService.tryGetBook(_this.idForEdit).subscribe(function (book) {
-                    _this.currentBook = book;
-                    _this.currentPhotoPath = book.photoPath;
-                });
-            }
-            else {
-                _this.isEdit = false;
-            }
-        });
-    };
-    AppBooksPutComponent.prototype.uploadPhotoChange = function (files) {
-        var _this = this;
-        this.photoUploaded = false;
-        if (files && files[0]) {
-            var formData = new FormData();
-            formData.append("image", files[0]);
-            this.booksService.uploadPhoto(formData).subscribe(function (res) {
-                _this.currentPhotoPath = res.path;
-                _this.currentBook.photoPath = res.path;
-                _this.currentBook.photoId = res.id;
-                _this.photoUploaded = true;
-            });
-        }
-        else {
-            this.photoUploaded = true;
-        }
-    };
-    AppBooksPutComponent.prototype.tryAddBook = function () {
-        var _this = this;
-        this.booksService.tryAddBook(this.currentBook).subscribe(function (resp) {
-            if (resp.ok) {
-                _this.router.navigateByUrl('/books');
-            }
-        });
-    };
-    AppBooksPutComponent.prototype.tryEditBook = function () {
-        var _this = this;
-        this.booksService.tryEditBook(this.currentBook).subscribe(function (resp) {
-            if (resp.ok) {
-                _this.router.navigateByUrl('/books');
-            }
-        });
-    };
-    AppBooksPutComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-books-put',
-            template: __webpack_require__(49),
-            styles: [__webpack_require__(68)]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__books_service__["a" /* BooksService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
-    ], AppBooksPutComponent);
-    return AppBooksPutComponent;
-}());
-
-
-
-/***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppBooksComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__export_service__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__books_service__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sell_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accounting_account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__basket_sell_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_transfer_export_service__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_transfer_import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__books_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2358,12 +2370,12 @@ var AppBooksComponent = (function () {
     AppBooksComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-books',
-            template: __webpack_require__(50),
-            styles: [__webpack_require__(69)]
+            template: __webpack_require__(52),
+            styles: [__webpack_require__(71)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_3__books_service__["a" /* BooksService */],
-            __WEBPACK_IMPORTED_MODULE_6__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_4__sell_service__["a" /* SellService */],
-            __WEBPACK_IMPORTED_MODULE_2__export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_5__import_service__["a" /* ImportService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__accounting_account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_5__books_service__["a" /* BooksService */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__basket_sell_service__["a" /* SellService */],
+            __WEBPACK_IMPORTED_MODULE_3__data_transfer_export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_4__data_transfer_import_service__["a" /* ImportService */]])
     ], AppBooksComponent);
     return AppBooksComponent;
 }());
@@ -2371,13 +2383,13 @@ var AppBooksComponent = (function () {
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppJournalsPutComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppBooksPutComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__journals_service__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__books_service__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2391,34 +2403,35 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AppJournalsPutComponent = (function () {
-    function AppJournalsPutComponent(journalsService, router, route) {
-        this.journalsService = journalsService;
+var AppBooksPutComponent = (function () {
+    function AppBooksPutComponent(booksService, router, route) {
+        this.booksService = booksService;
         this.router = router;
         this.route = route;
         this.photoUploaded = true;
         this.currentPhotoPath = "/Upload/Images/no-photo-e.png";
-        this.currentJournal = {
+        this.currentBook = {
             id: -1,
+            photoId: -1,
             title: '',
-            date: '',
-            theme: '',
-            periodicity: '',
+            author: '',
+            genre: '',
+            year: '',
             pages: '',
             amount: '',
             price: '',
             photoPath: '',
         };
     }
-    AppJournalsPutComponent.prototype.ngOnInit = function () {
+    AppBooksPutComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.idSubscriber = this.route.params.subscribe(function (params) {
             _this.idForEdit = +params['id'];
             if (_this.idForEdit && _this.idForEdit > -1) {
                 _this.isEdit = true;
-                _this.journalsService.tryGetJournal(_this.idForEdit).subscribe(function (journal) {
-                    _this.currentJournal = journal;
-                    _this.currentPhotoPath = journal.photoPath;
+                _this.booksService.tryGetBook(_this.idForEdit).subscribe(function (book) {
+                    _this.currentBook = book;
+                    _this.currentPhotoPath = book.photoPath;
                 });
             }
             else {
@@ -2426,15 +2439,16 @@ var AppJournalsPutComponent = (function () {
             }
         });
     };
-    AppJournalsPutComponent.prototype.uploadPhotoChange = function (files) {
+    AppBooksPutComponent.prototype.uploadPhotoChange = function (files) {
         var _this = this;
         this.photoUploaded = false;
         if (files && files[0]) {
             var formData = new FormData();
             formData.append("image", files[0]);
-            this.journalsService.uploadPhoto(formData).subscribe(function (res) {
+            this.booksService.uploadPhoto(formData).subscribe(function (res) {
                 _this.currentPhotoPath = res.path;
-                _this.currentJournal.photoPath = res.path;
+                _this.currentBook.photoPath = res.path;
+                _this.currentBook.photoId = res.id;
                 _this.photoUploaded = true;
             });
         }
@@ -2442,48 +2456,48 @@ var AppJournalsPutComponent = (function () {
             this.photoUploaded = true;
         }
     };
-    AppJournalsPutComponent.prototype.tryAddJournal = function () {
+    AppBooksPutComponent.prototype.tryAddBook = function () {
         var _this = this;
-        this.journalsService.tryAddJournal(this.currentJournal).subscribe(function (resp) {
+        this.booksService.tryAddBook(this.currentBook).subscribe(function (resp) {
             if (resp.ok) {
-                _this.router.navigateByUrl('/journals');
+                _this.router.navigateByUrl('/books');
             }
         });
     };
-    AppJournalsPutComponent.prototype.tryEditJournal = function () {
+    AppBooksPutComponent.prototype.tryEditBook = function () {
         var _this = this;
-        this.journalsService.tryEditJournal(this.currentJournal).subscribe(function (resp) {
+        this.booksService.tryEditBook(this.currentBook).subscribe(function (resp) {
             if (resp.ok) {
-                _this.router.navigateByUrl('/journals');
+                _this.router.navigateByUrl('/books');
             }
         });
     };
-    AppJournalsPutComponent = __decorate([
+    AppBooksPutComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-journals-put',
-            template: __webpack_require__(51),
-            styles: [__webpack_require__(70)]
+            selector: 'app-books-put',
+            template: __webpack_require__(53),
+            styles: [__webpack_require__(72)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__journals_service__["a" /* JournalsService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
-    ], AppJournalsPutComponent);
-    return AppJournalsPutComponent;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__books_service__["a" /* BooksService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
+    ], AppBooksPutComponent);
+    return AppBooksPutComponent;
 }());
 
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppJournalsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__journals_service__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sell_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__export_service__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__accounting_account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__data_transfer_export_service__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__basket_sell_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__data_transfer_import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__journals_service__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__(3);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2575,12 +2589,12 @@ var AppJournalsComponent = (function () {
     AppJournalsComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-journals',
-            template: __webpack_require__(52),
-            styles: [__webpack_require__(71)]
+            template: __webpack_require__(54),
+            styles: [__webpack_require__(73)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__journals_service__["a" /* JournalsService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_4__sell_service__["a" /* SellService */],
-            __WEBPACK_IMPORTED_MODULE_5__export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_6__import_service__["a" /* ImportService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__accounting_account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_5__journals_service__["a" /* JournalsService */],
+            __WEBPACK_IMPORTED_MODULE_6__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_3__basket_sell_service__["a" /* SellService */],
+            __WEBPACK_IMPORTED_MODULE_2__data_transfer_export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_4__data_transfer_import_service__["a" /* ImportService */]])
     ], AppJournalsComponent);
     return AppJournalsComponent;
 }());
@@ -2588,15 +2602,118 @@ var AppJournalsComponent = (function () {
 
 
 /***/ }),
-/* 28 */
+/* 29 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppJournalsPutComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__journals_service__ = __webpack_require__(11);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppJournalsPutComponent = (function () {
+    function AppJournalsPutComponent(journalsService, router, route) {
+        this.journalsService = journalsService;
+        this.router = router;
+        this.route = route;
+        this.photoUploaded = true;
+        this.currentPhotoPath = "/Upload/Images/no-photo-e.png";
+        this.currentJournal = {
+            id: -1,
+            title: '',
+            date: '',
+            theme: '',
+            periodicity: '',
+            pages: '',
+            amount: '',
+            price: '',
+            photoPath: '',
+        };
+    }
+    AppJournalsPutComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.idSubscriber = this.route.params.subscribe(function (params) {
+            _this.idForEdit = +params['id'];
+            if (_this.idForEdit && _this.idForEdit > -1) {
+                _this.isEdit = true;
+                _this.journalsService.tryGetJournal(_this.idForEdit).subscribe(function (journal) {
+                    _this.currentJournal = journal;
+                    _this.currentPhotoPath = journal.photoPath;
+                });
+            }
+            else {
+                _this.isEdit = false;
+            }
+        });
+    };
+    AppJournalsPutComponent.prototype.uploadPhotoChange = function (files) {
+        var _this = this;
+        this.photoUploaded = false;
+        if (files && files[0]) {
+            var formData = new FormData();
+            formData.append("image", files[0]);
+            this.journalsService.uploadPhoto(formData).subscribe(function (res) {
+                _this.currentPhotoPath = res.path;
+                _this.currentJournal.photoPath = res.path;
+                _this.photoUploaded = true;
+            });
+        }
+        else {
+            this.photoUploaded = true;
+        }
+    };
+    AppJournalsPutComponent.prototype.tryAddJournal = function () {
+        var _this = this;
+        this.journalsService.tryAddJournal(this.currentJournal).subscribe(function (resp) {
+            if (resp.ok) {
+                _this.router.navigateByUrl('/journals');
+            }
+        });
+    };
+    AppJournalsPutComponent.prototype.tryEditJournal = function () {
+        var _this = this;
+        this.journalsService.tryEditJournal(this.currentJournal).subscribe(function (resp) {
+            if (resp.ok) {
+                _this.router.navigateByUrl('/journals');
+            }
+        });
+    };
+    AppJournalsPutComponent = __decorate([
+        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-journals-put',
+            template: __webpack_require__(55),
+            styles: [__webpack_require__(74)]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__journals_service__["a" /* JournalsService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"]])
+    ], AppJournalsPutComponent);
+    return AppJournalsPutComponent;
+}());
+
+
+
+/***/ }),
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppNavComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ngx_cookie_service__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ngx_cookie_service__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accounting_account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__ = __webpack_require__(92);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_filter__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2610,13 +2727,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AppNavComponent = (function () {
     function AppNavComponent(cookieService, accountService, router) {
         this.cookieService = cookieService;
         this.accountService = accountService;
         this.router = router;
-        this.sections = [{ name: "Books", route: "/books" }, { name: "Journals", route: "/journals" },
-            { name: "Newspapers", route: "/newspapers" }
+        this.sections = [{ name: "Books", route: "/books" },
+            { name: "Journals", route: "/journals" },
+            { name: "Newspapers", route: "/newspapers" },
+            { name: "Basket", route: "/basket" },
+            { name: "Sign in", route: "/signin" },
+            { name: "Sign up", route: "/signup" }
         ];
         this.currentSection = this.sections[0];
         this.currentUser = {};
@@ -2628,6 +2750,14 @@ var AppNavComponent = (function () {
             _this.currentUser = user;
         });
         this.accountService.loadCurrentUser();
+        this.router.events.filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_2__angular_router__["NavigationEnd"]; })
+            .subscribe(function (event) {
+            _this.sections.forEach(function (section) {
+                if (section.route === event.urlAfterRedirects) {
+                    _this.currentSection = section;
+                }
+            });
+        });
     };
     AppNavComponent.prototype.signOut = function () {
         this.accountService.trySignOut();
@@ -2638,7 +2768,6 @@ var AppNavComponent = (function () {
         this.router.navigateByUrl(newSection.route);
     };
     AppNavComponent.prototype.initCurrentUser = function (account) {
-        console.log(account);
         if (account.isVisitor) {
             if (this.cookieService.check("AT")) {
                 this.cookieService.delete("AT");
@@ -2655,11 +2784,11 @@ var AppNavComponent = (function () {
     AppNavComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-nav',
-            template: __webpack_require__(53),
-            styles: [__webpack_require__(72)],
-            providers: [__WEBPACK_IMPORTED_MODULE_2_ngx_cookie_service__["a" /* CookieService */]]
+            template: __webpack_require__(56),
+            styles: [__webpack_require__(75)],
+            providers: [__WEBPACK_IMPORTED_MODULE_1_ngx_cookie_service__["a" /* CookieService */]]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ngx_cookie_service__["a" /* CookieService */], __WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ngx_cookie_service__["a" /* CookieService */], __WEBPACK_IMPORTED_MODULE_3__accounting_account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
     ], AppNavComponent);
     return AppNavComponent;
 }());
@@ -2667,117 +2796,18 @@ var AppNavComponent = (function () {
 
 
 /***/ }),
-/* 29 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppNewspapersPutComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__newspapers_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AppNewspapersPutComponent = (function () {
-    function AppNewspapersPutComponent(newspapersService, router, route) {
-        this.newspapersService = newspapersService;
-        this.router = router;
-        this.route = route;
-        this.photoUploaded = true;
-        this.currentPhotoPath = "/Upload/Images/no-photo-e.png";
-        this.currentNewspaper = {
-            id: -1,
-            title: '',
-            date: '',
-            periodicity: '',
-            amount: '',
-            price: '',
-            photoPath: '',
-        };
-    }
-    AppNewspapersPutComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.idSubscriber = this.route.params.subscribe(function (params) {
-            _this.idForEdit = +params['id'];
-            if (_this.idForEdit && _this.idForEdit > -1) {
-                _this.isEdit = true;
-                _this.newspapersService.tryGetNewspaper(_this.idForEdit).subscribe(function (newspaper) {
-                    _this.currentNewspaper = newspaper;
-                    _this.currentPhotoPath = newspaper.photoPath;
-                });
-            }
-            else {
-                _this.isEdit = false;
-            }
-        });
-    };
-    AppNewspapersPutComponent.prototype.uploadPhotoChange = function (files) {
-        var _this = this;
-        this.photoUploaded = false;
-        if (files && files[0]) {
-            var formData = new FormData();
-            formData.append("image", files[0]);
-            this.newspapersService.uploadPhoto(formData).subscribe(function (res) {
-                _this.currentPhotoPath = res.path;
-                _this.currentNewspaper.photoPath = res.path;
-                _this.photoUploaded = true;
-            });
-        }
-        else {
-            this.photoUploaded = true;
-        }
-    };
-    AppNewspapersPutComponent.prototype.tryAddNewspaper = function () {
-        var _this = this;
-        this.newspapersService.tryAddNewspaper(this.currentNewspaper).subscribe(function (resp) {
-            if (resp.ok) {
-                _this.router.navigateByUrl('/newspapers');
-            }
-        });
-    };
-    AppNewspapersPutComponent.prototype.tryEditNewspaper = function () {
-        var _this = this;
-        this.newspapersService.tryEditNewspaper(this.currentNewspaper).subscribe(function (resp) {
-            if (resp.ok) {
-                _this.router.navigateByUrl('/newspapers');
-            }
-        });
-    };
-    AppNewspapersPutComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-newspapers-put',
-            template: __webpack_require__(54),
-            styles: [__webpack_require__(73)]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__newspapers_service__["a" /* NewspapersService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_2__angular_router__["ActivatedRoute"]])
-    ], AppNewspapersPutComponent);
-    return AppNewspapersPutComponent;
-}());
-
-
-
-/***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppNewspapersComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__newspapers_service__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sell_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__export_service__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__import_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__newspapers_service__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__accounting_account_service__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__basket_sell_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__data_transfer_export_service__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__data_transfer_import_service__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2869,73 +2899,14 @@ var AppNewspapersComponent = (function () {
     AppNewspapersComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-newspapers',
-            template: __webpack_require__(55),
-            styles: [__webpack_require__(74)]
+            template: __webpack_require__(57),
+            styles: [__webpack_require__(76)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__newspapers_service__["a" /* NewspapersService */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_4__sell_service__["a" /* SellService */],
-            __WEBPACK_IMPORTED_MODULE_5__export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_6__import_service__["a" /* ImportService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__accounting_account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_1__newspapers_service__["a" /* NewspapersService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_4__basket_sell_service__["a" /* SellService */],
+            __WEBPACK_IMPORTED_MODULE_5__data_transfer_export_service__["a" /* ExportService */], __WEBPACK_IMPORTED_MODULE_6__data_transfer_import_service__["a" /* ImportService */]])
     ], AppNewspapersComponent);
     return AppNewspapersComponent;
-}());
-
-
-
-/***/ }),
-/* 31 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSignInComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var AppSignInComponent = (function () {
-    function AppSignInComponent(accountService, router) {
-        this.accountService = accountService;
-        this.router = router;
-        this.message = "";
-        this.isLoading = false;
-    }
-    AppSignInComponent.prototype.trySignIn = function (login, pass) {
-        var _this = this;
-        this.isLoading = true;
-        this.currUserUpdateSub = this.accountService.currentUser$.subscribe(function (result) {
-            if (!result.message) {
-                _this.router.navigateByUrl('/');
-            }
-            _this.isLoading = false;
-        });
-        this.signInError = this.accountService.error$.subscribe(function (message) {
-            _this.message = message;
-            _this.isLoading = false;
-        });
-        this.accountService.trySignIn(login, pass);
-    };
-    AppSignInComponent.prototype.showSignUpDialog = function () {
-        this.router.navigateByUrl('/signup');
-    };
-    AppSignInComponent = __decorate([
-        __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'app-signin',
-            template: __webpack_require__(56),
-            styles: [__webpack_require__(75)]
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
-    ], AppSignInComponent);
-    return AppSignInComponent;
 }());
 
 
@@ -2945,10 +2916,10 @@ var AppSignInComponent = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSignUpComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppNewspapersPutComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__account_service__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__newspapers_service__ = __webpack_require__(12);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2961,37 +2932,80 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-var AppSignUpComponent = (function () {
-    function AppSignUpComponent(accountService, router) {
-        this.accountService = accountService;
+var AppNewspapersPutComponent = (function () {
+    function AppNewspapersPutComponent(newspapersService, router, route) {
+        this.newspapersService = newspapersService;
         this.router = router;
-        this.message = "";
-        this.isLoading = false;
+        this.route = route;
+        this.photoUploaded = true;
+        this.currentPhotoPath = "/Upload/Images/no-photo-e.png";
+        this.currentNewspaper = {
+            id: -1,
+            title: '',
+            date: '',
+            periodicity: '',
+            amount: '',
+            price: '',
+            photoPath: '',
+        };
     }
-    AppSignUpComponent.prototype.trySignUp = function (login, pass) {
+    AppNewspapersPutComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.isLoading = true;
-        this.currUserUpdateSub = this.accountService.currentUser$.subscribe(function (result) {
-            if (!result.message) {
-                _this.router.navigateByUrl('/');
+        this.idSubscriber = this.route.params.subscribe(function (params) {
+            _this.idForEdit = +params['id'];
+            if (_this.idForEdit && _this.idForEdit > -1) {
+                _this.isEdit = true;
+                _this.newspapersService.tryGetNewspaper(_this.idForEdit).subscribe(function (newspaper) {
+                    _this.currentNewspaper = newspaper;
+                    _this.currentPhotoPath = newspaper.photoPath;
+                });
             }
-            _this.isLoading = false;
+            else {
+                _this.isEdit = false;
+            }
         });
-        this.signUpError = this.accountService.error$.subscribe(function (message) {
-            _this.message = message;
-            _this.isLoading = false;
-        });
-        this.accountService.trySignUp(login, pass);
     };
-    AppSignUpComponent = __decorate([
+    AppNewspapersPutComponent.prototype.uploadPhotoChange = function (files) {
+        var _this = this;
+        this.photoUploaded = false;
+        if (files && files[0]) {
+            var formData = new FormData();
+            formData.append("image", files[0]);
+            this.newspapersService.uploadPhoto(formData).subscribe(function (res) {
+                _this.currentPhotoPath = res.path;
+                _this.currentNewspaper.photoPath = res.path;
+                _this.photoUploaded = true;
+            });
+        }
+        else {
+            this.photoUploaded = true;
+        }
+    };
+    AppNewspapersPutComponent.prototype.tryAddNewspaper = function () {
+        var _this = this;
+        this.newspapersService.tryAddNewspaper(this.currentNewspaper).subscribe(function (resp) {
+            if (resp.ok) {
+                _this.router.navigateByUrl('/newspapers');
+            }
+        });
+    };
+    AppNewspapersPutComponent.prototype.tryEditNewspaper = function () {
+        var _this = this;
+        this.newspapersService.tryEditNewspaper(this.currentNewspaper).subscribe(function (resp) {
+            if (resp.ok) {
+                _this.router.navigateByUrl('/newspapers');
+            }
+        });
+    };
+    AppNewspapersPutComponent = __decorate([
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'signup',
-            template: __webpack_require__(57),
-            styles: [__webpack_require__(76)]
+            selector: 'app-newspapers-put',
+            template: __webpack_require__(58),
+            styles: [__webpack_require__(77)]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__account_service__["a" /* AccountService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["Router"]])
-    ], AppSignUpComponent);
-    return AppSignUpComponent;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__newspapers_service__["a" /* NewspapersService */], __WEBPACK_IMPORTED_MODULE_1__angular_router__["Router"], __WEBPACK_IMPORTED_MODULE_1__angular_router__["ActivatedRoute"]])
+    ], AppNewspapersPutComponent);
+    return AppNewspapersPutComponent;
 }());
 
 
@@ -3005,7 +3019,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "@media (max-width: 767px) {\r\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\r\n    .body-content {\r\n        padding-top: 50px;\r\n    }\r\n}\r\n", ""]);
 
 // exports
 
@@ -3145,7 +3159,7 @@ exports = module.exports = __webpack_require__(2)(undefined);
 
 
 // module
-exports.push([module.i, "@media (max-width: 767px) {\r\n    /* On small screens, the nav menu spans the full width of the screen. Leave a space for it. */\r\n    .body-content {\r\n        padding-top: 50px;\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, "", ""]);
 
 // exports
 
@@ -3675,67 +3689,67 @@ module.exports = XmlEntities;
 /* 48 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-sector-controls\" >\r\n    <div class=\"basket-labels\">\r\n        <span>Order id: {{basket.orderId}}</span>        \r\n        <span>Products: {{basket.totalProductsCount}}</span>\r\n    </div>\r\n    <span class=\"btn btn-icon\" (click)=\"tryAcceptOrder()\">\r\n        <span class=\"icon ic-accept\"></span>\r\n    </span>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">           \r\n        <label class=\"divider\">Books</label>                \r\n        <div [ngClass]=\"{'disabled': recordBusyId === book.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let book of basket.bookProducts\">\r\n            <div class=\"window-header\">\r\n                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-book\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{book.author}} - {{book.title}}</h4></div>                                    \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(book.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + book.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Author:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.author}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Genre:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.genre}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Year:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.year}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{book.price}}$</span>\r\n                        </td>                        \r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>        \r\n        <label class=\"divider\">Journals</label>                \r\n        \r\n        <div [ngClass]=\"{'disabled': recordBusyId === journal.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let journal of basket.journalProducts\">\r\n            <div class=\"window-header\">\r\n\r\n                <div class=\"window-header-icon\"><span class=\"icon ic-journal\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{journal.date}} - {{journal.title}}</h4></div>                \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(journal.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">\r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + journal.photoPath + ')'}\">\r\n                </div>\r\n                <table>\r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.date}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Theme:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.theme}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{journal.price}}$</span>\r\n                        </td>                        \r\n                    </tr>\r\n                </table>\r\n            </div>\r\n        </div>\r\n        <label class=\"divider\">Newspapers</label>                \r\n        \r\n        <div [ngClass]=\"{'disabled': recordBusyId === newspaper.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let newspaper of basket.newspaperProducts\">\r\n            <div class=\"window-header\">\r\n\r\n                <div class=\"window-header-icon\"><span class=\"icon ic-newspaper\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{newspaper.date}} - {{newspaper.title}}</h4></div>               \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(newspaper.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">\r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + newspaper.photoPath + ')'}\">\r\n                </div>\r\n                <table>\r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.date}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{newspaper.price}}$</span>\r\n                        </td> \r\n                    </tr>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<app-nav ></app-nav>\r\n";
 
 /***/ }),
 /* 49 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addbook\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit book</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create book</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"bookForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"book-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentBook.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentBook.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentBook.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Year</label></th>\r\n                                        <th><label>Pages</label></th>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter year\" name=\"year\" [(ngModel)]=\"currentBook.year\" required/></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter pages\" name=\"pages\" [(ngModel)]=\"currentBook.pages\" required/></td>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Author</label></th>\r\n                                        <th><label>Genre</label></th>\r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter author\" name=\"author\" [(ngModel)]=\"currentBook.author\" required /></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter genre\" name=\"genre\" [(ngModel)]=\"currentBook.genre\" required/></td>\r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addBookBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddBook()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editBookBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditBook()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">       \r\n        <div class=\"window centered bottom10\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-signin\"></span>\r\n                </div>\r\n                <div class=\"window-header-content\">\r\n                    <h4>Sign up</h4>\r\n                </div>\r\n                <div class=\"window-header-control auto-width\" [hidden]=\"!message || message==''\">\r\n                    <h5 class=\"error-msg header-msg\">{{message}}</h5>\r\n                </div>                    \r\n            </div>\r\n            <div class=\"window-content\">\r\n                <form name=\"signUpForm\">\r\n                    <input type=\"text\" placeholder=\"your login\" name=\"login\" [(ngModel)]=\"login\" required ng-minlength=\"5\" />\r\n                    <input type=\"password\" placeholder=\"your password\" name=\"password\" [(ngModel)]=\"password\" required ng-minlength=\"5\" />\r\n                    <div class=\"buttons\">            \r\n                        <input [disabled]=\"isLoading\" type=\"submit\" id=\"signUpBtn\" class=\"btn btn-colored\" value=\"Let me in!\" (click)=\"trySignUp(login,password)\" ng-disabled=\"signUpForm.$invalid\">\r\n                    </div>                        \r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 50 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-sector-controls\" [ngClass]=\"{'nav-sector-controls-expanded': exportMode}\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">                \r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-books\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExportBooks()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\"[hidden]=\"!exportMode\">       \r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/books/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === book.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let book of books\">\r\n            <div class=\"window-header\">                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-book\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{book.author}} - {{book.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editBookForm(book.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>\r\n                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveBook(book.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{book.id}}\" [(ngModel)]=\"book.selected\">\r\n                    <label for=\"cb-sellected-{{book.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + book.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Author:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.author}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Genre:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.genre}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Year:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.year}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{book.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(book.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered bottom10\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-signin\"></span>\r\n                </div>\r\n                <div class=\"window-header-content\">\r\n                    <h4>Sign in</h4>\r\n                </div>              \r\n                <div class=\"window-header-control auto-width\" [hidden]=\"!message || message == ''\">\r\n                    <h5 class=\"error-msg header-msg\">{{message}}</h5>\r\n                </div>                    \r\n            </div>\r\n            <div class=\"window-content\">\r\n                <form name=\"loginForm\">                        \r\n                    <input type=\"text\" placeholder=\"your login\" name=\"login\" [(ngModel)]=\"login\" required minlength=\"5\" />                       \r\n                    <input type=\"password\" placeholder=\"your password\" name=\"password\" [(ngModel)]=\"password\" required minlength=\"5\" />\r\n                    <div class=\"buttons\">                        \r\n                        <input [disabled]=\"isLoading\" type=\"submit\" id=\"signInBtn\" class=\"btn btn-colored\" value=\"Let me in!\" (click)=\"trySignIn(login,password)\" ng-disabled=\"loginForm.$invalid || isSignInBtnDisabled\">\r\n                        <input [disabled]=\"isLoading\" type=\"button\" class=\"btn\" value=\"Sign up\" (click)=\"showSignUpDialog()\">\r\n                    </div>                               \r\n                </form>\r\n            </div>\r\n        </div>        \r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 51 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addjournal\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit journal</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create journal</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"journalForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"journal-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentJournal.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentJournal.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentJournal.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Date</label></th>\r\n                                        <th><label>Pages</label></th>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter date\" name=\"date\" [(ngModel)]=\"currentJournal.date\" required/></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter pages\" name=\"pages\" [(ngModel)]=\"currentJournal.pages\" required/></td>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Periodicity</label></th>\r\n                                        <th><label>Theme</label></th>\r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter periodicity\" name=\"periodicity\" [(ngModel)]=\"currentJournal.periodicity\" required /></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter theme\" name=\"theme\" [(ngModel)]=\"currentJournal.theme\" required/></td>\r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addJournalBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddJournal()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editJournalBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditJournal()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"nav-sector-controls\" >\r\n    <div class=\"basket-labels\">\r\n        <span>Order id: {{basket.orderId}}</span>        \r\n        <span>Products: {{basket.totalProductsCount}}</span>\r\n    </div>\r\n    <span class=\"btn btn-icon\" (click)=\"tryAcceptOrder()\">\r\n        <span class=\"icon ic-accept\"></span>\r\n    </span>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">           \r\n        <label class=\"divider\">Books</label>                \r\n        <div [ngClass]=\"{'disabled': recordBusyId === book.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let book of basket.bookProducts\">\r\n            <div class=\"window-header\">\r\n                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-book\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{book.author}} - {{book.title}}</h4></div>                                    \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(book.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + book.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Author:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.author}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Genre:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.genre}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Year:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.year}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{book.price}}$</span>\r\n                        </td>                        \r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>        \r\n        <label class=\"divider\">Journals</label>                \r\n        \r\n        <div [ngClass]=\"{'disabled': recordBusyId === journal.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let journal of basket.journalProducts\">\r\n            <div class=\"window-header\">\r\n\r\n                <div class=\"window-header-icon\"><span class=\"icon ic-journal\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{journal.date}} - {{journal.title}}</h4></div>                \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(journal.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">\r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + journal.photoPath + ')'}\">\r\n                </div>\r\n                <table>\r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.date}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Theme:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.theme}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{journal.price}}$</span>\r\n                        </td>                        \r\n                    </tr>\r\n                </table>\r\n            </div>\r\n        </div>\r\n        <label class=\"divider\">Newspapers</label>                \r\n        \r\n        <div [ngClass]=\"{'disabled': recordBusyId === newspaper.recordId}\" class=\"window window-hovered-shadow\" *ngFor=\"let newspaper of basket.newspaperProducts\">\r\n            <div class=\"window-header\">\r\n\r\n                <div class=\"window-header-icon\"><span class=\"icon ic-newspaper\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{newspaper.date}} - {{newspaper.title}}</h4></div>               \r\n                <div class=\"window-header-control\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveFromOrder(newspaper.recordId)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n\r\n            </div>\r\n            <div class=\"window-content entity-content\">\r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + newspaper.photoPath + ')'}\">\r\n                </div>\r\n                <table>\r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.date}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{newspaper.price}}$</span>\r\n                        </td> \r\n                    </tr>\r\n                </table>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 52 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-sector-controls\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">\r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-journals\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExport()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\" [hidden]=\"!exportMode\">\r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/journals/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>    \r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === journal.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let journal of journals\">\r\n            <div class=\"window-header\">                   \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-journal\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{journal.date}} - {{journal.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editJournalForm(journal.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveJournal(journal.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{journal.id}}\" [(ngModel)]=\"journal.selected\">\r\n                    <label for=\"cb-sellected-{{journal.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + journal.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.date}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Theme:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.theme}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{journal.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(journal.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"nav-sector-controls\" [ngClass]=\"{'nav-sector-controls-expanded': exportMode}\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">                \r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-books\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExportBooks()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\"[hidden]=\"!exportMode\">       \r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/books/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === book.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let book of books\">\r\n            <div class=\"window-header\">                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-book\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{book.author}} - {{book.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editBookForm(book.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>\r\n                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveBook(book.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{book.id}}\" [(ngModel)]=\"book.selected\">\r\n                    <label for=\"cb-sellected-{{book.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + book.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Author:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.author}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Genre:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.genre}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Year:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.year}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{book.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{book.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(book.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 53 */
 /***/ (function(module, exports) {
 
-module.exports = "<header class=\"header-bar\">\r\n    <div class=\"header-title\">       \r\n    </div>\r\n    <div class=\"header-bar-menu-container\">\r\n        <ul id=\"header-bar-menu\">\r\n            <li [hidden]=\"!currentUser.isVisitor\">\r\n                <span>\r\n                    <a [routerLink]=\"['/signin']\">Sign in</a>\r\n                </span>\r\n            </li>\r\n            <li [hidden]=\"currentUser.isVisitor\">\r\n                <span>Hello, {{currentUser.login}}!</span>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</header>\r\n\r\n<div class=\"sidebar\">\r\n    <div class=\"sidebar-header\">\r\n        <span class=\"company\">Anuitex</span >       \r\n    </div>\r\n    <div class=\"sidebar-subheader\">\r\n        <span class=\"title\">Library</span>\r\n    </div>\r\n    <div class=\"sidebar-items-container\">\r\n        <h4 class=\"label\">Main</h4>\r\n        <ul class=\"section-selector\">\r\n            <li *ngFor=\"let section of sections\" [ngClass]=\"{'active': currentSection == section}\" (click)=\"setCurrentSection(section)\"><span>{{section.name}}</span></li>            \r\n        </ul>\r\n        <h4 class=\"label\">Sell</h4>\r\n        <ul class=\"section-selector\">\r\n            <li><a [routerLink]=\"['/basket']\">Basket</a></li>\r\n        </ul>\r\n        <h4 class=\"label\">Account</h4>\r\n        <ul class=\"section-selector\">\r\n            <li [hidden]=\"!currentUser.isVisitor\"><a [routerLink]=\"['/signin']\">Sign in</a></li>\r\n            <li [hidden]=\"!currentUser.isVisitor\"><a [routerLink]=\"['/signup']\">Sign up</a></li>\r\n            <li [hidden]=\"currentUser.isVisitor\"><a (click)=\"signOut()\" >Sign out</a></li>\r\n        </ul>\r\n\r\n        <h5>All rights reserved. <br>Tyner©2017</h5>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"body-content\"><router-outlet></router-outlet></div> ";
+module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addbook\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit book</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create book</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"bookForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"book-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentBook.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentBook.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentBook.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Year</label></th>\r\n                                        <th><label>Pages</label></th>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter year\" name=\"year\" [(ngModel)]=\"currentBook.year\" required/></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter pages\" name=\"pages\" [(ngModel)]=\"currentBook.pages\" required/></td>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Author</label></th>\r\n                                        <th><label>Genre</label></th>\r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter author\" name=\"author\" [(ngModel)]=\"currentBook.author\" required /></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter genre\" name=\"genre\" [(ngModel)]=\"currentBook.genre\" required/></td>\r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addBookBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddBook()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editBookBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditBook()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 54 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addnewspaper\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit newspaper</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create newspaper</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"newspaperForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"newspaper-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentNewspaper.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentNewspaper.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentNewspaper.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Date</label></th>                                        \r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter date\" name=\"date\" [(ngModel)]=\"currentNewspaper.date\" required/></td>                                        \r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Periodicity</label></th>                                        \r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter periodicity\" name=\"periodicity\" [(ngModel)]=\"currentNewspaper.periodicity\" required /></td>                                        \r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addNewspaperBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddNewspaper()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editNewspaperBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditNewspaper()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"nav-sector-controls\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">\r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-journals\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExport()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\" [hidden]=\"!exportMode\">\r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/journals/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>    \r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === journal.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let journal of journals\">\r\n            <div class=\"window-header\">                   \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-journal\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{journal.date}} - {{journal.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editJournalForm(journal.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveJournal(journal.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{journal.id}}\" [(ngModel)]=\"journal.selected\">\r\n                    <label for=\"cb-sellected-{{journal.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + journal.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.date}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>\r\n                    <tr>\r\n                        <th><span>Theme:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.theme}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Pages:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.pages}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{journal.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{journal.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(journal.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 55 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"nav-sector-controls\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">\r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-newspapers\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExport()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\" [hidden]=\"!exportMode\">\r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/newspapers/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === newspaper.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let newspaper of newspapers\">\r\n            <div class=\"window-header\">                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-newspaper\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{newspaper.date}} - {{newspaper.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editNewspaperForm(newspaper.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveNewspaper(newspaper.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{newspaper.id}}\" [(ngModel)]=\"newspaper.selected\">\r\n                    <label for=\"cb-sellected-{{newspaper.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + newspaper.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>                    \r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.date}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{newspaper.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(newspaper.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
+module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addjournal\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit journal</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create journal</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"journalForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"journal-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentJournal.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentJournal.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentJournal.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Date</label></th>\r\n                                        <th><label>Pages</label></th>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter date\" name=\"date\" [(ngModel)]=\"currentJournal.date\" required/></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter pages\" name=\"pages\" [(ngModel)]=\"currentJournal.pages\" required/></td>\r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Periodicity</label></th>\r\n                                        <th><label>Theme</label></th>\r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter periodicity\" name=\"periodicity\" [(ngModel)]=\"currentJournal.periodicity\" required /></td>\r\n                                        <td><input type=\"text\" placeholder=\"Enter theme\" name=\"theme\" [(ngModel)]=\"currentJournal.theme\" required/></td>\r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addJournalBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddJournal()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editJournalBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditJournal()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 56 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered bottom10\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-signin\"></span>\r\n                </div>\r\n                <div class=\"window-header-content\">\r\n                    <h4>Sign in</h4>\r\n                </div>              \r\n                <div class=\"window-header-control auto-width\" [hidden]=\"!message || message == ''\">\r\n                    <h5 class=\"error-msg header-msg\">{{message}}</h5>\r\n                </div>                    \r\n            </div>\r\n            <div class=\"window-content\">\r\n                <form name=\"loginForm\">                        \r\n                    <input type=\"text\" placeholder=\"your login\" name=\"login\" [(ngModel)]=\"login\" required minlength=\"5\" />                       \r\n                    <input type=\"password\" placeholder=\"your password\" name=\"password\" [(ngModel)]=\"password\" required minlength=\"5\" />\r\n                    <div class=\"buttons\">                        \r\n                        <input [disabled]=\"isLoading\" type=\"submit\" id=\"signInBtn\" class=\"btn btn-colored\" value=\"Let me in!\" (click)=\"trySignIn(login,password)\" ng-disabled=\"loginForm.$invalid || isSignInBtnDisabled\">\r\n                        <input [disabled]=\"isLoading\" type=\"button\" class=\"btn\" value=\"Sign up\" (click)=\"showSignUpDialog()\">\r\n                    </div>                               \r\n                </form>\r\n            </div>\r\n        </div>        \r\n    </div>\r\n</div>";
+module.exports = "<header class=\"header-bar\">\r\n    <div class=\"header-title\">       \r\n    </div>\r\n    <div class=\"header-bar-menu-container\">\r\n        <ul id=\"header-bar-menu\">\r\n            <li [hidden]=\"!currentUser.isVisitor\">\r\n                <span>\r\n                    <a [routerLink]=\"['/signin']\">Sign in</a>\r\n                </span>\r\n            </li>\r\n            <li [hidden]=\"currentUser.isVisitor\">\r\n                <span>Hello, {{currentUser.login}}!</span>\r\n            </li>\r\n        </ul>\r\n    </div>\r\n</header>\r\n\r\n<div class=\"sidebar\">\r\n    <div class=\"sidebar-header\">\r\n        <span class=\"company\">Anuitex</span >       \r\n    </div>\r\n    <div class=\"sidebar-subheader\">\r\n        <span class=\"title\">Library</span>\r\n    </div>\r\n    <div class=\"sidebar-items-container\">\r\n        <h4 class=\"label\">Main</h4>\r\n        <ul class=\"section-selector\">            \r\n            <li [ngClass]=\"{'active': currentSection == sections[0]}\" (click)=\"setCurrentSection(sections[0])\"><span>{{sections[0].name}}</span></li>            \r\n            <li [ngClass]=\"{'active': currentSection == sections[1]}\" (click)=\"setCurrentSection(sections[1])\"><span>{{sections[1].name}}</span></li>            \r\n            <li [ngClass]=\"{'active': currentSection == sections[2]}\" (click)=\"setCurrentSection(sections[2])\"><span>{{sections[2].name}}</span></li>            \r\n        </ul>\r\n        <h4 class=\"label\">Sell</h4>\r\n        <ul class=\"section-selector\">\r\n            <li [ngClass]=\"{'active': currentSection == sections[3]}\" (click)=\"setCurrentSection(sections[3])\"><span>{{sections[3].name}}</span></li>            \r\n            \r\n        </ul>\r\n        <h4 class=\"label\">Account</h4>\r\n        <ul class=\"section-selector\">            \r\n            <li [hidden]=\"!currentUser.isVisitor\" [ngClass]=\"{'active': currentSection == sections[4]}\" (click)=\"setCurrentSection(sections[4])\"><span>{{sections[4].name}}</span></li>\r\n            <li [hidden]=\"!currentUser.isVisitor\" [ngClass]=\"{'active': currentSection == sections[5]}\" (click)=\"setCurrentSection(sections[5])\"><span>{{sections[5].name}}</span></li>            \r\n\r\n            <li [hidden]=\"currentUser.isVisitor\"><a (click)=\"signOut()\" >Sign out</a></li>\r\n        </ul>\r\n\r\n        <h5>All rights reserved. <br>Tyner©2017</h5>\r\n    </div>\r\n</div>\r\n\r\n<div class=\"body-content\"><router-outlet></router-outlet></div> ";
 
 /***/ }),
 /* 57 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">       \r\n        <div class=\"window centered bottom10\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-signin\"></span>\r\n                </div>\r\n                <div class=\"window-header-content\">\r\n                    <h4>Sign up</h4>\r\n                </div>\r\n                <div class=\"window-header-control auto-width\" [hidden]=\"!message || message==''\">\r\n                    <h5 class=\"error-msg header-msg\">{{message}}</h5>\r\n                </div>                    \r\n            </div>\r\n            <div class=\"window-content\">\r\n                <form name=\"signUpForm\">\r\n                    <input type=\"text\" placeholder=\"your login\" name=\"login\" [(ngModel)]=\"login\" required ng-minlength=\"5\" />\r\n                    <input type=\"password\" placeholder=\"your password\" name=\"password\" [(ngModel)]=\"password\" required ng-minlength=\"5\" />\r\n                    <div class=\"buttons\">            \r\n                        <input [disabled]=\"isLoading\" type=\"submit\" id=\"signUpBtn\" class=\"btn btn-colored\" value=\"Let me in!\" (click)=\"trySignUp(login,password)\" ng-disabled=\"signUpForm.$invalid\">\r\n                    </div>                        \r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<div class=\"nav-sector-controls\" [hidden]=\"!currentUser.isAdmin\">\r\n    <div class=\"raw-xml-switch\" [hidden]=\"!exportMode\">\r\n        <h4>Raw</h4>\r\n        <label class=\"checkbox-switch\">\r\n            <input type=\"checkbox\" [(ngModel)]=\"isXml\">\r\n            <span class=\"slider round\"></span>\r\n        </label>\r\n        <h4>Xml</h4>\r\n    </div>\r\n    <span href=\"#\" class=\"btn btn-icon\" id=\"btn-import-newspapers\" (click)=\"uploadFile.click()\">\r\n        <span class=\"icon ic-import\"></span>\r\n    </span>\r\n    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"importChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\" />\r\n    <span class=\"btn btn-icon\" href=\"#\">\r\n        <span class=\"icon ic-accept\" [hidden]=\"!exportMode\" (click)=\"tryExport()\"></span>\r\n        <span class=\"icon ic-export\" [hidden]=\"exportMode\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <span class=\"btn btn-icon lowered\" [hidden]=\"!exportMode\">\r\n        <span class=\"icon ic-close\" (click)=\"switchExportMode()\"></span>\r\n    </span>\r\n    <a class=\"btn btn-icon\" [routerLink]=\"['/newspapers/put']\">\r\n        <span class=\"icon ic-add\"></span>\r\n    </a>\r\n</div>\r\n<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div [ngClass]=\"{'disabled': busyId === newspaper.id}\" class=\"window window-hovered-shadow\" *ngFor=\"let newspaper of newspapers\">\r\n            <div class=\"window-header\">                    \r\n                <div class=\"window-header-icon\"><span class=\"icon ic-newspaper\"></span></div>\r\n                <div class=\"window-header-content\"><h4 class=\"entity\">{{newspaper.date}} - {{newspaper.title}}</h4></div>                    \r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"editNewspaperForm(newspaper.id)\">\r\n                        <span class=\"icon ic-edit\"></span>\r\n                    </span>                        \r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!currentUser.isAdmin\">\r\n                    <span class=\"btn btn-icon\" (click)=\"tryRemoveNewspaper(newspaper.id)\">\r\n                        <span class=\"icon ic-remove\"></span>\r\n                    </span>\r\n                </div>\r\n                <div class=\"window-header-control\" [hidden]=\"!exportMode\">\r\n                    <input type=\"checkbox\" class=\"checkbox-default\" id=\"cb-sellected-{{newspaper.id}}\" [(ngModel)]=\"newspaper.selected\">\r\n                    <label for=\"cb-sellected-{{newspaper.id}}\" class=\"checkbox-default-label\"></label>\r\n                </div>\r\n            </div>\r\n            <div class=\"window-content entity-content\">                \r\n                <div class=\"entity-photo\" [ngStyle]=\"{ 'background-image': 'url(' + newspaper.photoPath + ')'}\">                    \r\n                </div>              \r\n                <table>  \r\n                    <tr>\r\n                        <th><span>Title:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.title}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Periodicity:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.periodicity}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br/></td></tr>                    \r\n                    <tr>\r\n                        <th><span>Date:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.date}}</span></td>\r\n                    </tr>\r\n                    <tr>\r\n                        <th><span>Available:</span></th>\r\n                        <td colspan=\"2\"><span>{{newspaper.amount}}</span></td>\r\n                    </tr>\r\n                    <tr><td><br /></td></tr>\r\n                    <tr>\r\n                        <th><span>Price:</span></th>\r\n                        <td colspan=\"2\">\r\n                            <span>{{newspaper.price}}$</span>\r\n                        </td>\r\n                        <td>\r\n                            <a class=\"btn btn-icon btn-buy\" (click)=\"addToBasket(newspaper.id)\">\r\n                                <span class=\"icon ic-buy\"></span>\r\n                            </a>\r\n                        </td>\r\n                    </tr>\r\n                </table>                                                                               \r\n            </div>            \r\n        </div>\r\n    </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 58 */
 /***/ (function(module, exports) {
 
-module.exports = "<app-nav ></app-nav>\r\n";
+module.exports = "<div class=\"windows-container\">\r\n    <div class=\"windows-grid\">        \r\n        <div class=\"window centered window-put\">\r\n            <div class=\"window-header\">\r\n                <div class=\"window-header-icon\">\r\n                    <span class=\"icon ic-addnewspaper\"></span>\r\n                </div>                \r\n                <div class=\"window-header-content\">\r\n                    <h4 [hidden]=\"!isEdit\">Edit newspaper</h4>\r\n                    <h4 [hidden]=\"isEdit\">Create newspaper</h4>\r\n                </div>                \r\n            </div>\r\n            <div class=\"window-content\">                                                           \r\n                <form name=\"newspaperForm\">\r\n                    <table class=\"form-table\">\r\n                        <tr>\r\n                            <td>                                    \r\n                                <div class=\"choose-photo\" (click)=\"uploadFile.click()\" [ngStyle]=\"{ 'background-image': 'url(' + currentPhotoPath + ')'}\" id=\"newspaper-photo\">\r\n                                    <h5>Click for choose photo</h5>\r\n                                </div>\r\n                            </td>\r\n                            <td>\r\n                                <label>Title</label>\r\n                                <input type=\"text\" placeholder=\"Enter title\" name=\"title\" [(ngModel)]=\"currentNewspaper.title\" required/>                                    \r\n                                <label>Amount</label>\r\n                                <input type=\"text\" placeholder=\"Enter amount\" name=\"amount\" [(ngModel)]=\"currentNewspaper.amount\" required/>\r\n                                <label>Price</label>\r\n                                <input type=\"text\" placeholder=\"Enter price\" name=\"price\" [(ngModel)]=\"currentNewspaper.price\" required/>\r\n                            </td>\r\n                        </tr>    \r\n                        <tr>\r\n                            <td colspan=\"2\" class=\"td-divider\">\r\n                                <hr/>\r\n                                <label>Additional info</label>\r\n                            </td>\r\n                        </tr>\r\n                        <tr>\r\n                            <td colspan=\"2\">\r\n                                <table class=\"create-form-table\">\r\n                                    <tr>\r\n                                        <th><label>Date</label></th>                                        \r\n                                    </tr>\r\n                                    <tr>\r\n                                        <td><input type=\"text\" placeholder=\"Enter date\" name=\"date\" [(ngModel)]=\"currentNewspaper.date\" required/></td>                                        \r\n                                    </tr>\r\n                                    <tr>\r\n                                        <th><label>Periodicity</label></th>                                        \r\n                                    </tr>\r\n                                    <tr>                                            \r\n                                        <td><input type=\"text\" placeholder=\"Enter periodicity\" name=\"periodicity\" [(ngModel)]=\"currentNewspaper.periodicity\" required /></td>                                        \r\n                                    </tr>\r\n                                </table>\r\n                            </td>\r\n                        </tr>\r\n                    </table>\r\n                                                                                                \r\n                    <input type=\"file\" name=\"upload\" #uploadFile (change)=\"uploadPhotoChange(uploadFile.files)\" id=\"uploadFile\" style=\"display: none\"/>\r\n                   \r\n                    <input type=\"submit\" id=\"addNewspaperBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryAddNewspaper()\" [hidden]=\"isEdit\" [disabled]=\"!photoUploaded\">\r\n                    <input type=\"submit\" id=\"editNewspaperBtn\" class=\"btn btn-colored\" value=\"Complete\" (click)=\"tryEditNewspaper()\" [hidden]=\"!isEdit\" [disabled]=\"!photoUploaded\">\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 /* 59 */
@@ -5725,6 +5739,23 @@ __webpack_require__(18);
 __webpack_require__(17);
 module.exports = __webpack_require__(16);
 
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var Observable_1 = __webpack_require__(83);
+var filter_1 = __webpack_require__(93);
+Observable_1.Observable.prototype.filter = filter_1.filter;
+//# sourceMappingURL=filter.js.map
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = (__webpack_require__(1))(77);
 
 /***/ })
 /******/ ]);

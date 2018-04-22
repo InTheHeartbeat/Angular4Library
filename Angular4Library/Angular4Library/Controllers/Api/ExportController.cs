@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Net;
-using System.Net.Http;
-using Angular4Library.Data.Enums;
-using Angular4Library.Data.Models;
-using Angular4Library.Data.Providers;
-using Angular4Library.Data.Transfer.Helpers;
-using Angular4Library.Helpers;
 using Angular4Library.Models;
 using Angular4Library.Services.Data;
 using Microsoft.AspNetCore.Mvc;
