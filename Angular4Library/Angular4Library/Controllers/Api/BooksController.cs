@@ -1,38 +1,39 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Angular4Library.BusinessLogic.Services.Products;
 using Angular4Library.Helpers;
-using Angular4Library.Models.Data;
-using Angular4Library.Services;
-using Angular4Library.Services.Products;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Linq;
+using Angular4Library.ViewModels.Data;
+using Angular4Library.ViewModels.Books;
 
 namespace Angular4Library.Controllers.Api
 {
     [Route("api/[controller]")]
     public class BooksController : Controller
     {
-        private readonly BooksService _service;
+        private readonly BooksService _bookService;
         private readonly IHostingEnvironment _hostingEnvironment;
 
-        public BooksController(IHostingEnvironment hostingEnvironment)
+        public BooksController(IHostingEnvironment hostingEnvironment, BooksService booksService)
         {
-            _service = new BooksService();
+            _bookService = booksService;
             _hostingEnvironment = hostingEnvironment;
         }
         
         [HttpGet("GetBooks")]        
         public IEnumerable<BookViewModel> GetBooks()
         {
-            IEnumerable<BookViewModel> result = _service.GetAll();
+            List<BookViewModel> result = _bookService.GetAll().ToList();
             return result;
         }
 
         [HttpGet("GetBook/{id}")]
         public BookViewModel GetBook(int id)
         {
-            BookViewModel result = _service.GetBookById(id);
+            BookViewModel result = _bookService.GetBookById(id);
             return result;
         }
         
@@ -41,7 +42,7 @@ namespace Angular4Library.Controllers.Api
         {            
             try
             {
-                _service.AddNewBook(book);
+                _bookService.AddNewBook(book);
             }
             catch (Exception e)
             {
@@ -56,7 +57,7 @@ namespace Angular4Library.Controllers.Api
         {
             try
             {
-                _service.EditBook(bookViewModel);
+                _bookService.EditBook(bookViewModel);
                 return Ok();
             }
             catch (Exception e)
@@ -70,7 +71,7 @@ namespace Angular4Library.Controllers.Api
         {
             try
             {
-                _service.DeleteBookById(id);
+                _bookService.DeleteBookById(id);
                 return Ok();
             }
             catch (Exception e)

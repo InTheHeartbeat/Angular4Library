@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Angular4Library.Data">
+      <HintPath>..\Angular4Library.Data\bin\Debug\netcoreapp2.0\Angular4Library.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Angular4Library.Extentions">
+      <HintPath>..\Angular4Library.Extentions\bin\Debug\netcoreapp2.0\Angular4Library.Extentions.dll</HintPath>
+    </Reference>
+    <Reference Include="Angular4Library.Repositories">
+      <HintPath>..\Angular4Library.Repositories\bin\Debug\netcoreapp2.0\Angular4Library.Repositories.dll</HintPath>
+    </Reference>
+    <Reference Include="Angular4Library.ViewModels">
+      <HintPath>..\Angular4Library.ViewModels\bin\Debug\netcoreapp2.0\Angular4Library.ViewModels.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Http.Features">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.http.features\2.0.2\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>..\..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.mvc.core\2.0.3\lib\netstandard2.0\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Net.Http.Headers">
+      <HintPath>bin\Debug\netcoreapp2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

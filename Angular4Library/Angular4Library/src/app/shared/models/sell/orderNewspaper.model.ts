@@ -1,0 +1,3 @@
+class OrderNewspaper {
+    RecordId: number;
+}

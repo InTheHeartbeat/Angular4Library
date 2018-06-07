@@ -1,0 +1,3 @@
+class OrderJournal {
+    RecordId: number;
+}

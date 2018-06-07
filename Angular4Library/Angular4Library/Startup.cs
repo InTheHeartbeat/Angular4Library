@@ -1,13 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Angular4Library.BusinessLogic.Services.Accounting;
+using Angular4Library.BusinessLogic.Services.Additional;
+using Angular4Library.BusinessLogic.Services.Products;
+using Angular4Library.BusinessLogic.Services.Selling;
+using Angular4Library.BusinessLogic.Services.Transfer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SpaServices.Webpack;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Angular4Library
 {
@@ -22,7 +29,15 @@ namespace Angular4Library
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {            
+        {
+            services.AddTransient<AccountService>();
+            services.AddTransient<AuthorService>();
+            services.AddTransient<BooksService>();
+            services.AddTransient<JournalsService>();
+            services.AddTransient<NewspapersService>();
+            services.AddTransient<SellService>();
+            services.AddTransient<ExportService>();
+            services.AddTransient<ImportService>();
             services.AddMvc();
         }
 
@@ -32,28 +47,17 @@ namespace Angular4Library
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    HotModuleReplacement = true
-                });
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
+            }           
 
+            app.UseDefaultFiles();
             app.UseStaticFiles();
-
-            app.UseMvc(routes =>
+            app.UseStaticFiles(new StaticFileOptions
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-
-                routes.MapSpaFallbackRoute(
-                    name: "spa-fallback",
-                    defaults: new { controller = "Home", action = "Index" });
+                FileProvider = new PhysicalFileProvider(
+                Path.Combine(Directory.GetCurrentDirectory(), "Upload")),
+                RequestPath = "/Upload"
             });
+            app.UseMvc();
         }
     }
 }

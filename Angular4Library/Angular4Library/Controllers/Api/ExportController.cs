@@ -1,6 +1,6 @@
-﻿using System;
-using Angular4Library.Models;
-using Angular4Library.Services.Data;
+using Angular4Library.BusinessLogic.Services.Transfer;
+using Angular4Library.ViewModels;
+using Angular4Library.ViewModels.Export;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
@@ -10,9 +10,9 @@ namespace Angular4Library.Controllers.Api
     {
         private readonly ExportService _exportService;
 
-        public ExportController()
+        public ExportController(ExportService exportService)
         {
-            _exportService = new ExportService();
+            _exportService = exportService;
         }
 
         [HttpPost("TryExport")]

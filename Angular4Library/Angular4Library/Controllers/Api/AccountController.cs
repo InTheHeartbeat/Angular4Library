@@ -1,6 +1,6 @@
-﻿using System;
-using Angular4Library.Models;
-using Angular4Library.Services.Accounting;
+using System;
+using Angular4Library.BusinessLogic.Services.Accounting;
+using Angular4Library.ViewModels.Account;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
@@ -9,64 +9,71 @@ namespace Angular4Library.Controllers.Api
     {
         private readonly AccountService _accountService;
 
-        public AccountController()
+        public AccountController(AccountService accountService)
         {
-            _accountService = new AccountService();
+            _accountService = accountService;
         }
 
-        [Route("api/Account/GetCurrentUser")]        
+        [Route("api/Account/GetCurrentUser")]
         [HttpGet]
         public IActionResult GetCurrentUser()
         {
-            AuthDataViewModel current = _accountService.GetCurrentAuthData(Request);
-            if(current == null)
-            { return BadRequest(); }
+            string accountToken = Request.Cookies["AT"];
+            string visitorToken = Request.Cookies["VT"];
+            string remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
 
+            AuthDataViewModel current = _accountService.GetCurrentAuthData(accountToken,visitorToken, remoteAddress);
+            if (current == null)
+            {
+                return BadRequest();
+            }
             return Ok(current);
         }
-                        
-        [Route("api/Account/TrySignIn")]        
+
+        [Route("api/Account/TrySignIn")]
         [HttpPost]
-        public IActionResult TrySignIn([FromBody] SignInDataViewModel dataViewModel)
+        public IActionResult TrySignIn([FromBody] SignInViewModel dataViewModel)
         {
+            var result = new AuthDataViewModel();
             try
-            {                
+            {
                 string remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
 
-                AuthDataViewModel result =
+                result =
                     _accountService.SignAccount(dataViewModel.Login, dataViewModel.Password, remoteAddress);
 
                 return Ok(result);
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                result.Message = e.Message;
+                return Ok(result);
             }
         }
 
-        [Route("api/Account/SignOut")]        
+        [Route("api/Account/SignOut")]
         [HttpPost]
         public IActionResult SignOut([FromBody] AuthDataViewModel viewModel)
-        {
+        {            
             _accountService.SignOutAccount(viewModel.Token);
-
-            return GetCurrentUser();
+            
+            return Ok(_accountService.GetCurrentAuthData(String.Empty, String.Empty, Request.HttpContext.Connection.RemoteIpAddress.ToString()));
         }
 
-        [Route("api/Account/TrySignUp")]        
+        [Route("api/Account/TrySignUp")]
         [HttpPost]
-        public IActionResult TrySignUp([FromBody]SignInDataViewModel dataViewModel)
+        public IActionResult TrySignUp([FromBody]SignInViewModel dataViewModel)
         {
             try
-            {                
-                _accountService.CreateAccount(dataViewModel);                         
+            {
+                _accountService.CreateAccount(dataViewModel);
                 return TrySignIn(dataViewModel);
             }
             catch (Exception e)
             {
                 var viewModel = new AuthDataViewModel();
                 viewModel.Message = e.Message;
-                return BadRequest(viewModel);
+                return Ok(viewModel);
             }
         }
     }

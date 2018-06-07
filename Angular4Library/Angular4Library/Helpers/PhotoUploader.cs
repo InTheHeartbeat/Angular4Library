@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading.Tasks;
-using Angular4Library.Models.Data;
+using Angular4Library.ViewModels.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 
@@ -13,7 +13,7 @@ namespace Angular4Library.Helpers
         {
             var file = request.Form.Files[0];
             string relPath = "/Upload/Images/";
-            string root = hostingEnvironment.WebRootPath + relPath;
+            string root = hostingEnvironment.ContentRootPath + relPath;
             string customFileName = Guid.NewGuid().ToString() + new FileInfo(file.FileName).Extension;
 
 

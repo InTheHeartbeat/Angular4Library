@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Angular4Library.BusinessLogic.Services.Products;
 using Angular4Library.Helpers;
-using Angular4Library.Models.Data;
-using Angular4Library.Services.Products;
+using Angular4Library.ViewModels.Data;
+using Angular4Library.ViewModels.Newspapers;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,9 @@ namespace Angular4Library.Controllers.Api
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly NewspapersService _newspapersService;
 
-        public NewspapersController(IHostingEnvironment hostingEnvironment)
+        public NewspapersController(IHostingEnvironment hostingEnvironment, NewspapersService newspapersService)
         {
-            _newspapersService = new NewspapersService();
+            _newspapersService = newspapersService;
             _hostingEnvironment = hostingEnvironment;
         }
 

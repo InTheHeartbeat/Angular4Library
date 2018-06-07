@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Angular4Library.BusinessLogic.Services.Products;
 using Angular4Library.Helpers;
-using Angular4Library.Models.Data;
-using Angular4Library.Services.Products;
+using Angular4Library.ViewModels.Data;
+using Angular4Library.ViewModels.Journals;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,9 +16,9 @@ namespace Angular4Library.Controllers.Api
         private readonly IHostingEnvironment _hostingEnvironment;
         private readonly JournalsService _journalsService;
 
-        public JournalsController(IHostingEnvironment hostingEnvironment)
+        public JournalsController(IHostingEnvironment hostingEnvironment, JournalsService journalsService)
         {
-            _journalsService = new JournalsService();          
+            _journalsService = journalsService;          
             _hostingEnvironment = hostingEnvironment;
         }
 

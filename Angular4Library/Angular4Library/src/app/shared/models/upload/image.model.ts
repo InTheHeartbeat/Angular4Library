@@ -1,0 +1,3 @@
+class ImageModel {
+    Path: string;
+}

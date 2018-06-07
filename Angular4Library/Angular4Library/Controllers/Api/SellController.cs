@@ -1,6 +1,8 @@
-﻿using Angular4Library.Models;
-using Angular4Library.Services.Accounting;
-using Angular4Library.Services.Selling;
+using Angular4Library.BusinessLogic.Services.Accounting;
+using Angular4Library.BusinessLogic.Services.Selling;
+using Angular4Library.ViewModels;
+using Angular4Library.ViewModels.Account;
+using Angular4Library.ViewModels.Sell;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Angular4Library.Controllers.Api
@@ -11,25 +13,33 @@ namespace Angular4Library.Controllers.Api
         private readonly SellService _sellService;            
         private readonly AccountService _accountService;
 
-        public SellController()
+        public SellController(SellService sellService, AccountService accountService)
         {
-            _sellService = new SellService();
-            _accountService = new AccountService();
+            _sellService = sellService;
+            _accountService = accountService;           
         }
 
         [HttpGet("GetBasket")]
         public ActionResult GetBasket()
-        {            
-            AuthDataViewModel currentUser = _accountService.GetCurrentAuthData(Request);            
+        {
+            string accountToken = Request.Cookies["AT"];
+            string visitorToken = Request.Cookies["VT"];
+            string remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+            
+            AuthDataViewModel currentUser = _accountService.GetCurrentAuthData(accountToken, visitorToken, remoteAddress);
             BasketViewModel basket = _sellService.GetBasket(currentUser);
                                 
             return Ok(basket);
         }
 
         [HttpPost("AddToBasket")]
-        public ActionResult AddToBasket([FromBody] AddToBasketViewModel viewModel)
+        public ActionResult AddToBasket([FromBody] AddBasketViewModel viewModel)
         {
-            AuthDataViewModel currentUser = _accountService.GetCurrentAuthData(Request);
+            string accountToken = Request.Cookies["AT"];
+            string visitorToken = Request.Cookies["VT"];
+            string remoteAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
+
+            AuthDataViewModel currentUser = _accountService.GetCurrentAuthData(accountToken, visitorToken, remoteAddress);
 
             if (currentUser == null)
             {
